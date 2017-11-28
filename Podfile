@@ -14,5 +14,5 @@ pod 'Masonry'
 pod 'IQKeyboardManager'
 pod 'MJExtension'
 pod 'MBProgressHUD'
-
+pod 'MJRefresh'
 end
