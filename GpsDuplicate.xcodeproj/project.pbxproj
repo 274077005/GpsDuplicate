@@ -1,0 +1,746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B61A0A671FCC104100DC1CE0 /* DriverOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61A0A661FCC104100DC1CE0 /* DriverOrderViewController.m */; };
+		B61A0A701FCC130900DC1CE0 /* DriverFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61A0A6F1FCC130900DC1CE0 /* DriverFinishViewController.m */; };
+		B61A0A731FCC133700DC1CE0 /* DriverUnfinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61A0A721FCC133700DC1CE0 /* DriverUnfinishedViewController.m */; };
+		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
+		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
+		B6D7EF351FC7C0ED00E669E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */; };
+		B6D7EF371FC7C0ED00E669E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */; };
+		B6D7EF3A1FC7C0ED00E669E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */; };
+		B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF3C1FC7C0ED00E669E3 /* main.m */; };
+		B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF451FC7C14300E669E3 /* AppDelegate.m */; };
+		B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */; };
+		B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */; };
+		B6D7EF651FC7F85400E669E3 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF641FC7F85400E669E3 /* BindingViewController.m */; };
+		B6D7EF691FC7FD6800E669E3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF681FC7FD6800E669E3 /* LoginViewController.m */; };
+		B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */; };
+		B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF751FC7FFBF00E669E3 /* SkToast.m */; };
+		B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */; };
+		B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */; };
+		B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */; };
+		B6D7EF961FC824EB00E669E3 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF951FC824EB00E669E3 /* ForgetPWViewController.m */; };
+		B6E985181FCCF78D003A370A /* ZWTopSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985151FCCF78D003A370A /* ZWTopSelectButton.m */; };
+		B6E985191FCCF78D003A370A /* ZWTopSelectVcView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985171FCCF78D003A370A /* ZWTopSelectVcView.m */; };
+		B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */; };
+		D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.debug.xcconfig"; sourceTree = "<group>"; };
+		407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.release.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.release.xcconfig"; sourceTree = "<group>"; };
+		A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GpsDuplicate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61A0A651FCC104100DC1CE0 /* DriverOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriverOrderViewController.h; sourceTree = "<group>"; };
+		B61A0A661FCC104100DC1CE0 /* DriverOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverOrderViewController.m; sourceTree = "<group>"; };
+		B61A0A6E1FCC130900DC1CE0 /* DriverFinishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriverFinishViewController.h; sourceTree = "<group>"; };
+		B61A0A6F1FCC130900DC1CE0 /* DriverFinishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverFinishViewController.m; sourceTree = "<group>"; };
+		B61A0A711FCC133700DC1CE0 /* DriverUnfinishedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriverUnfinishedViewController.h; sourceTree = "<group>"; };
+		B61A0A721FCC133700DC1CE0 /* DriverUnfinishedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverUnfinishedViewController.m; sourceTree = "<group>"; };
+		B62CFDCA1FCBB09C00776F72 /* UserLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserLogin.h; sourceTree = "<group>"; };
+		B62CFDCB1FCBB09C00776F72 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
+		B62CFDD11FCBB3CD00776F72 /* ComMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacro.h; sourceTree = "<group>"; };
+		B62CFDD21FCBB3CD00776F72 /* ComMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComMacro.m; sourceTree = "<group>"; };
+		B6D7EF2A1FC7C0ED00E669E3 /* GpsDuplicate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpsDuplicate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D7EF341FC7C0ED00E669E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6D7EF391FC7C0ED00E669E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6D7EF3B1FC7C0ED00E669E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D7EF3C1FC7C0ED00E669E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6D7EF441FC7C14300E669E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B6D7EF451FC7C14300E669E3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B6D7EF581FC7EDD700E669E3 /* SKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworking.h; sourceTree = "<group>"; };
+		B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworking.m; sourceTree = "<group>"; };
+		B6D7EF5A1FC7EDD700E669E3 /* SKPicModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPicModle.h; sourceTree = "<group>"; };
+		B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPicModle.m; sourceTree = "<group>"; };
+		B6D7EF5F1FC7F7DA00E669E3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B6D7EF631FC7F85400E669E3 /* BindingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
+		B6D7EF641FC7F85400E669E3 /* BindingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingViewController.m; sourceTree = "<group>"; };
+		B6D7EF671FC7FAA300E669E3 /* GpsDuplicate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GpsDuplicate-Prefix.pch"; sourceTree = "<group>"; };
+		B6D7EF681FC7FD6800E669E3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B6D7EF6B1FC7FF5F00E669E3 /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
+		B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
+		B6D7EF751FC7FFBF00E669E3 /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
+		B6D7EF761FC7FFBF00E669E3 /* SkToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkToast.h; sourceTree = "<group>"; };
+		B6D7EF881FC803FA00E669E3 /* SKKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKKeyboard.h; sourceTree = "<group>"; };
+		B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
+		B6D7EF8C1FC8067600E669E3 /* SkyerBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyerBaseViewController.h; sourceTree = "<group>"; };
+		B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyerBaseViewController.m; sourceTree = "<group>"; };
+		B6D7EF901FC81A6100E669E3 /* UIView+skBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+skBoard.h"; sourceTree = "<group>"; };
+		B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+skBoard.m"; sourceTree = "<group>"; };
+		B6D7EF941FC824EB00E669E3 /* ForgetPWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPWViewController.h; sourceTree = "<group>"; };
+		B6D7EF951FC824EB00E669E3 /* ForgetPWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPWViewController.m; sourceTree = "<group>"; };
+		B6E985141FCCF78D003A370A /* ZWTopSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWTopSelectButton.h; sourceTree = "<group>"; };
+		B6E985151FCCF78D003A370A /* ZWTopSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWTopSelectButton.m; sourceTree = "<group>"; };
+		B6E985161FCCF78D003A370A /* ZWTopSelectVcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWTopSelectVcView.h; sourceTree = "<group>"; };
+		B6E985171FCCF78D003A370A /* ZWTopSelectVcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWTopSelectVcView.m; sourceTree = "<group>"; };
+		B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+skStrWidth.h"; sourceTree = "<group>"; };
+		B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+skStrWidth.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6D7EF271FC7C0ED00E669E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E7D5205D0B87959434ABF56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B61A0A561FCC0D5900DC1CE0 /* 司机订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A5F1FCC0FEA00DC1CE0 /* 订单主页 */,
+			);
+			path = "司机订单";
+			sourceTree = "<group>";
+		};
+		B61A0A591FCC0F2E00DC1CE0 /* 监理订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A6B1FCC12CE00DC1CE0 /* 未完成订单 */,
+				B61A0A681FCC12CE00DC1CE0 /* 已完成订单 */,
+				B61A0A621FCC100200DC1CE0 /* 订单主页 */,
+			);
+			path = "监理订单";
+			sourceTree = "<group>";
+		};
+		B61A0A5F1FCC0FEA00DC1CE0 /* 订单主页 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A601FCC0FEA00DC1CE0 /* Models */,
+				B61A0A611FCC0FEA00DC1CE0 /* Views */,
+			);
+			path = "订单主页";
+			sourceTree = "<group>";
+		};
+		B61A0A601FCC0FEA00DC1CE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B61A0A611FCC0FEA00DC1CE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B61A0A621FCC100200DC1CE0 /* 订单主页 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A631FCC100200DC1CE0 /* Models */,
+				B61A0A641FCC100200DC1CE0 /* Views */,
+				B61A0A651FCC104100DC1CE0 /* DriverOrderViewController.h */,
+				B61A0A661FCC104100DC1CE0 /* DriverOrderViewController.m */,
+			);
+			path = "订单主页";
+			sourceTree = "<group>";
+		};
+		B61A0A631FCC100200DC1CE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B61A0A641FCC100200DC1CE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B61A0A681FCC12CE00DC1CE0 /* 已完成订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A691FCC12CE00DC1CE0 /* Models */,
+				B61A0A6A1FCC12CE00DC1CE0 /* Views */,
+				B61A0A6E1FCC130900DC1CE0 /* DriverFinishViewController.h */,
+				B61A0A6F1FCC130900DC1CE0 /* DriverFinishViewController.m */,
+			);
+			path = "已完成订单";
+			sourceTree = "<group>";
+		};
+		B61A0A691FCC12CE00DC1CE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B61A0A6A1FCC12CE00DC1CE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B61A0A6B1FCC12CE00DC1CE0 /* 未完成订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A6C1FCC12CE00DC1CE0 /* Models */,
+				B61A0A6D1FCC12CE00DC1CE0 /* Views */,
+				B61A0A711FCC133700DC1CE0 /* DriverUnfinishedViewController.h */,
+				B61A0A721FCC133700DC1CE0 /* DriverUnfinishedViewController.m */,
+			);
+			path = "未完成订单";
+			sourceTree = "<group>";
+		};
+		B61A0A6C1FCC12CE00DC1CE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B61A0A6D1FCC12CE00DC1CE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B62CFDC81FCBB06D00776F72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B62CFDC91FCBB06D00776F72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B62CFDCA1FCBB09C00776F72 /* UserLogin.h */,
+				B62CFDCB1FCBB09C00776F72 /* UserLogin.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B62CFDCD1FCBB36A00776F72 /* ComMacro */ = {
+			isa = PBXGroup;
+			children = (
+				B62CFDD11FCBB3CD00776F72 /* ComMacro.h */,
+				B62CFDD21FCBB3CD00776F72 /* ComMacro.m */,
+			);
+			path = ComMacro;
+			sourceTree = "<group>";
+		};
+		B6D7EF211FC7C0ED00E669E3 = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF2C1FC7C0ED00E669E3 /* GpsDuplicate */,
+				B6D7EF2B1FC7C0ED00E669E3 /* Products */,
+				DBFE880E8607B67086DFC7AB /* Pods */,
+				4E7D5205D0B87959434ABF56 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B6D7EF2B1FC7C0ED00E669E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF2A1FC7C0ED00E669E3 /* GpsDuplicate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6D7EF2C1FC7C0ED00E669E3 /* GpsDuplicate */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF441FC7C14300E669E3 /* AppDelegate.h */,
+				B6D7EF451FC7C14300E669E3 /* AppDelegate.m */,
+				B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */,
+				B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */,
+				B6D7EF431FC7C14300E669E3 /* Classes */,
+				B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */,
+				B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */,
+				B6D7EF3B1FC7C0ED00E669E3 /* Info.plist */,
+				B6D7EF3C1FC7C0ED00E669E3 /* main.m */,
+				B6D7EF671FC7FAA300E669E3 /* GpsDuplicate-Prefix.pch */,
+			);
+			path = GpsDuplicate;
+			sourceTree = "<group>";
+		};
+		B6D7EF431FC7C14300E669E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B61A0A591FCC0F2E00DC1CE0 /* 监理订单 */,
+				B61A0A561FCC0D5900DC1CE0 /* 司机订单 */,
+				B6D7EF931FC824BA00E669E3 /* 忘记密码 */,
+				B6D7EF621FC7F80F00E669E3 /* 绑定界面 */,
+				B6D7EF5E1FC7F7DA00E669E3 /* 登录界面 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985131FCCF78D003A370A /* SelectViews */,
+				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
+				B6D7EF8F1FC81A2B00E669E3 /* Category */,
+				B6D7EF8B1FC8065900E669E3 /* BaseViewController */,
+				B6D7EF841FC8038C00E669E3 /* SKKeyboard */,
+				B6D7EF6A1FC7FF5F00E669E3 /* SKHUD */,
+				B6D7EF571FC7EDD700E669E3 /* SKNetworking */,
+			);
+			path = SkyerTool;
+			sourceTree = "<group>";
+		};
+		B6D7EF571FC7EDD700E669E3 /* SKNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF581FC7EDD700E669E3 /* SKNetworking.h */,
+				B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */,
+				B6D7EF5A1FC7EDD700E669E3 /* SKPicModle.h */,
+				B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */,
+			);
+			path = SKNetworking;
+			sourceTree = "<group>";
+		};
+		B6D7EF5E1FC7F7DA00E669E3 /* 登录界面 */ = {
+			isa = PBXGroup;
+			children = (
+				B62CFDC91FCBB06D00776F72 /* Models */,
+				B62CFDC81FCBB06D00776F72 /* Views */,
+				B6D7EF5F1FC7F7DA00E669E3 /* LoginViewController.h */,
+				B6D7EF681FC7FD6800E669E3 /* LoginViewController.m */,
+			);
+			path = "登录界面";
+			sourceTree = "<group>";
+		};
+		B6D7EF621FC7F80F00E669E3 /* 绑定界面 */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF631FC7F85400E669E3 /* BindingViewController.h */,
+				B6D7EF641FC7F85400E669E3 /* BindingViewController.m */,
+			);
+			path = "绑定界面";
+			sourceTree = "<group>";
+		};
+		B6D7EF6A1FC7FF5F00E669E3 /* SKHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF761FC7FFBF00E669E3 /* SkToast.h */,
+				B6D7EF751FC7FFBF00E669E3 /* SkToast.m */,
+				B6D7EF6B1FC7FF5F00E669E3 /* SkyerHUD.h */,
+				B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */,
+			);
+			path = SKHUD;
+			sourceTree = "<group>";
+		};
+		B6D7EF841FC8038C00E669E3 /* SKKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF881FC803FA00E669E3 /* SKKeyboard.h */,
+				B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */,
+			);
+			path = SKKeyboard;
+			sourceTree = "<group>";
+		};
+		B6D7EF8B1FC8065900E669E3 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF8C1FC8067600E669E3 /* SkyerBaseViewController.h */,
+				B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		B6D7EF8F1FC81A2B00E669E3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF901FC81A6100E669E3 /* UIView+skBoard.h */,
+				B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */,
+				B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */,
+				B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B6D7EF931FC824BA00E669E3 /* 忘记密码 */ = {
+			isa = PBXGroup;
+			children = (
+				B6D7EF941FC824EB00E669E3 /* ForgetPWViewController.h */,
+				B6D7EF951FC824EB00E669E3 /* ForgetPWViewController.m */,
+			);
+			path = "忘记密码";
+			sourceTree = "<group>";
+		};
+		B6E985131FCCF78D003A370A /* SelectViews */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985141FCCF78D003A370A /* ZWTopSelectButton.h */,
+				B6E985151FCCF78D003A370A /* ZWTopSelectButton.m */,
+				B6E985161FCCF78D003A370A /* ZWTopSelectVcView.h */,
+				B6E985171FCCF78D003A370A /* ZWTopSelectVcView.m */,
+			);
+			path = SelectViews;
+			sourceTree = "<group>";
+		};
+		DBFE880E8607B67086DFC7AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */,
+				407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6D7EF291FC7C0ED00E669E3 /* GpsDuplicate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D7EF401FC7C0ED00E669E3 /* Build configuration list for PBXNativeTarget "GpsDuplicate" */;
+			buildPhases = (
+				B12AAB894ECCBF9DC0BF8B23 /* [CP] Check Pods Manifest.lock */,
+				B6D7EF261FC7C0ED00E669E3 /* Sources */,
+				B6D7EF271FC7C0ED00E669E3 /* Frameworks */,
+				B6D7EF281FC7C0ED00E669E3 /* Resources */,
+				16194BC81602A2710C4791A1 /* [CP] Embed Pods Frameworks */,
+				CCA4A04E17A9E0F875085732 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GpsDuplicate;
+			productName = GpsDuplicate;
+			productReference = B6D7EF2A1FC7C0ED00E669E3 /* GpsDuplicate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6D7EF221FC7C0ED00E669E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = skyer;
+				TargetAttributes = {
+					B6D7EF291FC7C0ED00E669E3 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B6D7EF251FC7C0ED00E669E3 /* Build configuration list for PBXProject "GpsDuplicate" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6D7EF211FC7C0ED00E669E3;
+			productRefGroup = B6D7EF2B1FC7C0ED00E669E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6D7EF291FC7C0ED00E669E3 /* GpsDuplicate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6D7EF281FC7C0ED00E669E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D7EF3A1FC7C0ED00E669E3 /* LaunchScreen.storyboard in Resources */,
+				B6D7EF371FC7C0ED00E669E3 /* Assets.xcassets in Resources */,
+				B6D7EF351FC7C0ED00E669E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16194BC81602A2710C4791A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B12AAB894ECCBF9DC0BF8B23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GpsDuplicate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCA4A04E17A9E0F875085732 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6D7EF261FC7C0ED00E669E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6E985191FCCF78D003A370A /* ZWTopSelectVcView.m in Sources */,
+				B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */,
+				B61A0A731FCC133700DC1CE0 /* DriverUnfinishedViewController.m in Sources */,
+				B6D7EF691FC7FD6800E669E3 /* LoginViewController.m in Sources */,
+				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
+				B61A0A701FCC130900DC1CE0 /* DriverFinishViewController.m in Sources */,
+				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
+				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
+				B6D7EF961FC824EB00E669E3 /* ForgetPWViewController.m in Sources */,
+				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
+				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
+				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
+				B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */,
+				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
+				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
+				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
+				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
+				B61A0A671FCC104100DC1CE0 /* DriverOrderViewController.m in Sources */,
+				B6E985181FCCF78D003A370A /* ZWTopSelectButton.m in Sources */,
+				B6D7EF651FC7F85400E669E3 /* BindingViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D7EF341FC7C0ED00E669E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D7EF391FC7C0ED00E669E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6D7EF3E1FC7C0ED00E669E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B6D7EF3F1FC7C0ED00E669E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6D7EF411FC7C0ED00E669E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F474Y7ZN3P;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/htwx/Desktop/电子联单(电子外包)/GpsDuplicate/GpsDuplicate/GpsDuplicate-Prefix.pch";
+				INFOPLIST_FILE = GpsDuplicate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.skyer.com.GpsDuplicate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B6D7EF421FC7C0ED00E669E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F474Y7ZN3P;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/htwx/Desktop/电子联单(电子外包)/GpsDuplicate/GpsDuplicate/GpsDuplicate-Prefix.pch";
+				INFOPLIST_FILE = GpsDuplicate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.skyer.com.GpsDuplicate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6D7EF251FC7C0ED00E669E3 /* Build configuration list for PBXProject "GpsDuplicate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D7EF3E1FC7C0ED00E669E3 /* Debug */,
+				B6D7EF3F1FC7C0ED00E669E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D7EF401FC7C0ED00E669E3 /* Build configuration list for PBXNativeTarget "GpsDuplicate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D7EF411FC7C0ED00E669E3 /* Debug */,
+				B6D7EF421FC7C0ED00E669E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6D7EF221FC7C0ED00E669E3 /* Project object */;
+}
