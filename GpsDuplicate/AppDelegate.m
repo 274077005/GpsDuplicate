@@ -65,6 +65,8 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 }
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     NSLog(@"didReceiveRemoteNotification");
+    
+    [[skJPUSHSet sharedskJPUSHSet] skReceiveJPUSH:userInfo];
     // Required, iOS 7 Support
     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
@@ -73,6 +75,7 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"didReceiveRemoteNotification");
     // Required,For systems with less than or equal to iOS6
+    [[skJPUSHSet sharedskJPUSHSet] skReceiveJPUSH:userInfo];
     [JPUSHService handleRemoteNotification:userInfo];
 }
 @end

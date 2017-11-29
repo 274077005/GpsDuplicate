@@ -24,7 +24,7 @@
     [self RACAction];
     
     
-    
+    NSLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"key"]);
 }
 
 /**

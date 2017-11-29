@@ -17,7 +17,7 @@
 @interface skJPUSHSet : NSObject <JPUSHRegisterDelegate>
 SkyerSingletonH(skJPUSHSet)
 /**
- 极光推送的配置
+ 极光推送的配置(AppDelegate的didFinishLaunchingWithOptions中调用)
 
  @param launchOptions 需要的参数
  */
@@ -28,5 +28,5 @@ SkyerSingletonH(skJPUSHSet)
 
  @param info 详情信息
  */
--(void)skReceiveJPUSH:(NSDictionary *)info;
+-(void)skReceiveJPUSH:(NSDictionary *_Nullable)info;
 @end
