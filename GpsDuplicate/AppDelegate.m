@@ -10,7 +10,6 @@
 #import "SKKeyboard.h"
 #import "skJPUSHSet.h"
 
-
 @interface AppDelegate ()
 
 @end
@@ -21,6 +20,8 @@
     // Override point for customization after application launch.
     //处理键盘弹出和导航栏全局属性
     [SKKeyboard skMangerKeyboard];
+    //配置极光推送的key
+    [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
     return YES;
 }
 

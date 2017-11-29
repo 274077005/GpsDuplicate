@@ -8,15 +8,9 @@
 
 #import "AppDelegate+Jpush.h"
 #import "skJPUSHSet.h"
-
+/*由于下面的代理平时很少用到可以写在分类,一般情况下别把这玩意写分类,写分类后原来的类就runtime调用的时候会出现问题,团队开发禁止使用*/
 @implementation AppDelegate (Jpush)
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    //配置极光推送的key
-    [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
-    
-    return YES;
-}
+
 #pragma mark -下面的事推送的时候注册和消息处理
 //获取deviceToken和注册
 - (void)application:(UIApplication *)application

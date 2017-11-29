@@ -41,6 +41,7 @@
     //第三步： 开始ZWTopSelectVcViewUI绘制,必须实现！
     [self.topSelectVcView setupZWTopSelectVcViewUI];
     [self.topSelectVcView setAnimationType:Push];
+    self.topSelectVcView.isCloseSwipeGesture=NO;//关闭左右滑动的按钮
     self.topSelectVcView.topViewFirstbtn.selectedColor=[UIColor blueColor];
     self.topSelectVcView.topViewFirstbtn.notSelectedColor=[UIColor blackColor];
     self.topSelectVcView.topViewFirstbtn.viewLine.backgroundColor=[UIColor lightGrayColor];

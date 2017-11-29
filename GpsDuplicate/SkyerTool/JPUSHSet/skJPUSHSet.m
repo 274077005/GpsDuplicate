@@ -21,12 +21,6 @@ SkyerSingletonM(skJPUSHSet)
     
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        // 可以添加自定义categories
-        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
-        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
-    }
-    
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     [JPUSHService setupWithOption:launchOptions appKey:kjpushKey
                           channel:kjpushChannel
@@ -43,10 +37,15 @@ SkyerSingletonM(skJPUSHSet)
     // Required
     NSDictionary * userInfo = notification.request.content.userInfo;
     [self skReceiveJPUSH:userInfo];
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+    if (@available(iOS 10.0, *)) {
+        if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
+        completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户
+    } else {
+        // Fallback on earlier versions
     }
-    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户
+    
     
 }
 
@@ -56,11 +55,14 @@ SkyerSingletonM(skJPUSHSet)
     // Required
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     [self skReceiveJPUSH:userInfo];
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        [JPUSHService handleRemoteNotification:userInfo];
+    if (@available(iOS 10.0, *)) {
+        if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
+        completionHandler();  // 系统要求执行这个方法
+    } else {
+        // Fallback on earlier versions
     }
-    completionHandler();  // 系统要求执行这个方法
-    
 }
 #pragma mark - 对收到的消息进行处理
 -(void)skReceiveJPUSH:(NSDictionary *_Nullable)info{
