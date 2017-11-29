@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
 		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
+		B6CB57861FCE4F3000D4FE02 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CB57851FCE4F3000D4FE02 /* AppDelegate+Jpush.m */; };
 		B6D7EF351FC7C0ED00E669E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */; };
 		B6D7EF371FC7C0ED00E669E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */; };
 		B6D7EF3A1FC7C0ED00E669E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,8 @@
 		B62CFDCB1FCBB09C00776F72 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
 		B62CFDD11FCBB3CD00776F72 /* ComMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacro.h; sourceTree = "<group>"; };
 		B62CFDD21FCBB3CD00776F72 /* ComMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComMacro.m; sourceTree = "<group>"; };
+		B6CB57841FCE4F3000D4FE02 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
+		B6CB57851FCE4F3000D4FE02 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
 		B6D7EF2A1FC7C0ED00E669E3 /* GpsDuplicate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpsDuplicate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D7EF341FC7C0ED00E669E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -415,6 +418,8 @@
 		B6E985851FCD5A52003A370A /* JPUSHSet */ = {
 			isa = PBXGroup;
 			children = (
+				B6CB57841FCE4F3000D4FE02 /* AppDelegate+Jpush.h */,
+				B6CB57851FCE4F3000D4FE02 /* AppDelegate+Jpush.m */,
 				B6E985861FCD5A71003A370A /* skJPUSHSet.h */,
 				B6E985871FCD5A71003A370A /* skJPUSHSet.m */,
 			);
@@ -584,6 +589,7 @@
 				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
 				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
 				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
+				B6CB57861FCE4F3000D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
 				B6E985181FCCF78D003A370A /* ZWTopSelectButton.m in Sources */,
 				B6E985821FCD3CBA003A370A /* DriverFinishViewController.m in Sources */,
