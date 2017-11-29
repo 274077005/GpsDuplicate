@@ -27,14 +27,15 @@
 		B6E985181FCCF78D003A370A /* ZWTopSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985151FCCF78D003A370A /* ZWTopSelectButton.m */; };
 		B6E985191FCCF78D003A370A /* ZWTopSelectVcView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985171FCCF78D003A370A /* ZWTopSelectVcView.m */; };
 		B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */; };
-		B6E985481FCD3721003A370A /* SignAlreadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985371FCD3721003A370A /* SignAlreadyViewController.m */; };
-		B6E985491FCD3721003A370A /* SureWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9853C1FCD3721003A370A /* SureWaitingViewController.m */; };
-		B6E9854A1FCD3721003A370A /* SignWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985411FCD3721003A370A /* SignWaitingViewController.m */; };
-		B6E9854B1FCD3721003A370A /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985451FCD3721003A370A /* ManagerOrderViewController.m */; };
-		B6E9855C1FCD375C003A370A /* DriverFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9854F1FCD375C003A370A /* DriverFinishViewController.m */; };
-		B6E9855D1FCD375C003A370A /* DriverUnfinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985541FCD375C003A370A /* DriverUnfinishedViewController.m */; };
-		B6E9855E1FCD375C003A370A /* DriverOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985591FCD375C003A370A /* DriverOrderViewController.m */; };
 		B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985651FCD38B5003A370A /* TableViewForOrder.m */; };
+		B6E9857E1FCD3CBA003A370A /* SignAlreadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9856A1FCD3CBA003A370A /* SignAlreadyViewController.m */; };
+		B6E9857F1FCD3CBA003A370A /* SureWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9856D1FCD3CBA003A370A /* SureWaitingViewController.m */; };
+		B6E985801FCD3CBA003A370A /* SignWaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985701FCD3CBA003A370A /* SignWaitingViewController.m */; };
+		B6E985811FCD3CBA003A370A /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */; };
+		B6E985821FCD3CBA003A370A /* DriverFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985771FCD3CBA003A370A /* DriverFinishViewController.m */; };
+		B6E985831FCD3CBA003A370A /* DriverUnfinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9857A1FCD3CBA003A370A /* DriverUnfinishedViewController.m */; };
+		B6E985841FCD3CBA003A370A /* DriverOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9857D1FCD3CBA003A370A /* DriverOrderViewController.m */; };
+		B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985871FCD5A71003A370A /* skJPUSHSet.m */; };
 		D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */; };
 /* End PBXBuildFile section */
 
@@ -81,22 +82,25 @@
 		B6E985171FCCF78D003A370A /* ZWTopSelectVcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWTopSelectVcView.m; sourceTree = "<group>"; };
 		B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+skStrWidth.h"; sourceTree = "<group>"; };
 		B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+skStrWidth.m"; sourceTree = "<group>"; };
-		B6E985361FCD3721003A370A /* SignAlreadyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignAlreadyViewController.h; sourceTree = "<group>"; };
-		B6E985371FCD3721003A370A /* SignAlreadyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignAlreadyViewController.m; sourceTree = "<group>"; };
-		B6E9853B1FCD3721003A370A /* SureWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureWaitingViewController.h; sourceTree = "<group>"; };
-		B6E9853C1FCD3721003A370A /* SureWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SureWaitingViewController.m; sourceTree = "<group>"; };
-		B6E985401FCD3721003A370A /* SignWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignWaitingViewController.h; sourceTree = "<group>"; };
-		B6E985411FCD3721003A370A /* SignWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignWaitingViewController.m; sourceTree = "<group>"; };
-		B6E985441FCD3721003A370A /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
-		B6E985451FCD3721003A370A /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
-		B6E9854E1FCD375C003A370A /* DriverFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverFinishViewController.h; sourceTree = "<group>"; };
-		B6E9854F1FCD375C003A370A /* DriverFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverFinishViewController.m; sourceTree = "<group>"; };
-		B6E985531FCD375C003A370A /* DriverUnfinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverUnfinishedViewController.h; sourceTree = "<group>"; };
-		B6E985541FCD375C003A370A /* DriverUnfinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverUnfinishedViewController.m; sourceTree = "<group>"; };
-		B6E985581FCD375C003A370A /* DriverOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverOrderViewController.h; sourceTree = "<group>"; };
-		B6E985591FCD375C003A370A /* DriverOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverOrderViewController.m; sourceTree = "<group>"; };
 		B6E985641FCD38B5003A370A /* TableViewForOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewForOrder.h; sourceTree = "<group>"; };
 		B6E985651FCD38B5003A370A /* TableViewForOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewForOrder.m; sourceTree = "<group>"; };
+		B6E985691FCD3CBA003A370A /* SignAlreadyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignAlreadyViewController.h; sourceTree = "<group>"; };
+		B6E9856A1FCD3CBA003A370A /* SignAlreadyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignAlreadyViewController.m; sourceTree = "<group>"; };
+		B6E9856C1FCD3CBA003A370A /* SureWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SureWaitingViewController.h; sourceTree = "<group>"; };
+		B6E9856D1FCD3CBA003A370A /* SureWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SureWaitingViewController.m; sourceTree = "<group>"; };
+		B6E9856F1FCD3CBA003A370A /* SignWaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignWaitingViewController.h; sourceTree = "<group>"; };
+		B6E985701FCD3CBA003A370A /* SignWaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignWaitingViewController.m; sourceTree = "<group>"; };
+		B6E985721FCD3CBA003A370A /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
+		B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
+		B6E985761FCD3CBA003A370A /* DriverFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverFinishViewController.h; sourceTree = "<group>"; };
+		B6E985771FCD3CBA003A370A /* DriverFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverFinishViewController.m; sourceTree = "<group>"; };
+		B6E985791FCD3CBA003A370A /* DriverUnfinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverUnfinishedViewController.h; sourceTree = "<group>"; };
+		B6E9857A1FCD3CBA003A370A /* DriverUnfinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverUnfinishedViewController.m; sourceTree = "<group>"; };
+		B6E9857C1FCD3CBA003A370A /* DriverOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverOrderViewController.h; sourceTree = "<group>"; };
+		B6E9857D1FCD3CBA003A370A /* DriverOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriverOrderViewController.m; sourceTree = "<group>"; };
+		B6E985861FCD5A71003A370A /* skJPUSHSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
+		B6E985871FCD5A71003A370A /* skJPUSHSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
+		B6E985891FCD606B003A370A /* GpsDuplicate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpsDuplicate.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 		B6D7EF2C1FC7C0ED00E669E3 /* GpsDuplicate */ = {
 			isa = PBXGroup;
 			children = (
+				B6E985891FCD606B003A370A /* GpsDuplicate.entitlements */,
 				B6D7EF441FC7C14300E669E3 /* AppDelegate.h */,
 				B6D7EF451FC7C14300E669E3 /* AppDelegate.m */,
 				B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */,
@@ -193,6 +198,7 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
+				B6E985851FCD5A52003A370A /* JPUSHSet */,
 				B6E985131FCCF78D003A370A /* SelectViews */,
 				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
 				B6D7EF8F1FC81A2B00E669E3 /* Category */,
@@ -298,208 +304,12 @@
 		B6E985321FCD3721003A370A /* 全部订单 */ = {
 			isa = PBXGroup;
 			children = (
+				B6E985671FCD3CBA003A370A /* 监理订单 */,
+				B6E985741FCD3CBA003A370A /* 司机订单 */,
 				B6E985621FCD38B4003A370A /* Models */,
 				B6E985631FCD38B5003A370A /* Views */,
-				B6E9854C1FCD375C003A370A /* 监理订单 */,
-				B6E985331FCD3721003A370A /* 司机订单 */,
 			);
 			path = "全部订单";
-			sourceTree = "<group>";
-		};
-		B6E985331FCD3721003A370A /* 司机订单 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E985341FCD3721003A370A /* 已签认 */,
-				B6E985391FCD3721003A370A /* 待确认 */,
-				B6E9853E1FCD3721003A370A /* 待签认 */,
-				B6E985431FCD3721003A370A /* 订单主页 */,
-			);
-			path = "司机订单";
-			sourceTree = "<group>";
-		};
-		B6E985341FCD3721003A370A /* 已签认 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E985351FCD3721003A370A /* Models */,
-				B6E985361FCD3721003A370A /* SignAlreadyViewController.h */,
-				B6E985371FCD3721003A370A /* SignAlreadyViewController.m */,
-				B6E985381FCD3721003A370A /* Views */,
-			);
-			path = "已签认";
-			sourceTree = "<group>";
-		};
-		B6E985351FCD3721003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E985381FCD3721003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E985391FCD3721003A370A /* 待确认 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E9853A1FCD3721003A370A /* Models */,
-				B6E9853B1FCD3721003A370A /* SureWaitingViewController.h */,
-				B6E9853C1FCD3721003A370A /* SureWaitingViewController.m */,
-				B6E9853D1FCD3721003A370A /* Views */,
-			);
-			path = "待确认";
-			sourceTree = "<group>";
-		};
-		B6E9853A1FCD3721003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E9853D1FCD3721003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E9853E1FCD3721003A370A /* 待签认 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E9853F1FCD3721003A370A /* Models */,
-				B6E985401FCD3721003A370A /* SignWaitingViewController.h */,
-				B6E985411FCD3721003A370A /* SignWaitingViewController.m */,
-				B6E985421FCD3721003A370A /* Views */,
-			);
-			path = "待签认";
-			sourceTree = "<group>";
-		};
-		B6E9853F1FCD3721003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E985421FCD3721003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E985431FCD3721003A370A /* 订单主页 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E985441FCD3721003A370A /* ManagerOrderViewController.h */,
-				B6E985451FCD3721003A370A /* ManagerOrderViewController.m */,
-				B6E985461FCD3721003A370A /* Models */,
-				B6E985471FCD3721003A370A /* Views */,
-			);
-			path = "订单主页";
-			sourceTree = "<group>";
-		};
-		B6E985461FCD3721003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E985471FCD3721003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E9854C1FCD375C003A370A /* 监理订单 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E9854D1FCD375C003A370A /* 已完成订单 */,
-				B6E985521FCD375C003A370A /* 未完成订单 */,
-				B6E985571FCD375C003A370A /* 订单主页 */,
-			);
-			path = "监理订单";
-			sourceTree = "<group>";
-		};
-		B6E9854D1FCD375C003A370A /* 已完成订单 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E9854E1FCD375C003A370A /* DriverFinishViewController.h */,
-				B6E9854F1FCD375C003A370A /* DriverFinishViewController.m */,
-				B6E985501FCD375C003A370A /* Models */,
-				B6E985511FCD375C003A370A /* Views */,
-			);
-			path = "已完成订单";
-			sourceTree = "<group>";
-		};
-		B6E985501FCD375C003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E985511FCD375C003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E985521FCD375C003A370A /* 未完成订单 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E985531FCD375C003A370A /* DriverUnfinishedViewController.h */,
-				B6E985541FCD375C003A370A /* DriverUnfinishedViewController.m */,
-				B6E985551FCD375C003A370A /* Models */,
-				B6E985561FCD375C003A370A /* Views */,
-			);
-			path = "未完成订单";
-			sourceTree = "<group>";
-		};
-		B6E985551FCD375C003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E985561FCD375C003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6E985571FCD375C003A370A /* 订单主页 */ = {
-			isa = PBXGroup;
-			children = (
-				B6E985581FCD375C003A370A /* DriverOrderViewController.h */,
-				B6E985591FCD375C003A370A /* DriverOrderViewController.m */,
-				B6E9855A1FCD375C003A370A /* Models */,
-				B6E9855B1FCD375C003A370A /* Views */,
-			);
-			path = "订单主页";
-			sourceTree = "<group>";
-		};
-		B6E9855A1FCD375C003A370A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B6E9855B1FCD375C003A370A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B6E985621FCD38B4003A370A /* Models */ = {
@@ -516,6 +326,99 @@
 				B6E985651FCD38B5003A370A /* TableViewForOrder.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B6E985671FCD3CBA003A370A /* 监理订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985681FCD3CBA003A370A /* 已签认 */,
+				B6E9856B1FCD3CBA003A370A /* 待确认 */,
+				B6E9856E1FCD3CBA003A370A /* 待签认 */,
+				B6E985711FCD3CBA003A370A /* 订单主页 */,
+			);
+			path = "监理订单";
+			sourceTree = "<group>";
+		};
+		B6E985681FCD3CBA003A370A /* 已签认 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985691FCD3CBA003A370A /* SignAlreadyViewController.h */,
+				B6E9856A1FCD3CBA003A370A /* SignAlreadyViewController.m */,
+			);
+			path = "已签认";
+			sourceTree = "<group>";
+		};
+		B6E9856B1FCD3CBA003A370A /* 待确认 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E9856C1FCD3CBA003A370A /* SureWaitingViewController.h */,
+				B6E9856D1FCD3CBA003A370A /* SureWaitingViewController.m */,
+			);
+			path = "待确认";
+			sourceTree = "<group>";
+		};
+		B6E9856E1FCD3CBA003A370A /* 待签认 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E9856F1FCD3CBA003A370A /* SignWaitingViewController.h */,
+				B6E985701FCD3CBA003A370A /* SignWaitingViewController.m */,
+			);
+			path = "待签认";
+			sourceTree = "<group>";
+		};
+		B6E985711FCD3CBA003A370A /* 订单主页 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985721FCD3CBA003A370A /* ManagerOrderViewController.h */,
+				B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */,
+			);
+			path = "订单主页";
+			sourceTree = "<group>";
+		};
+		B6E985741FCD3CBA003A370A /* 司机订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985751FCD3CBA003A370A /* 已完成订单 */,
+				B6E985781FCD3CBA003A370A /* 未完成订单 */,
+				B6E9857B1FCD3CBA003A370A /* 订单主页 */,
+			);
+			path = "司机订单";
+			sourceTree = "<group>";
+		};
+		B6E985751FCD3CBA003A370A /* 已完成订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985761FCD3CBA003A370A /* DriverFinishViewController.h */,
+				B6E985771FCD3CBA003A370A /* DriverFinishViewController.m */,
+			);
+			path = "已完成订单";
+			sourceTree = "<group>";
+		};
+		B6E985781FCD3CBA003A370A /* 未完成订单 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985791FCD3CBA003A370A /* DriverUnfinishedViewController.h */,
+				B6E9857A1FCD3CBA003A370A /* DriverUnfinishedViewController.m */,
+			);
+			path = "未完成订单";
+			sourceTree = "<group>";
+		};
+		B6E9857B1FCD3CBA003A370A /* 订单主页 */ = {
+			isa = PBXGroup;
+			children = (
+				B6E9857C1FCD3CBA003A370A /* DriverOrderViewController.h */,
+				B6E9857D1FCD3CBA003A370A /* DriverOrderViewController.m */,
+			);
+			path = "订单主页";
+			sourceTree = "<group>";
+		};
+		B6E985851FCD5A52003A370A /* JPUSHSet */ = {
+			isa = PBXGroup;
+			children = (
+				B6E985861FCD5A71003A370A /* skJPUSHSet.h */,
+				B6E985871FCD5A71003A370A /* skJPUSHSet.m */,
+			);
+			path = JPUSHSet;
 			sourceTree = "<group>";
 		};
 		DBFE880E8607B67086DFC7AB /* Pods */ = {
@@ -562,6 +465,11 @@
 					B6D7EF291FC7C0ED00E669E3 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -656,31 +564,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6E985491FCD3721003A370A /* SureWaitingViewController.m in Sources */,
-				B6E9854B1FCD3721003A370A /* ManagerOrderViewController.m in Sources */,
 				B6E985191FCCF78D003A370A /* ZWTopSelectVcView.m in Sources */,
-				B6E9855D1FCD375C003A370A /* DriverUnfinishedViewController.m in Sources */,
 				B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */,
-				B6E9855E1FCD375C003A370A /* DriverOrderViewController.m in Sources */,
 				B6D7EF691FC7FD6800E669E3 /* LoginViewController.m in Sources */,
+				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
+				B6E9857F1FCD3CBA003A370A /* SureWaitingViewController.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
-				B6E9854A1FCD3721003A370A /* SignWaitingViewController.m in Sources */,
 				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
 				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
 				B6D7EF961FC824EB00E669E3 /* ForgetPWViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
+				B6E985841FCD3CBA003A370A /* DriverOrderViewController.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
-				B6E985481FCD3721003A370A /* SignAlreadyViewController.m in Sources */,
+				B6E9857E1FCD3CBA003A370A /* SignAlreadyViewController.m in Sources */,
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
 				B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */,
+				B6E985831FCD3CBA003A370A /* DriverUnfinishedViewController.m in Sources */,
 				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
 				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
 				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
 				B6E985181FCCF78D003A370A /* ZWTopSelectButton.m in Sources */,
+				B6E985821FCD3CBA003A370A /* DriverFinishViewController.m in Sources */,
 				B6D7EF651FC7F85400E669E3 /* BindingViewController.m in Sources */,
-				B6E9855C1FCD375C003A370A /* DriverFinishViewController.m in Sources */,
+				B6E985801FCD3CBA003A370A /* SignWaitingViewController.m in Sources */,
+				B6E985811FCD3CBA003A370A /* ManagerOrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +724,7 @@
 			baseConfigurationReference = 1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -822,7 +732,7 @@
 				INFOPLIST_FILE = GpsDuplicate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.skyer.com.GpsDuplicate;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.todayTrack.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -833,6 +743,7 @@
 			baseConfigurationReference = 407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -840,7 +751,7 @@
 				INFOPLIST_FILE = GpsDuplicate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.skyer.com.GpsDuplicate;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.todayTrack.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

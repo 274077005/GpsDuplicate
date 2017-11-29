@@ -40,12 +40,13 @@
     self.topSelectVcView.delegate=self;
     //第三步： 开始ZWTopSelectVcViewUI绘制,必须实现！
     [self.topSelectVcView setupZWTopSelectVcViewUI];
+    [self.topSelectVcView setAnimationType:Push];
     self.topSelectVcView.topViewFirstbtn.selectedColor=[UIColor blueColor];
     self.topSelectVcView.topViewFirstbtn.notSelectedColor=[UIColor blackColor];
     self.topSelectVcView.topViewFirstbtn.viewLine.backgroundColor=[UIColor lightGrayColor];
 }
 #pragma mark - ZWTopSelectVcViewDelegate
-#warning 只要一步且必须实现：传入您的各种控制器，用可变数组封装传入，就会动态的生成，默认最多能传入九个控制器
+//只要一步且必须实现：传入您的各种控制器，用可变数组封装传入，就会动态的生成，默认最多能传入九个控制器
 //初始化设置
 -(NSMutableArray *)totalControllerInZWTopSelectVcView:(ZWTopSelectVcView *)topSelectVcView
 {
@@ -61,14 +62,12 @@
     DriverUnfinishedView.title=@"未完成订单";
     [controllerMutableArr addObject:DriverUnfinishedView];
     
-    
-    
     return controllerMutableArr;
     
 }
 
 #pragma mark - ZWTopSelectVcViewDelegate
-#warning 单个设置顶部标题栏的优先级>初始化设置顶部标题栏>统一设置顶部标题栏的优先级
+//单个设置顶部标题栏的优先级>初始化设置顶部标题栏>统一设置顶部标题栏的优先级
 //统一设置 ：通过totalTopBtns修改顶部控件样式
 
 

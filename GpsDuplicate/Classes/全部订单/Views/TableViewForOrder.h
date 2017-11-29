@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TableViewForOrder : UIView
+@interface TableViewForOrder : UIView <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *tableView;
 
+/**
+ 初始化界面元素
+ */
+-(void)skInitView;
 @end
