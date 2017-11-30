@@ -28,8 +28,11 @@
     keyboardManager.placeholderFont = [UIFont boldSystemFontOfSize:17]; // 设置占位文字的字体
     
     keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
+    
+    //设置导航栏的颜色
+    [[UINavigationBar appearance] setBarTintColor:skUIColorFromRGB(0x24AC6E)];
     //设置导航栏标题的属性
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor greenColor],NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}];
     //设置返回按钮的颜色
     [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
     

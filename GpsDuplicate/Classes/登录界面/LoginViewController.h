@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface LoginViewController : SkyerBaseViewController
 
 @property (weak, nonatomic) IBOutlet UIView *viewName;
@@ -16,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 @property (weak, nonatomic) IBOutlet UITextField *textName;
 @property (weak, nonatomic) IBOutlet UITextField *textPassword;
+@property (weak, nonatomic) IBOutlet UIButton *btnRemamber;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnRemamberTop;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnForget;
+
 
 @end
 

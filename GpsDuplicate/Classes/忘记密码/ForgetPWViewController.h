@@ -10,4 +10,12 @@
 
 @interface ForgetPWViewController : SkyerBaseViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *textPhoneNum;
+
+@property (weak, nonatomic) IBOutlet UITextField *textCode;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnGetCode;
+@property (weak, nonatomic) IBOutlet UILabel *labGetCode;
+@property (weak, nonatomic) IBOutlet UIButton *btnSure;
+
 @end

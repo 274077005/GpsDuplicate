@@ -18,19 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor=[[UIColor grayColor] colorWithAlphaComponent:0.8];
+    UserLogin *user=[UserLogin sharedUserLogin];
+    NSLog(@"%@",user.Address);
+    [self initUI];
+}
+
+-(void)initUI{
+    _labLine.backgroundColor=skUIColorFromRGB(0xDFDFDF);
     
+    [_viewBind skSetBoardRadius:5 Width:1 andBorderColor:[UIColor clearColor]];
+    [_btnBind skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
+    [[_btnBind rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
-    UIViewController *drvier=[[DriverOrderViewController alloc] init];
-    
-    [self.navigationController pushViewController:drvier animated:YES];
-     
-}
 @end

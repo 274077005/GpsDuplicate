@@ -22,7 +22,8 @@ SkyerSingletonM(skJPUSHSet)
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    [JPUSHService setupWithOption:launchOptions appKey:kjpushKey
+    [JPUSHService setupWithOption:launchOptions
+                           appKey:kjpushKey
                           channel:kjpushChannel
                  apsForProduction:kjpushIsProduction
             advertisingIdentifier:NULL];
@@ -64,11 +65,11 @@ SkyerSingletonM(skJPUSHSet)
         // Fallback on earlier versions
     }
 }
+
+
 #pragma mark - 对收到的消息进行处理
 -(void)skReceiveJPUSH:(NSDictionary *_Nullable)info{
     NSLog(@"收到了啥?=%@",info);
-    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
-    [ud setObject:@"收到了" forKey:@"key"];
-    [ud synchronize];
 }
+
 @end

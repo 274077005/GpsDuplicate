@@ -104,6 +104,8 @@ SkyerSingletonM(SKNetworking)
  *  @param failure    请求失败回调
  */
 - (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters showHUD:(Boolean)isShow showErrMsg:(BOOL) showErr success:(Success)success failure:(Failure)failure {
+    NSLog(@"请求的接口和参数\n%@\n%@",URLString,parameters);
+    
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -129,6 +131,9 @@ SkyerSingletonM(SKNetworking)
             if (isShow) {
                 [SkyerHUD skyerRemoveProgress];
             }
+            
+            
+            
             success(responseObject);
         }
         
@@ -142,7 +147,7 @@ SkyerSingletonM(SKNetworking)
                 [SkyerHUD skyerRemoveProgress];
             }
             if (showErr) {
-                [SkyerHUD skyerShowToast:@"请求数据失败"];
+                [SkyerHUD skyerShowToast:@"网络异常!请过会再试"];
             }
             failure(error);
         }

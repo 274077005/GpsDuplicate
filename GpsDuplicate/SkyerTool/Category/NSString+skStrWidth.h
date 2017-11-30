@@ -21,4 +21,11 @@
 -(CGSize)skTitleSize:(NSString *)text
              labWidth:(CGFloat)width
           fontOfSize:(CGFloat)size;
+
+/**
+ MD5加密
+
+ @return 返回加密后的字符
+ */
+-(id)MD5;
 @end

@@ -20,21 +20,22 @@
     
     self.title=@"忘记密码";
     
-    [self skSetNagRightTitle:@"帅气" withColor:[UIColor redColor]];
-    
-    [self skSetNagLeftTitle:@"你妹" withColor:[UIColor redColor]];
-    
-    
-    
+    UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
+    [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self initUI];
 }
+
+-(void)initUI{
+    [_btnSure skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 @end

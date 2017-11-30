@@ -10,4 +10,9 @@
 
 @interface BindingViewController : SkyerBaseViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *textNum;
+@property (weak, nonatomic) IBOutlet UIButton *btnBind;
+@property (weak, nonatomic) IBOutlet UILabel *labLine;
+@property (weak, nonatomic) IBOutlet UIView *viewBind;
+
 @end

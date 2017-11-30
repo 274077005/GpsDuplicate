@@ -11,14 +11,13 @@
 @implementation UserLogin
 SkyerSingletonM(UserLogin)
 
--(UserLogin *)skGetUserInfo{
-    UserLogin *usrLogin=[UserLogin mj_objectWithKeyValues:_userInfoDic];
-    return usrLogin;
-}
 
 -(void)skChangeUserInfo:(id)userinfo{
     if ([userinfo isKindOfClass:[NSDictionary class]]) {
         _userInfoDic=userinfo;
+        [UserLogin mj_objectWithKeyValues:_userInfoDic];
+    }else{
+        NSLog(@"后台数据异常");
     }
 }
 

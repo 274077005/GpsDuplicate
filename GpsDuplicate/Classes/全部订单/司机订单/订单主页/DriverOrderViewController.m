@@ -20,13 +20,37 @@
 
 @implementation DriverOrderViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title=@"全部运单";
+    UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
+    [[btnUser rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }];
     [self initUI];
+    
+    [self showBingdView];
 }
 
+/**
+ 如果是司机登录就先显示绑定界面
+ */
+- (void)showBingdView {
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *bind=[story instantiateViewControllerWithIdentifier:@"BindingViewController"];
+    
+    //设置模式展示风格
+    [bind setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    //必要配置
+    self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    self.providesPresentationContextTransitionStyle = YES;
+    self.definesPresentationContext = YES;
+    
+    [self presentViewController:bind animated:YES completion:nil];
+}
 
 -(void)initUI{
     self.view.backgroundColor=[UIColor whiteColor];
@@ -56,11 +80,11 @@
     
     //完成订单
     DriverFinishViewController *DriverFinishView= [[DriverFinishViewController alloc]init];
-    DriverFinishView.title=@"完成订单";
+    DriverFinishView.title=@"已完成";
     [controllerMutableArr addObject:DriverFinishView];
     //未完成订单
     DriverUnfinishedViewController *DriverUnfinishedView= [[DriverUnfinishedViewController alloc]init];
-    DriverUnfinishedView.title=@"未完成订单";
+    DriverUnfinishedView.title=@"未完成";
     [controllerMutableArr addObject:DriverUnfinishedView];
     
     return controllerMutableArr;
@@ -70,7 +94,6 @@
 #pragma mark - ZWTopSelectVcViewDelegate
 //单个设置顶部标题栏的优先级>初始化设置顶部标题栏>统一设置顶部标题栏的优先级
 //统一设置 ：通过totalTopBtns修改顶部控件样式
-
 
 //不修改,则为默认
 -(void)totalTopZWTopSelectButton:(ZWTopSelectButton *)totalTopBtns IntopSelectVcView:(ZWTopSelectVcView *)topSelectVcView

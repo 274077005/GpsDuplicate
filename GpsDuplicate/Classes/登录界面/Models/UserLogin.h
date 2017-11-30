@@ -10,15 +10,13 @@
 @interface UserLogin : NSObject
 SkyerSingletonH(UserLogin)
 @property (nonatomic,strong) NSMutableDictionary *userInfoDic;//用户的词典
-@property (nonatomic,copy) NSString *username;
-@property (nonatomic,copy) NSString *password;
+//服务器返回字段
+@property (nonatomic,copy) NSString *Address;
+@property (nonatomic,copy) NSString *Company;
+@property (nonatomic,copy) NSString *Tel;
+@property (nonatomic,copy) NSString *Version;
+@property (nonatomic,copy) NSString *Website;
 
-/**
- 获取个人信息
- 
- @return 返回个人信息模型
- */
--(UserLogin *)skGetUserInfo;
 
 /**
  修改个人信息
