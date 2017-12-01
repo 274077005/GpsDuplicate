@@ -399,7 +399,7 @@ typedef enum{
     
     
     
-    self.viewUnder.backgroundColor=[UIColor greenColor];
+    self.viewUnder.backgroundColor=skBaseColor;
     [self.viewTop addSubview:_viewUnder];
       //  NSLog(@"%f -------",underViewInitHeight);
 }
@@ -427,7 +427,6 @@ typedef enum{
     
     if (self.contentVC.childViewControllers.count==0||self.contentVC.childViewControllers.count>9) {
         [self removeFromSuperview];
-        
     }else
     {
         self.showVC=self.contentVC.childViewControllers[0];

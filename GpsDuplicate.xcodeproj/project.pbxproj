@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
 		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
+		B66C2AE41FD1358400B51EB8 /* UserSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C2AE31FD1358400B51EB8 /* UserSetViewController.m */; };
 		B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CB578A1FCE67AE00D4FE02 /* AppDelegate+Jpush.m */; };
 		B6D7EF351FC7C0ED00E669E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */; };
 		B6D7EF371FC7C0ED00E669E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */; };
@@ -48,6 +49,8 @@
 		B62CFDCB1FCBB09C00776F72 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
 		B62CFDD11FCBB3CD00776F72 /* ComMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacro.h; sourceTree = "<group>"; };
 		B62CFDD21FCBB3CD00776F72 /* ComMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComMacro.m; sourceTree = "<group>"; };
+		B66C2AE21FD1358400B51EB8 /* UserSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserSetViewController.h; sourceTree = "<group>"; };
+		B66C2AE31FD1358400B51EB8 /* UserSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserSetViewController.m; sourceTree = "<group>"; };
 		B6CB578A1FCE67AE00D4FE02 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
 		B6CB578B1FCE67AE00D4FE02 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
 		B6D7EF2A1FC7C0ED00E669E3 /* GpsDuplicate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpsDuplicate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +154,31 @@
 			path = ComMacro;
 			sourceTree = "<group>";
 		};
+		B66C2ADC1FD134D400B51EB8 /* 个人设置 */ = {
+			isa = PBXGroup;
+			children = (
+				B66C2ADD1FD134D400B51EB8 /* Models */,
+				B66C2ADE1FD134D400B51EB8 /* Views */,
+				B66C2AE21FD1358400B51EB8 /* UserSetViewController.h */,
+				B66C2AE31FD1358400B51EB8 /* UserSetViewController.m */,
+			);
+			path = "个人设置";
+			sourceTree = "<group>";
+		};
+		B66C2ADD1FD134D400B51EB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B66C2ADE1FD134D400B51EB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B6D7EF211FC7C0ED00E669E3 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +218,7 @@
 		B6D7EF431FC7C14300E669E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B66C2ADC1FD134D400B51EB8 /* 个人设置 */,
 				B6E985321FCD3721003A370A /* 全部订单 */,
 				B6D7EF931FC824BA00E669E3 /* 忘记密码 */,
 				B6D7EF621FC7F80F00E669E3 /* 绑定界面 */,
@@ -573,6 +602,7 @@
 				B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */,
 				B6D7EF691FC7FD6800E669E3 /* LoginViewController.m in Sources */,
 				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
+				B66C2AE41FD1358400B51EB8 /* UserSetViewController.m in Sources */,
 				B6E9857F1FCD3CBA003A370A /* SureWaitingViewController.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
 				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,

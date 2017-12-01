@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@加载",self);
+    UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
+    [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 -(void)dealloc{
     NSLog(@"%@销毁",self);

@@ -128,13 +128,23 @@ SkyerSingletonM(SKNetworking)
         
         if (success)
         {
+            NSLog(@"返回的数据=%@",responseObject);
+            
             if (isShow) {
                 [SkyerHUD skyerRemoveProgress];
             }
             
+            if (showErr) {
+                NSString *Result=[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"Result"]];
+                if (![Result isEqualToString:@"00000"]) {
+                    NSString *ShowTips=[responseObject objectForKey:@"ShowTips"];
+                    [SkyerHUD skyerShowToast:ShowTips];
+                }else{
+                    success(responseObject);
+                }
+            }
             
             
-            success(responseObject);
         }
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]; // 关闭状态栏动画

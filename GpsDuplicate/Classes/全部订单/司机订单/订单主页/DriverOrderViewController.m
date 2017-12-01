@@ -9,6 +9,7 @@
 #import "DriverOrderViewController.h"
 #import "DriverFinishViewController.h"
 #import "DriverUnfinishedViewController.h"
+#import "UserSetViewController.h"
 #import "ZWTopSelectButton.h"
 #import "ZWTopSelectVcView.h"
 
@@ -26,9 +27,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"全部运单";
+    self.view.backgroundColor=skLineColor;
     UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
     [[btnUser rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        
+        UIViewController *userSetView=[[UserSetViewController alloc] init];
+        [self.navigationController pushViewController:userSetView animated:YES];
+        
     }];
     [self initUI];
     
@@ -64,9 +70,9 @@
     self.topSelectVcView.delegate=self;
     //第三步： 开始ZWTopSelectVcViewUI绘制,必须实现！
     [self.topSelectVcView setupZWTopSelectVcViewUI];
-    [self.topSelectVcView setAnimationType:Push];
+    [self.topSelectVcView setAnimationType:PageUnCurl];
     self.topSelectVcView.isCloseSwipeGesture=NO;//关闭左右滑动的按钮
-    self.topSelectVcView.topViewFirstbtn.selectedColor=[UIColor blueColor];
+    self.topSelectVcView.topViewFirstbtn.selectedColor=skBaseColor;
     self.topSelectVcView.topViewFirstbtn.notSelectedColor=[UIColor blackColor];
     self.topSelectVcView.topViewFirstbtn.viewLine.backgroundColor=[UIColor lightGrayColor];
 }
@@ -99,7 +105,7 @@
 -(void)totalTopZWTopSelectButton:(ZWTopSelectButton *)totalTopBtns IntopSelectVcView:(ZWTopSelectVcView *)topSelectVcView
 {
     // 优先级最低
-    totalTopBtns.selectedColor=[UIColor blueColor];
+    totalTopBtns.selectedColor=skBaseColor;
     totalTopBtns.notSelectedColor=[UIColor blackColor];
     
     

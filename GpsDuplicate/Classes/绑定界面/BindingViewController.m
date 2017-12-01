@@ -20,12 +20,12 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[[UIColor grayColor] colorWithAlphaComponent:0.8];
     UserLogin *user=[UserLogin sharedUserLogin];
-    NSLog(@"%@",user.Address);
+    NSLog(@"%@",user.UserName);
     [self initUI];
 }
 
 -(void)initUI{
-    _labLine.backgroundColor=skUIColorFromRGB(0xDFDFDF);
+    _labLine.backgroundColor=skLineColor;
     
     [_viewBind skSetBoardRadius:5 Width:1 andBorderColor:[UIColor clearColor]];
     [_btnBind skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];

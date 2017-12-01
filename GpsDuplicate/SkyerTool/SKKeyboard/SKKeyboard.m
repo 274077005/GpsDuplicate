@@ -30,7 +30,10 @@
     keyboardManager.keyboardDistanceFromTextField = 10.0f; // 输入框距离键盘的距离
     
     //设置导航栏的颜色
-    [[UINavigationBar appearance] setBarTintColor:skUIColorFromRGB(0x24AC6E)];
+    [[UINavigationBar appearance] setBarTintColor:skBaseColor];
+    //取消导航栏半透明状态
+//    [[UINavigationBar appearance] setTranslucent:NO];
+    
     //设置导航栏标题的属性
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}];
     //设置返回按钮的颜色

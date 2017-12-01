@@ -11,13 +11,13 @@
 SkyerSingletonH(UserLogin)
 @property (nonatomic,strong) NSMutableDictionary *userInfoDic;//用户的词典
 //服务器返回字段
-@property (nonatomic,copy) NSString *Address;
-@property (nonatomic,copy) NSString *Company;
-@property (nonatomic,copy) NSString *Tel;
-@property (nonatomic,copy) NSString *Version;
-@property (nonatomic,copy) NSString *Website;
-
-
+@property (nonatomic,copy) NSString *EnterName;
+@property (nonatomic,copy) NSString *IsBindVehicle;
+@property (nonatomic,copy) NSString *RealName;
+@property (nonatomic,copy) NSString *UserID;
+@property (nonatomic,copy) NSString *UserName;
+@property (nonatomic,copy) NSString *UserType;
+@property (nonatomic,copy) NSString *VehicleNo;
 /**
  修改个人信息
  

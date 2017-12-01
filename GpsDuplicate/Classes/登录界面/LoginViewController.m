@@ -94,6 +94,7 @@
         if (_textName.text.length==11) {
             
             [self userLogin];
+//            [self loginSuccess];
             
         }else{
             [SkToast SkToastShow:@"仅支持11位手机号"];
@@ -126,12 +127,13 @@
     NSDictionary *params=@{@"UserName":_textName.text
                            ,@"PassWord":[password MD5]
                            ,@"RememberPwd":_isRemamber?@"0":@"1"
-                           ,@"DeviceID":@""
+                           ,@"DeviceID":_textName.text
+                           ,@"NO":@"UserLogin"
                            };
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"UserLogin") parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [[UserLogin sharedUserLogin] skChangeUserInfo:skContent(responseObject)];
+        
         [self loginSuccess];
         
     } failure:^(NSError * _Nullable error) {

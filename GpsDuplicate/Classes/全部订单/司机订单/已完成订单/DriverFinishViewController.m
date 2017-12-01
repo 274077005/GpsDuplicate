@@ -21,7 +21,7 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     _tableViewForOrder=[[TableViewForOrder alloc] init];
-    [_tableViewForOrder skInitView];
+    [_tableViewForOrder skInitView:typeFinish];
     [self.view addSubview:_tableViewForOrder];
     
 }
