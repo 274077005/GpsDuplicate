@@ -25,4 +25,8 @@ typedef enum : NSUInteger {
  初始化界面元素
  */
 -(void)skInitView:(orderType)type;
+//订单列表获取
+-(void)OrderList;
+
+
 @end

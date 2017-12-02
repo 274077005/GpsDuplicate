@@ -115,12 +115,10 @@
     //车牌号码
     UILabel *labNum=[[UILabel alloc] initWithFrame:CGRectMake(view.frame.size.width-80, (CGRectGetMaxY(labEnd.frame)-CGRectGetMinY(labStart.frame))+10, 80, 30)];
     labNum.text=@"粤B 1YT87";
-    labNum.font=[UIFont systemFontOfSize:15];
+    labNum.font=[UIFont systemFontOfSize:15 weight:20];
     labNum.textColor=skUIColorFromRGB(0x529DE2);
     labNum.textAlignment=1;
     [view addSubview:labNum];
-    
-    
     
     
     [cell.contentView addSubview:view];

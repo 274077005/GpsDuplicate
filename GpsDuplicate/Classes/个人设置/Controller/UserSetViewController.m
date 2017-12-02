@@ -177,6 +177,7 @@
         {
             UIButton *btnLoginOut=[[UIButton alloc] initWithFrame:CGRectMake(0, 2, kScreenWidth, 40)];
             [btnLoginOut setTitle:@"退出登录" forState:(UIControlStateNormal)];
+            btnLoginOut.titleLabel.font=[UIFont systemFontOfSize:14];
             [btnLoginOut setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
             [btnLoginOut setTitleColor:[UIColor blackColor] forState:(UIControlStateHighlighted)];
             [cell.contentView addSubview:btnLoginOut];
