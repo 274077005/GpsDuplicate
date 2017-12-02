@@ -385,7 +385,7 @@ typedef enum{
 }
 -(void)setupViewUnderContent
 {
-    self.labBottom=[[UILabel alloc] initWithFrame:CGRectMake(0, (_topViewHeight)-1, kScreenWidth, 1)];
+    self.labBottom=[[UILabel alloc] initWithFrame:CGRectMake(0, (_topViewHeight)-1, skScreenWidth, 1)];
     self.labBottom.backgroundColor=[UIColor lightGrayColor];
     [self.viewTop addSubview:self.labBottom];
 
@@ -393,7 +393,7 @@ typedef enum{
     NSArray *viewArr=self.contentVC.childViewControllers;
     UIViewController *view=[viewArr objectAtIndex:0];
     NSString *title=view.title;
-    CGSize titleSize=[title skTitleSize:title labWidth:kScreenWidth fontOfSize:14];
+    CGSize titleSize=[title skTitleSize:title labWidth:skScreenWidth fontOfSize:14];
     
     self.viewUnder=[[UIView alloc]initWithFrame:CGRectMake((((_topViewWidth)/self.index)-titleSize.width)/2, (_topViewHeight)-kMoveViewHight, titleSize.width, kMoveViewHight)];
     
@@ -468,7 +468,7 @@ typedef enum{
 }
 -(void)underViewMoveTo:(int)index withAnimation:(BOOL)isAnimation{
     NSString *title=[_titleArr objectAtIndex:index];
-    CGSize titleSize=[title skTitleSize:title labWidth:kScreenWidth fontOfSize:14];
+    CGSize titleSize=[title skTitleSize:title labWidth:skScreenWidth fontOfSize:14];
     
     if (isAnimation) {
         

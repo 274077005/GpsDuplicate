@@ -54,12 +54,12 @@
     return 0;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 5)];
     view.backgroundColor=skLineColor;
     return view;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 0)];
     view.backgroundColor=skBaseColor;
     return view;
 }
@@ -157,7 +157,7 @@
                 {
                     cell.textLabel.text=@"重置密码";
                     cell.textLabel.font=[UIFont systemFontOfSize:14];
-                    UILabel *labLine=[[UILabel alloc] initWithFrame:CGRectMake(0, 43, kScreenWidth, 1)];
+                    UILabel *labLine=[[UILabel alloc] initWithFrame:CGRectMake(0, 43, skScreenWidth, 1)];
                     labLine.backgroundColor=skLineColor;
                     [cell.contentView addSubview:labLine];
                 }
@@ -175,7 +175,7 @@
             break;
         case 3://消息提醒
         {
-            UIButton *btnLoginOut=[[UIButton alloc] initWithFrame:CGRectMake(0, 2, kScreenWidth, 40)];
+            UIButton *btnLoginOut=[[UIButton alloc] initWithFrame:CGRectMake(0, 2, skScreenWidth, 40)];
             [btnLoginOut setTitle:@"退出登录" forState:(UIControlStateNormal)];
             btnLoginOut.titleLabel.font=[UIFont systemFontOfSize:14];
             [btnLoginOut setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];

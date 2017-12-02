@@ -15,7 +15,7 @@
 
 -(void)skInitView:(orderType)type{
     _orderType=type;
-    self.frame=CGRectMake(0, 0, kScreenWidth, kScreenHeight-114);
+    self.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-114);
     self.delegate=self;
     self.dataSource=self;
 }
@@ -43,7 +43,7 @@
     }
     cell.backgroundColor=skLineColor;
     //添加一个view
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(8, 5, kScreenWidth-16, skCellHigth-10)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(8, 5, skScreenWidth-16, skCellHigth-10)];
     [view skSetBoardRadius:2 Width:1 andBorderColor:[UIColor clearColor]];
     view.backgroundColor=[UIColor whiteColor];
     
@@ -97,7 +97,7 @@
     [view addSubview:labEnd];
     
     //起点地址
-    UILabel *labStAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labStart.frame)+10, CGRectGetMinY(labStart.frame)-5, kScreenWidth-150, 40)];
+    UILabel *labStAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labStart.frame)+10, CGRectGetMinY(labStart.frame)-5, skScreenWidth-150, 40)];
     labStAddress.text=@"我激素是爽酸爽的腹肌阿开始就打发空间的发就发刷卡机发世纪东方";
     labStAddress.font=[UIFont systemFontOfSize:14];
     labStAddress.textColor=[UIColor grayColor];
@@ -105,7 +105,7 @@
     [view addSubview:labStAddress];
     
     //终点地址
-    UILabel *labEndAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labEnd.frame)+10, CGRectGetMinY(labEnd.frame)-5, kScreenWidth-150, 40)];
+    UILabel *labEndAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labEnd.frame)+10, CGRectGetMinY(labEnd.frame)-5, skScreenWidth-150, 40)];
     labEndAddress.text=@"我激素是爽酸爽的腹肌阿开始就打发空间的发就发刷卡机发世纪东方";
     labEndAddress.font=[UIFont systemFontOfSize:14];
     labEndAddress.textColor=[UIColor grayColor];
