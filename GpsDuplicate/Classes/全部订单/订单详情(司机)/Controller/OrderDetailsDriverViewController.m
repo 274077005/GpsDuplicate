@@ -9,17 +9,39 @@
 #import "OrderDetailsDriverViewController.h"
 #import "OrderDetailsDriverTableView.h"
 #import "OrderDetailsModel.h"
+#import "AbnormalViewController.h"
 
 @interface OrderDetailsDriverViewController ()
-
+@property (nonatomic,strong) OrderDetailsModel *model;
 @end
 
 @implementation OrderDetailsDriverViewController
 
-- (void)bottomView {
+- (void)bottomView:(NSString *)state{
+    //11待确认、12待出场、15待处置、21已完成
+    NSString *stateInfo;
+    switch ([state integerValue]) {
+        case 11:
+            stateInfo=@"出厂确认";
+            break;
+        case 12:
+            stateInfo=@"确认处理";
+            break;
+        case 15:
+            stateInfo=@"确认运单信息";
+            break;
+        case 21:
+            stateInfo=@"已完成";
+            break;
+            
+        default:
+            break;
+    }
+    
+    
     UIButton *btnSure=[[UIButton alloc] init];
     [btnSure setBackgroundColor:skBaseColor];
-    [btnSure setTitle:@"确认运单信息" forState:0];
+    [btnSure setTitle:stateInfo forState:0];
     btnSure.titleLabel.font=[UIFont systemFontOfSize:14];
     [btnSure setTitleColor:[UIColor whiteColor] forState:0];
     [btnSure skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
@@ -30,6 +52,11 @@
         make.bottom.mas_equalTo(-30);
         make.height.mas_equalTo(30);
     }];
+    [[btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        
+    }];
+    
+    
     
     //异常上报
     UIButton *btnAbnormal=[[UIButton alloc] init];
@@ -39,6 +66,12 @@
     [btnAbnormal mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(skScreenWidth, 30));
         make.bottom.mas_equalTo(btnSure.mas_top).offset(-15);
+    }];
+    [[btnAbnormal rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        AbnormalViewController *view=[Main instantiateViewControllerWithIdentifier:@"AbnormalViewController"];
+        view.OrderID=_model.OrderID;
+        [self.navigationController pushViewController:view animated:YES];
     }];
 }
 
@@ -63,11 +96,15 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //确认运单信息
-        [self bottomView];
-        OrderDetailsModel *model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
+        
+        _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
+        //21是已经完成
+        if ([_model.OrderStatus integerValue]!=21) {
+            [self bottomView:_model.OrderStatus];
+        }
         
         OrderDetailsDriverTableView *odt=[[OrderDetailsDriverTableView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-120) style:(UITableViewStyleGrouped)];
-        odt.model=model;
+        odt.model=_model;
         [self.view addSubview:odt];
         
     } failure:^(NSError * _Nullable error) {
