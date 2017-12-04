@@ -7,49 +7,77 @@
 //
 
 #import "TableViewForOrder.h"
+#import "OrderDetailsDriverViewController.h"
+#import "OrderListModel.h"
 
-#define skCellHigth  180
+#define skCellHigth  170
 
 @implementation TableViewForOrder 
 
-
--(void)skInitView:(orderType)type{
-    _orderType=type;
-    self.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-114);
-    self.delegate=self;
-    self.dataSource=self;
+-(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style andType:(NSString *)type{
+    self=[super initWithFrame:frame style:style];
+    if (self) {
+        self.delegate=self;
+        self.dataSource=self;
+    }
+    return self;
 }
+
 #pragma mark - cell的代理
 #pragma mark cell 的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return skCellHigth;
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _arrCellData.count;
+}
 #pragma mark section下得cell的个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    return 1;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 0)];
+    view.backgroundColor=skLineColor;
+    return view;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 10)];
+    view.backgroundColor=skLineColor;
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 10;
 }
+
 #pragma mark 绘制一个cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    static NSString *cellIdentifier = @"cellIdentifier";
+    static NSString *cellIdentifier = @"TableViewForOrder";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         
     }
+
+    OrderListModel *model=[_arrCellData objectAtIndex:indexPath.section];
+    
     cell.backgroundColor=skLineColor;
     //添加一个view
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(8, 5, skScreenWidth-16, skCellHigth-10)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(8, 0, skScreenWidth-16, skCellHigth)];
     [view skSetBoardRadius:2 Width:1 andBorderColor:[UIColor clearColor]];
     view.backgroundColor=[UIColor whiteColor];
     
     //添加订单编号
     UILabel *labOrder=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, view.frame.size.width-16, 44)];
-    labOrder.text=@"运单编号:20171017-B-00000";
+    
+    labOrder.text=[NSString stringWithFormat:@"运单编号:%@",model.OrderID];
     labOrder.font=[UIFont systemFontOfSize:16];
     labOrder.textColor=[UIColor blackColor];
     [view addSubview:labOrder];
@@ -59,7 +87,7 @@
     labState.backgroundColor=[UIColor orangeColor];
     labState.font=[UIFont systemFontOfSize:15];
     labState.textAlignment=1;
-    labState.text=@"待确认";
+    labState.text=model.StatusName;
     [view addSubview:labState];
     //分割线
     UILabel *labLine=[[UILabel alloc] initWithFrame:CGRectMake(8, 45, view.frame.size.width-16, 1)];
@@ -98,7 +126,7 @@
     
     //起点地址
     UILabel *labStAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labStart.frame)+10, CGRectGetMinY(labStart.frame)-5, skScreenWidth-150, 40)];
-    labStAddress.text=@"我激素是爽酸爽的腹肌阿开始就打发空间的发就发刷卡机发世纪东方";
+    labStAddress.text=model.ProjectAddress;
     labStAddress.font=[UIFont systemFontOfSize:14];
     labStAddress.textColor=[UIColor grayColor];
     labStAddress.numberOfLines=2;
@@ -106,7 +134,7 @@
     
     //终点地址
     UILabel *labEndAddress=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(labEnd.frame)+10, CGRectGetMinY(labEnd.frame)-5, skScreenWidth-150, 40)];
-    labEndAddress.text=@"我激素是爽酸爽的腹肌阿开始就打发空间的发就发刷卡机发世纪东方";
+    labEndAddress.text=model.ReceivingName;
     labEndAddress.font=[UIFont systemFontOfSize:14];
     labEndAddress.textColor=[UIColor grayColor];
     labEndAddress.numberOfLines=2;
@@ -114,7 +142,7 @@
     
     //车牌号码
     UILabel *labNum=[[UILabel alloc] initWithFrame:CGRectMake(view.frame.size.width-80, (CGRectGetMaxY(labEnd.frame)-CGRectGetMinY(labStart.frame))+10, 80, 30)];
-    labNum.text=@"粤B 1YT87";
+    labNum.text=model.VehicleNo;
     labNum.font=[UIFont systemFontOfSize:15 weight:20];
     labNum.textColor=skUIColorFromRGB(0x529DE2);
     labNum.textAlignment=1;
@@ -128,7 +156,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    OrderListModel *model=[_arrCellData objectAtIndex:indexPath.section];
+    OrderDetailsDriverViewController *view=[[OrderDetailsDriverViewController alloc] init];
+    view.OrderID=model.OrderID;
+    UIViewController *visibleView=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+    [visibleView.navigationController pushViewController:view animated:YES];
+    
+    
 }
+-(void)skReloadDataWithData:(NSArray *)data{
+    _arrCellData=data;
+    [self reloadData];
+}
+
+
 
 
 @end

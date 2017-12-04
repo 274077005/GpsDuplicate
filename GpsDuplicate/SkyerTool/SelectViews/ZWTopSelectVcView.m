@@ -443,9 +443,14 @@ typedef enum{
                // NSLog(@"%d --init",self.btnIndex);
     }
 }
+
+-(void)skGetUserSelectIndex:(NSInteger)index{
+    
+}
+
+
 -(void)setupBtnContentState:(ZWTopSelectButton *)btn index:(int)index
 {
-    
     [self setupAllBtnState:btn];
     for (NSNumber *titleIndex in self.titleIndexArr) {
         
@@ -467,6 +472,7 @@ typedef enum{
     [self.viewTop addSubview:btn];
 }
 -(void)underViewMoveTo:(int)index withAnimation:(BOOL)isAnimation{
+    
     NSString *title=[_titleArr objectAtIndex:index];
     CGSize titleSize=[title skTitleSize:title labWidth:skScreenWidth fontOfSize:14];
     
@@ -480,7 +486,7 @@ typedef enum{
     {
             self.viewUnder.frame=CGRectMake(index *((_topViewWidth)/self.index)+(((_topViewWidth)/self.index)-titleSize.width)/2, (_topViewHeight)-kMoveViewHight, titleSize.width, kMoveViewHight);
     }
-
+    [self skGetUserSelectIndex:index];
 }
 
 -(void)setupbtnSelectIndex:(int)btnSelectIndex withAnimation:(BOOL)isAnimation

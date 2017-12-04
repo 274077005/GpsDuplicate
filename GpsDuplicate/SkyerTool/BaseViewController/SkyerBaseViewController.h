@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserLogin.h"
 
 @interface SkyerBaseViewController : UIViewController
-
+@property (nonatomic,strong) UserLogin *user;
 #pragma mark 导航栏右边的按钮
 /**
  修改导航栏右边的按钮文字和颜色

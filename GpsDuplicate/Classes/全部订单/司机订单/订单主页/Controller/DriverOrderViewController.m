@@ -7,15 +7,20 @@
 //
 
 #import "DriverOrderViewController.h"
-#import "DriverFinishViewController.h"
-#import "DriverUnfinishedViewController.h"
 #import "UserSetViewController.h"
-#import "ZWTopSelectButton.h"
-#import "ZWTopSelectVcView.h"
+#import "TableViewForOrder.h"
+#import "skSelectView.h"
+#import "SkScollPageView.h"
+#import "OrderListModel.h"
 
-@interface DriverOrderViewController () <ZWTopSelectVcViewDelegate>
-@property (nonatomic, weak) ZWTopSelectVcView *topSelectVcView;
 
+@interface DriverOrderViewController ()
+
+@property (nonatomic,strong) skSelectView *skSelect;
+@property (nonatomic,strong) SkScollPageView *aapv;
+@property (nonatomic,strong) TableViewForOrder *finishView;
+@property (nonatomic,strong) TableViewForOrder *unFinishView;
+@property (nonatomic,assign) NSInteger indexSelect;
 
 @end
 
@@ -30,17 +35,18 @@
     self.view.backgroundColor=skLineColor;
     UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
     [[btnUser rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-        
         UIViewController *userSetView=[[UserSetViewController alloc] init];
         [self.navigationController pushViewController:userSetView animated:YES];
         
     }];
     [self initUI];
     
-    [self showBingdView];
+//    [self showBingdView];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"%s",__func__);
+    [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+}
 /**
  如果是司机登录就先显示绑定界面
  */
@@ -60,54 +66,74 @@
 
 -(void)initUI{
     self.view.backgroundColor=[UIColor whiteColor];
-    //第一步：初始化ZWTopSelectVcView，把其加入当前控制器view中
-    ZWTopSelectVcView *topSelectVcView=[[ZWTopSelectVcView alloc]init];
+    _skSelect=[[skSelectView alloc] initWithFrame:CGRectMake(0, 64, skScreenWidth, 46) andTitleArr:@[@"已完成",@"未完成"]  andSelectIndex:0  andSelectColor:skBaseColor];
     
-    topSelectVcView.frame=CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view addSubview:topSelectVcView];
-    self.topSelectVcView=topSelectVcView;
-    //第二步：设置ZWTopSelectVcView的代理
-    self.topSelectVcView.delegate=self;
-    //第三步： 开始ZWTopSelectVcViewUI绘制,必须实现！
-    [self.topSelectVcView setupZWTopSelectVcViewUI];
-    [self.topSelectVcView setAnimationType:PageUnCurl];
-    self.topSelectVcView.isCloseSwipeGesture=NO;//关闭左右滑动的按钮
-    self.topSelectVcView.topViewFirstbtn.selectedColor=skBaseColor;
-    self.topSelectVcView.topViewFirstbtn.notSelectedColor=[UIColor blackColor];
-    self.topSelectVcView.topViewFirstbtn.viewLine.backgroundColor=[UIColor lightGrayColor];
-}
-#pragma mark - ZWTopSelectVcViewDelegate
-//只要一步且必须实现：传入您的各种控制器，用可变数组封装传入，就会动态的生成，默认最多能传入九个控制器
-//初始化设置
--(NSMutableArray *)totalControllerInZWTopSelectVcView:(ZWTopSelectVcView *)topSelectVcView
-{
+    [self.view addSubview:_skSelect];
     
-    NSMutableArray *controllerMutableArr=[NSMutableArray array];
     
-    //完成订单
-    DriverFinishViewController *DriverFinishView= [[DriverFinishViewController alloc]init];
-    DriverFinishView.title=@"已完成";
-    [controllerMutableArr addObject:DriverFinishView];
-    //未完成订单
-    DriverUnfinishedViewController *DriverUnfinishedView= [[DriverUnfinishedViewController alloc]init];
-    DriverUnfinishedView.title=@"未完成";
-    [controllerMutableArr addObject:DriverUnfinishedView];
+    _finishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"0"];
+    _unFinishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"1"];
     
-    return controllerMutableArr;
     
+    _aapv=[[SkScollPageView alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_finishView,_unFinishView] andSelecetIndex:0];
+    [self.view addSubview:_aapv];
+    
+    kWeakSelf(self)
+    [_aapv setIndexBlock:^(NSInteger index) {
+        _indexSelect=index;
+        [weakself.skSelect skChangSelect:index];
+        [weakself GetList:[NSString stringWithFormat:@"%ld",index]];
+    }];
+    [_skSelect setSelectIndexBlock:^(NSInteger index) {
+        _indexSelect=index;
+        [weakself.aapv skChangPage:index];
+    }];
 }
 
-#pragma mark - ZWTopSelectVcViewDelegate
-//单个设置顶部标题栏的优先级>初始化设置顶部标题栏>统一设置顶部标题栏的优先级
-//统一设置 ：通过totalTopBtns修改顶部控件样式
+#pragma mark - 获取列表数据
 
-//不修改,则为默认
--(void)totalTopZWTopSelectButton:(ZWTopSelectButton *)totalTopBtns IntopSelectVcView:(ZWTopSelectVcView *)topSelectVcView
-{
-    // 优先级最低
-    totalTopBtns.selectedColor=skBaseColor;
-    totalTopBtns.notSelectedColor=[UIColor blackColor];
+
+-(void)GetList:(NSString *)OrderType{
+    
+    NSDictionary *parameters=@{@"UserID":self.user.UserID,
+                               @"OrderType":OrderType,
+                               @"UserType":self.user.UserType,
+                               @"No":@"GetList"
+                               };
     
     
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
+        [self getListModelArr:responseObject];
+        
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
+
+/**
+ 获取模型数组
+
+ @param responseObject 这个是接口返回的数据
+ */
+- (void)getListModelArr:(id _Nullable)responseObject {
+    NSArray *arrData=skContent(responseObject);
+    
+    NSMutableArray *arrList=[[NSMutableArray alloc] init];
+    
+    for (int i =0; i<arrData.count; ++i) {
+        NSDictionary *oneDic=[arrData objectAtIndex:i];
+        OrderListModel *model=[OrderListModel mj_objectWithKeyValues:oneDic];
+        [arrList addObject:model];
+    }
+    //运单类型：司机登录：0已完成 1未完成
+
+    if (_indexSelect==0) {
+        [_finishView skReloadDataWithData:arrList];
+    }else{
+        [_unFinishView skReloadDataWithData:arrList];
+    }
+}
+
 @end

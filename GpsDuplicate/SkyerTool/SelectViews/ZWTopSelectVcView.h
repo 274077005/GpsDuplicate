@@ -137,5 +137,13 @@ typedef enum : NSUInteger {
  */
 -(void)reloadWithChildControllerMutableArr:(NSMutableArray *)arr;
 
+
+/**
+ 获取选择了哪项的回调
+
+ @param index 选择的项
+ */
+-(void)skGetUserSelectIndex:(NSInteger)index;
+
 @end
 

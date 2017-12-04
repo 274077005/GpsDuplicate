@@ -10,7 +10,8 @@
 
 
 @interface TableViewForOrder : UITableView <UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) id cellData;
+
+@property (nonatomic,strong) NSArray *arrCellData;
 
 typedef enum : NSUInteger {
     typeFinish = 0,                   //已完成
@@ -20,13 +21,23 @@ typedef enum : NSUInteger {
     typeSignWaiting,                  //等待签认
     
 } orderType;
-@property (nonatomic,assign) orderType orderType;
-/**
- 初始化界面元素
- */
--(void)skInitView:(orderType)type;
-//订单列表获取
--(void)OrderList;
 
+@property (nonatomic,assign) orderType orderType;
+
+/**
+ 初始化
+
+ @param frame frame
+ @param type 类型
+ @return 自己
+ */
+-(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style andType:(NSString *)type;
+
+/**
+ 刷新界面
+
+ @param data 需要的数据
+ */
+-(void)skReloadDataWithData:(NSArray *)data;
 
 @end

@@ -103,7 +103,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    static NSString *cellIdentifier = @"cellIdentifier";
+    static NSString *cellIdentifier = @"UserSetViewController";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
