@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AbnormalViewController : SkyerBaseViewController
+
 @property (nonatomic,copy) NSString *OrderID;
 @property (weak, nonatomic) IBOutlet UITextField *textFidld;
 @property (weak, nonatomic) IBOutlet UIButton *btnSure;

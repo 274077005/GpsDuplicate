@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@加载",self);
-    _user=[UserLogin sharedUserLogin];
+    self.user=[UserLogin sharedUserLogin];
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
     [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         [self.navigationController popViewControllerAnimated:YES];

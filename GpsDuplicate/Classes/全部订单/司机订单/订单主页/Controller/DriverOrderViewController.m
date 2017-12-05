@@ -12,6 +12,7 @@
 #import "skSelectView.h"
 #import "SkScollPageView.h"
 #import "OrderListModel.h"
+#import "BindingViewController.h"
 
 
 @interface DriverOrderViewController ()
@@ -39,21 +40,34 @@
         [self.navigationController pushViewController:userSetView animated:YES];
         
     }];
-    [self initUI];
     
-//    [self showBingdView];
+    //0绑定、1未绑定
+    if (![self.user.IsBindVehicle isEqualToString:@"1"]) {
+        [self showBingdView];
+    }else{
+        [self initUI];
+        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+    }
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"%s",__func__);
-    [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+    
+    if (![self.user.IsBindVehicle isEqualToString:@"1"]) {
+        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+    }
+    
 }
+
 /**
  如果是司机登录就先显示绑定界面
  */
 - (void)showBingdView {
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *bind=[story instantiateViewControllerWithIdentifier:@"BindingViewController"];
-    
+    BindingViewController *bind=[story instantiateViewControllerWithIdentifier:@"BindingViewController"];
+    [bind setBindBlock:^{
+        [self initUI];
+        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+    }];
     //设置模式展示风格
     [bind setModalPresentationStyle:UIModalPresentationOverFullScreen];
     //必要配置
@@ -64,6 +78,9 @@
     [self presentViewController:bind animated:YES completion:nil];
 }
 
+/**
+ 创建UI,司机端就只有已完成和未完成
+ */
 -(void)initUI{
     self.view.backgroundColor=[UIColor whiteColor];
     _skSelect=[[skSelectView alloc] initWithFrame:CGRectMake(0, 64, skScreenWidth, 46) andTitleArr:@[@"已完成",@"未完成"]  andSelectIndex:0  andSelectColor:skBaseColor];
@@ -102,7 +119,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         [self getListModelArr:responseObject];
         

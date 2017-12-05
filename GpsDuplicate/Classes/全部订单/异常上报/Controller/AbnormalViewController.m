@@ -23,11 +23,13 @@
     
     [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
-        if (_textFidld.text.length<200) {
+        if (_textFidld.text.length<200&&![_textFidld.text isEqualToString:@""]) {
             [self UploadError];
         }
         
     }];
+    [_btnSure skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
+    [_btnSure setBackgroundColor:skBaseColor];
     
     [[_textFidld rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
         if (x.length>200) {

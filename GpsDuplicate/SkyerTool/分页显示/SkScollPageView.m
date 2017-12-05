@@ -40,6 +40,7 @@
                 view.view.frame=CGRectMake(i*Width, 0, Width, Height);
                 
                 [self addSubview:view.view];
+                
             }else{
                 UIView *view=[arrViews objectAtIndex:i];
                 

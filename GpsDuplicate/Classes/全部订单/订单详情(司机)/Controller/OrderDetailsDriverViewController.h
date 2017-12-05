@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderListModel.h"
 
 @interface OrderDetailsDriverViewController : SkyerBaseViewController
-@property (nonatomic,strong) NSString *OrderID;
+@property (nonatomic,strong) OrderListModel *orderListModel;
+
 @end
