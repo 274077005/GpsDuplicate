@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor=[UIColor whiteColor];
     NSLog(@"%@加载",self);
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
     kWeakSelf(self)

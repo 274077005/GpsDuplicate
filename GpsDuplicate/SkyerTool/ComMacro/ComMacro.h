@@ -13,7 +13,7 @@
 #define skPw @"123456"
 
 //url和接口组成的请求连接
-#define skURLWithPort(port)  [NSString stringWithFormat:@"%@%@",skURLString,port]
+#define skURLWithPort(port)  [NSString stringWithFormat:@"%@/?No=%@",skURLString,port]
 //返回数据的解析
 #define skContent(responseObject)  [responseObject objectForKey:@"Content"]
 

@@ -7,6 +7,9 @@
 //
 
 #import "UserSetViewController.h"
+#import "MessageViewController.h"
+#import "ResetPasswordViewController.h"
+#import "AboutUsViewController.h"
 #define skCellHeidth 120
 
 
@@ -173,7 +176,7 @@
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         }
             break;
-        case 3://消息提醒
+        case 3:
         {
             UIButton *btnLoginOut=[[UIButton alloc] initWithFrame:CGRectMake(0, 2, skScreenWidth, 40)];
             [btnLoginOut setTitle:@"退出登录" forState:(UIControlStateNormal)];
@@ -182,8 +185,13 @@
             [btnLoginOut setTitleColor:[UIColor blackColor] forState:(UIControlStateHighlighted)];
             [cell.contentView addSubview:btnLoginOut];
             kWeakSelf(self)
+            //退出账号
             [[btnLoginOut rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                [weakself.navigationController dismissViewControllerAnimated:NO completion:nil];
+                
+                [skClassMethod skAlerView:@"确认退出当前账号?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [weakself dismissViewControllerAnimated:YES completion:nil];
+                }];
+                
             }];
         }
             break;
@@ -198,7 +206,45 @@
 #pragma mark 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    switch (indexPath.section) {
+        case 0:
+            
+            break;
+        case 1:
+        {
+            //消息提醒
+            MessageViewController *view=[[MessageViewController alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
+        }
+            break;
+        case 2:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    ResetPasswordViewController *view=[[ResetPasswordViewController alloc] init];
+                    [self.navigationController pushViewController:view animated:YES];
+                }
+                    break;
+                case 1:
+                {
+                    AboutUsViewController *view=[[AboutUsViewController alloc] init];
+                    [self.navigationController pushViewController:view animated:YES];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+            break;
+        case 3:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

@@ -10,6 +10,12 @@
 		B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61141E61FD54BDA00C7C392 /* AbnormalViewController.m */; };
 		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
 		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
+		B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9F91FD68A5A00A6153F /* MessageViewController.m */; };
+		B640D9FD1FD68A7F00A6153F /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FC1FD68A7F00A6153F /* ResetPasswordViewController.m */; };
+		B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FF1FD68AA400A6153F /* AboutUsViewController.m */; };
+		B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA041FD68CAA00A6153F /* UserSetViewController.m */; };
+		B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA091FD68E6F00A6153F /* AboutUsModel.m */; };
+		B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA0C1FD699DB00A6153F /* skClassMethod.m */; };
 		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
 		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
 		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
@@ -17,7 +23,6 @@
 		B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830271FD534E70092A00F /* OrderDetailsModel.m */; };
 		B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB5D1FD24AD100061441 /* LoginViewController.m */; };
-		B6C0FB631FD24B1100061441 /* UserSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB621FD24B1100061441 /* UserSetViewController.m */; };
 		B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB671FD24BEF00061441 /* ForgetPWViewController.m */; };
 		B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB6D1FD24C0300061441 /* BindingViewController.m */; };
 		B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB7E1FD24C5F00061441 /* DriverOrderViewController.m */; };
@@ -51,6 +56,18 @@
 		B62CFDCB1FCBB09C00776F72 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
 		B62CFDD11FCBB3CD00776F72 /* ComMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacro.h; sourceTree = "<group>"; };
 		B62CFDD21FCBB3CD00776F72 /* ComMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComMacro.m; sourceTree = "<group>"; };
+		B640D9F81FD68A5A00A6153F /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		B640D9F91FD68A5A00A6153F /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		B640D9FB1FD68A7F00A6153F /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		B640D9FC1FD68A7F00A6153F /* ResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		B640D9FE1FD68AA400A6153F /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		B640D9FF1FD68AA400A6153F /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		B640DA031FD68CAA00A6153F /* UserSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetViewController.h; sourceTree = "<group>"; };
+		B640DA041FD68CAA00A6153F /* UserSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetViewController.m; sourceTree = "<group>"; };
+		B640DA081FD68E6F00A6153F /* AboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsModel.h; sourceTree = "<group>"; };
+		B640DA091FD68E6F00A6153F /* AboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsModel.m; sourceTree = "<group>"; };
+		B640DA0B1FD699DB00A6153F /* skClassMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skClassMethod.h; sourceTree = "<group>"; };
+		B640DA0C1FD699DB00A6153F /* skClassMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skClassMethod.m; sourceTree = "<group>"; };
 		B64272581FD25663008F505C /* OrderDetailsDriverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverViewController.h; sourceTree = "<group>"; };
 		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
 		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
@@ -65,8 +82,6 @@
 		B6C0FB561FD23FBF00061441 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		B6C0FB5C1FD24AD100061441 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B6C0FB5D1FD24AD100061441 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B6C0FB611FD24B1100061441 /* UserSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetViewController.h; sourceTree = "<group>"; };
-		B6C0FB621FD24B1100061441 /* UserSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetViewController.m; sourceTree = "<group>"; };
 		B6C0FB661FD24BEF00061441 /* ForgetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPWViewController.h; sourceTree = "<group>"; };
 		B6C0FB671FD24BEF00061441 /* ForgetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPWViewController.m; sourceTree = "<group>"; };
 		B6C0FB6C1FD24C0300061441 /* BindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
@@ -187,6 +202,105 @@
 			path = ComMacro;
 			sourceTree = "<group>";
 		};
+		B640D9F01FD68A3600A6153F /* 消息提醒 */ = {
+			isa = PBXGroup;
+			children = (
+				B640D9F11FD68A3600A6153F /* Controller */,
+				B640D9F21FD68A3600A6153F /* Models */,
+				B640D9F31FD68A3600A6153F /* Views */,
+			);
+			path = "消息提醒";
+			sourceTree = "<group>";
+		};
+		B640D9F11FD68A3600A6153F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B640D9F81FD68A5A00A6153F /* MessageViewController.h */,
+				B640D9F91FD68A5A00A6153F /* MessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B640D9F21FD68A3600A6153F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B640D9F31FD68A3600A6153F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B640D9F41FD68A3700A6153F /* 重置密码 */ = {
+			isa = PBXGroup;
+			children = (
+				B640D9F51FD68A3700A6153F /* Controller */,
+				B640D9F61FD68A3700A6153F /* Models */,
+				B640D9F71FD68A3700A6153F /* Views */,
+			);
+			path = "重置密码";
+			sourceTree = "<group>";
+		};
+		B640D9F51FD68A3700A6153F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B640D9FB1FD68A7F00A6153F /* ResetPasswordViewController.h */,
+				B640D9FC1FD68A7F00A6153F /* ResetPasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B640D9F61FD68A3700A6153F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B640D9F71FD68A3700A6153F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B640DA011FD68CAA00A6153F /* 个人设置 */ = {
+			isa = PBXGroup;
+			children = (
+				B640DA021FD68CAA00A6153F /* Controller */,
+				B640DA051FD68CAA00A6153F /* Models */,
+				B640DA061FD68CAA00A6153F /* Views */,
+			);
+			path = "个人设置";
+			sourceTree = "<group>";
+		};
+		B640DA021FD68CAA00A6153F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B640DA031FD68CAA00A6153F /* UserSetViewController.h */,
+				B640DA041FD68CAA00A6153F /* UserSetViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B640DA051FD68CAA00A6153F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B640DA061FD68CAA00A6153F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B64272501FD25503008F505C /* 订单详情(司机) */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,26 +372,12 @@
 		B66C2ADC1FD134D400B51EB8 /* 个人设置 */ = {
 			isa = PBXGroup;
 			children = (
+				B640DA011FD68CAA00A6153F /* 个人设置 */,
+				B640D9F01FD68A3600A6153F /* 消息提醒 */,
+				B640D9F41FD68A3700A6153F /* 重置密码 */,
 				B6C0FB581FD2449800061441 /* 关于我们 */,
-				B6C0FB601FD24B1100061441 /* Controller */,
-				B66C2ADD1FD134D400B51EB8 /* Models */,
-				B66C2ADE1FD134D400B51EB8 /* Views */,
 			);
 			path = "个人设置";
-			sourceTree = "<group>";
-		};
-		B66C2ADD1FD134D400B51EB8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B66C2ADE1FD134D400B51EB8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B6B8301F1FD4DD340092A00F /* 分页显示 */ = {
@@ -304,6 +404,8 @@
 		B6C0FB591FD2449800061441 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B640DA081FD68E6F00A6153F /* AboutUsModel.h */,
+				B640DA091FD68E6F00A6153F /* AboutUsModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,15 +429,8 @@
 		B6C0FB5F1FD24AF500061441 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		B6C0FB601FD24B1100061441 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B6C0FB611FD24B1100061441 /* UserSetViewController.h */,
-				B6C0FB621FD24B1100061441 /* UserSetViewController.m */,
+				B640D9FE1FD68AA400A6153F /* AboutUsViewController.h */,
+				B640D9FF1FD68AA400A6153F /* AboutUsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -541,6 +636,8 @@
 				B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */,
 				B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */,
 				B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */,
+				B640DA0B1FD699DB00A6153F /* skClassMethod.h */,
+				B640DA0C1FD699DB00A6153F /* skClassMethod.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -775,32 +872,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */,
+				B640D9FD1FD68A7F00A6153F /* ResetPasswordViewController.m in Sources */,
 				B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */,
 				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
 				B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */,
 				B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
 				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
+				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
 				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
-				B6C0FB631FD24B1100061441 /* UserSetViewController.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
 				B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */,
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
 				B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */,
+				B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */,
 				B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */,
 				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
 				B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */,
 				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
 				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
+				B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */,
 				B6E985811FCD3CBA003A370A /* ManagerOrderViewController.m in Sources */,
 				B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */,
 				B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */,
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,
+				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
+				B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */,
 				B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,6 +22,8 @@
 #import "NSString+skStrWidth.h"
 #import "MJExtension.h"
 #import "UserLogin.h"
+#import "skClassMethod.h"
+
 
 
 #endif /* GpsDuplicate_Prefix_pch */

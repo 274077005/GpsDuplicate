@@ -50,21 +50,58 @@
         //司机操作订单按钮
         kWeakSelf(self)
         [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"确认并提交运单信息?" message:@"提交后不可以修改!" preferredStyle:1];
-            UIAlertAction *cancal=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
-            UIAlertAction *sure=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [weakself Confirm];
-            }];
-            
-            [alert addAction:cancal];
-            [alert addAction:sure];
-            [weakself presentViewController:alert animated:YES completion:nil];
+            [weakself userConfirm];
         }];
     }
     return _btnSure;
 }
+
+
+/**
+ 出厂提示
+ */
+-(void)userConfirm{
+    kWeakSelf(self)
+    //11待确认、12待出场、15待处置、21已完成
+    switch ([_model.OrderStatus integerValue]) {
+        case 11:
+            {
+                [skClassMethod skAlerView:@"确认并提交运单" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [weakself Confirm];
+                }];
+                
+            }
+            break;
+        case 12:
+            
+            {
+                NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
+                
+                [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [weakself Confirm];
+                }];
+            }
+            break;
+        case 15:
+            {
+                NSString *title=[NSString stringWithFormat:@"确认车辆是(%@)已进入处置场",self.model.VehicleNo];
+                
+                [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [weakself Confirm];
+                }];
+            }
+            break;
+        case 21:
+        {
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
 
 -(UIButton *)btnAbnormal{
     if (!_btnAbnormal) {
