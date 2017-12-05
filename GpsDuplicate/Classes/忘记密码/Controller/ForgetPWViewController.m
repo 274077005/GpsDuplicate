@@ -21,8 +21,9 @@
     self.title=@"忘记密码";
     
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
+    kWeakSelf(self)
     [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        [weakself.navigationController dismissViewControllerAnimated:YES completion:nil];
     }];
     [self initUI];
 }
@@ -36,6 +37,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

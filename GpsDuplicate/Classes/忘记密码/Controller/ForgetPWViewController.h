@@ -6,8 +6,6 @@
 //  Copyright © 2017年 skyer. All rights reserved.
 //
 
-#import "SkyerBaseViewController.h"
-
 @interface ForgetPWViewController : SkyerBaseViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *textPhoneNum;

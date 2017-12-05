@@ -48,18 +48,19 @@
             make.height.mas_equalTo(30);
         }];
         //司机操作订单按钮
+        kWeakSelf(self)
         [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"确认并提交运单信息?" message:@"提交后不可以修改!" preferredStyle:1];
             UIAlertAction *cancal=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 
             }];
             UIAlertAction *sure=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self Confirm];
+                [weakself Confirm];
             }];
             
             [alert addAction:cancal];
             [alert addAction:sure];
-            [self presentViewController:alert animated:YES completion:nil];
+            [weakself presentViewController:alert animated:YES completion:nil];
         }];
     }
     return _btnSure;
@@ -76,12 +77,12 @@
             make.size.mas_equalTo(CGSizeMake(skScreenWidth, 30));
             make.bottom.mas_equalTo(_btnSure.mas_top).offset(-15);
         }];
-        
+        kWeakSelf(self)
         [[_btnAbnormal rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
             AbnormalViewController *view=[Main instantiateViewControllerWithIdentifier:@"AbnormalViewController"];
-            view.OrderID=_model.OrderID;
-            [self.navigationController pushViewController:view animated:YES];
+            view.OrderID=weakself.model.OrderID;
+            [weakself.navigationController pushViewController:view animated:YES];
         }];
     }
     return _btnAbnormal;
@@ -132,9 +133,9 @@
 -(void)GetDetails{
     
     NSDictionary *parameters=@{@"No":@"GetDetails",
-                               @"UserID":self.user.UserID,
+                               @"UserID":UserLogin.sharedUserLogin.UserID,
                                @"OrderID":self.orderListModel.OrderID,
-                               @"UserType":self.user.UserType
+                               @"UserType":UserLogin.sharedUserLogin.UserType
                                };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
@@ -153,15 +154,17 @@
 #pragma mark - 司机操作订单的接口
 -(void)Confirm{
     NSDictionary *parameters=@{@"No":@"Confirm",
-                               @"UserID":self.user.UserID,
+                               @"UserID":UserLogin.sharedUserLogin.UserID,
                                @"OrderID":self.orderListModel.OrderID,
                                @"OrderStatus":self.orderListModel.OrderStatus,
-                               @"UserType":self.user.UserType,
+                               @"UserType":UserLogin.sharedUserLogin.UserType,
                                
                                };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
         [self GetDetails];
+        
     } failure:^(NSError * _Nullable error) {
         
     }];

@@ -181,8 +181,9 @@
             [btnLoginOut setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
             [btnLoginOut setTitleColor:[UIColor blackColor] forState:(UIControlStateHighlighted)];
             [cell.contentView addSubview:btnLoginOut];
+            kWeakSelf(self)
             [[btnLoginOut rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+                [weakself.navigationController dismissViewControllerAnimated:NO completion:nil];
             }];
         }
             break;

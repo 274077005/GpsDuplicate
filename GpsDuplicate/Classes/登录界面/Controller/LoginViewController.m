@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "UserLogin.h"
 #import "DriverOrderViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 
@@ -90,10 +89,11 @@
  */
 -(void)RACAction{
     //用户登录
+    kWeakSelf(self)
     [[_btnLogin rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        if (_textName.text.length==11) {
+        if (weakself.textName.text.length==11) {
             
-            [self userLogin];
+            [weakself userLogin];
 //            [self loginSuccess];
             
         }else{
@@ -105,16 +105,16 @@
     
     //记住密码
     [[_btnRemamberTop rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        _isRemamber=_isRemamber?NO:YES;
-        [[NSUserDefaults standardUserDefaults] setBool:_isRemamber forKey:skRemamber];
+        weakself.isRemamber=_isRemamber?NO:YES;
+        [[NSUserDefaults standardUserDefaults] setBool:weakself.isRemamber forKey:skRemamber];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self changRemamberButtonState];
+        [weakself changRemamberButtonState];
     }];
     //忘记密码
     [[_btnForget rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
         UINavigationController *view=[self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPWNag"];
-        [self presentViewController:view animated:YES completion:nil];
+        [weakself presentViewController:view animated:YES completion:nil];
         
     }];
 }

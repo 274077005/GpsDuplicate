@@ -29,9 +29,10 @@
     
     [_viewBind skSetBoardRadius:5 Width:1 andBorderColor:[UIColor clearColor]];
     [_btnBind skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
+    kWeakSelf(self)
     [[_btnBind rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        if (![_textNum.text isEqualToString:@""]) {
-            [self BindVehicle];
+        if (![weakself.textNum.text isEqualToString:@""]) {
+            [weakself BindVehicle];
         }
         
     }];
@@ -40,15 +41,17 @@
 
 -(void)BindVehicle{
     NSDictionary *parameters=@{@"No":@"BindVehicle",
-                               @"UserName":self.user.UserName,
+                               @"UserName":UserLogin.sharedUserLogin.UserName,
                                @"VehicleNo":_textNum.text
                                };
+    
+    kWeakSelf(self)
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //绑定成功后修改绑定车牌号和是否绑定的字段//0绑定、1未绑定
-        self.user.VehicleNo=_textNum.text;
-        self.user.IsBindVehicle=@"0";
-        _bindBlock();
-        [self dismissViewControllerAnimated:YES completion:nil];
+        UserLogin.sharedUserLogin.VehicleNo=_textNum.text;
+        UserLogin.sharedUserLogin.IsBindVehicle=@"0";
+        weakself.bindBlock();
+        [weakself dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError * _Nullable error) {
         
     }];

@@ -35,14 +35,15 @@
     self.title=@"全部运单";
     self.view.backgroundColor=skLineColor;
     UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
+    kWeakSelf(self)
     [[btnUser rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         UIViewController *userSetView=[[UserSetViewController alloc] init];
-        [self.navigationController pushViewController:userSetView animated:YES];
+        [weakself.navigationController pushViewController:userSetView animated:YES];
         
     }];
     
     //0绑定、1未绑定
-    if (![self.user.IsBindVehicle isEqualToString:@"1"]) {
+    if (![UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
         [self showBingdView];
     }else{
         [self initUI];
@@ -52,7 +53,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     
-    if (![self.user.IsBindVehicle isEqualToString:@"1"]) {
+    if (![UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
         [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
     }
     
@@ -62,6 +63,7 @@
  如果是司机登录就先显示绑定界面
  */
 - (void)showBingdView {
+    
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     BindingViewController *bind=[story instantiateViewControllerWithIdentifier:@"BindingViewController"];
     [bind setBindBlock:^{
@@ -112,9 +114,9 @@
 
 -(void)GetList:(NSString *)OrderType{
     
-    NSDictionary *parameters=@{@"UserID":self.user.UserID,
+    NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
                                @"OrderType":OrderType,
-                               @"UserType":self.user.UserType,
+                               @"UserType":UserLogin.sharedUserLogin.UserType,
                                @"No":@"GetList"
                                };
     

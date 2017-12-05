@@ -20,11 +20,11 @@
     self.title=@"异常上报";
     self.view.backgroundColor=skLineColor;
     
-    
+    kWeakSelf(self)
     [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
-        if (_textFidld.text.length<200&&![_textFidld.text isEqualToString:@""]) {
-            [self UploadError];
+        if (weakself.textFidld.text.length<200&&![weakself.textFidld.text isEqualToString:@""]) {
+            [weakself UploadError];
         }
         
     }];
@@ -35,7 +35,8 @@
         if (x.length>200) {
             
             [SkToast SkToastShow:@"文字不能超过200" withHight:skScreenHeight/2];
-            _textFidld.text=[x substringToIndex:200];
+            weakself.textFidld.text=[x substringToIndex:200];
+            
         }
     }];
 }
@@ -46,7 +47,7 @@
 -(void)UploadError{
     
     NSDictionary *parameters=@{@"No":@"UploadError",
-                               @"UserID":self.user.UserID,
+                               @"UserID":UserLogin.sharedUserLogin.UserID,
                                @"OrderID":_OrderID,
                                @"Describe":_textFidld.text
                                };

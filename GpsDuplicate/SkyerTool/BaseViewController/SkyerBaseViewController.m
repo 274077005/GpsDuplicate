@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@加载",self);
-    self.user=[UserLogin sharedUserLogin];
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
+    kWeakSelf(self)
     [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakself.navigationController popViewControllerAnimated:YES];
     }];
 }
 -(void)dealloc{
@@ -57,7 +57,7 @@
 
 /**
  修改导航栏右边的文字
- 
+
  @param title 要修改成的文字
  */
 -(UIButton *)skSetNagLeftTitle:(NSString *)title withColor:(UIColor *)color{
@@ -71,7 +71,7 @@
 
 /**
  修改导航栏右边的文字
- 
+
  @param image 图片的名称
  */
 -(UIButton *)skSetNagLeftImage:(NSString *)image{

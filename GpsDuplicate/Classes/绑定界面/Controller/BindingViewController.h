@@ -11,7 +11,7 @@
 @interface BindingViewController : SkyerBaseViewController
 
 
-@property (nonatomic,copy) void(^bindBlock)();
+@property (nonatomic,copy) void(^bindBlock)(void);
 
 @property (weak, nonatomic) IBOutlet UITextField *textNum;
 @property (weak, nonatomic) IBOutlet UIButton *btnBind;
