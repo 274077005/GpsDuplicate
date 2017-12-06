@@ -21,7 +21,8 @@
 
 - (void)initUI {
     self.title=@"设置";
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    [self useMethodToFindBlackLineAndHind];
     
     UITableView *tableview=[[UITableView alloc] initWithFrame:self.view.bounds];
     tableview.backgroundColor=skLineColor;
@@ -31,6 +32,27 @@
     
     [self.view addSubview:self.tableView];
 }
+-(void)useMethodToFindBlackLineAndHind
+{
+    UIImageView* blackLineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    //隐藏黑线（在viewWillAppear时隐藏，在viewWillDisappear时显示）
+    blackLineImageView.hidden = YES;
+}
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view
+{
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
+    {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setTranslucent:NO];
 }

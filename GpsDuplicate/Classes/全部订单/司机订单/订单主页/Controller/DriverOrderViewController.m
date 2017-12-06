@@ -22,6 +22,7 @@
 @property (nonatomic,strong) TableViewForOrder *finishView;
 @property (nonatomic,strong) TableViewForOrder *unFinishView;
 @property (nonatomic,assign) NSInteger indexSelect;
+@property (nonatomic,strong) UIButton *btnLeft;
 
 @end
 
@@ -35,11 +36,21 @@
     self.title=@"全部运单";
     self.view.backgroundColor=skLineColor;
     UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
-    kWeakSelf(self)
+    @weakify(self)
     [[btnUser rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
         UIViewController *userSetView=[[UserSetViewController alloc] init];
-        [weakself.navigationController pushViewController:userSetView animated:YES];
+        [self.navigationController pushViewController:userSetView animated:YES];
         
+    }];
+    
+    [[self.btnLeft rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        
+        
+        @strongify(self)
+        [skClassMethod skAlerView:@"确定解绑车辆吗?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+            [self UnBindVehicle];
+        }];
     }];
     
     //0绑定、1未绑定
@@ -47,10 +58,37 @@
         [self showBingdView];
     }else{
         [self initUI];
+        [self changVehicleNo];
         [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
     }
     
 }
+-(UIButton *)btnLeft{
+    if (_btnLeft==nil) {
+        _btnLeft=[[UIButton alloc] initWithFrame:CGRectMake(0,0,80,30)];
+        [_btnLeft setTitleColor:skBaseColor forState:0];
+        _btnLeft.titleLabel.font =[UIFont systemFontOfSize:14];
+        UIBarButtonItem *btnBack = [[UIBarButtonItem alloc] initWithCustomView:_btnLeft];
+        self.navigationItem.leftBarButtonItem = btnBack;
+    }
+    return _btnLeft;
+}
+
+/**
+ 修改车牌号码
+ */
+-(void)changVehicleNo{
+    //0绑定、1未绑定
+    if ([UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
+        self.btnLeft.hidden=YES;
+    }else{
+        self.btnLeft.hidden=NO;
+        [self.btnLeft setTitle:UserLogin.sharedUserLogin.VehicleNo forState:0];
+        [_btnLeft setBackgroundImage:[UIImage imageNamed:@"btn_license_locked_default"] forState:UIControlStateNormal];
+    }
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     
     if (![UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
@@ -66,10 +104,13 @@
     
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     BindingViewController *bind=[story instantiateViewControllerWithIdentifier:@"BindingViewController"];
+    
     [bind setBindBlock:^{
+        [self changVehicleNo];
         [self initUI];
         [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
     }];
+    
     //设置模式展示风格
     [bind setModalPresentationStyle:UIModalPresentationOverFullScreen];
     //必要配置
@@ -85,6 +126,7 @@
  */
 -(void)initUI{
     self.view.backgroundColor=[UIColor whiteColor];
+    
     _skSelect=[[skSelectView alloc] initWithFrame:CGRectMake(0, 64, skScreenWidth, 46) andTitleArr:@[@"已完成",@"未完成"]  andSelectIndex:0  andSelectColor:skBaseColor];
     
     [self.view addSubview:_skSelect];
@@ -154,5 +196,22 @@
         [_unFinishView skReloadDataWithData:arrList];
     }
 }
-
+#pragma mark - 解除绑定
+/**
+ 获取验证码
+ */
+-(void)UnBindVehicle{
+    
+    
+    NSDictionary *parameters=@{
+                               @"UserName":UserLogin.sharedUserLogin.UserName
+                               };
+    
+    
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"UnBindVehicle") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        [self showBingdView];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

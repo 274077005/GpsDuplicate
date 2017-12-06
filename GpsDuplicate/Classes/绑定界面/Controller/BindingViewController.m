@@ -19,8 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[[UIColor grayColor] colorWithAlphaComponent:0.8];
-    UserLogin *user=[UserLogin sharedUserLogin];
-    NSLog(@"%@",user.UserName);
     [self initUI];
 }
 
