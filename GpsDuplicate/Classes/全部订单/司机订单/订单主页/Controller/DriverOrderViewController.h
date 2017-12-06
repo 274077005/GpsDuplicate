@@ -10,6 +10,4 @@
 
 @interface DriverOrderViewController : SkyerBaseViewController
 
-@property (nonatomic,copy) NSString *UserType;
-
 @end

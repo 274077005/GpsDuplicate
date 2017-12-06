@@ -20,9 +20,12 @@
     self.view.backgroundColor=[UIColor whiteColor];
     NSLog(@"%@加载",self);
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
-    kWeakSelf(self)
+    
+    
+    @weakify(self);
     [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        [weakself.navigationController popViewControllerAnimated:YES];
+        @strongify(self);
+        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 -(void)dealloc{

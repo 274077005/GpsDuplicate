@@ -158,8 +158,9 @@
     
     OrderListModel *model=[_arrCellData objectAtIndex:indexPath.section];
     OrderDetailsDriverViewController *view=[[OrderDetailsDriverViewController alloc] init];
-    
     view.orderListModel=model;
+    
+    
     
     UIViewController *visibleView=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
     [visibleView.navigationController pushViewController:view animated:YES];

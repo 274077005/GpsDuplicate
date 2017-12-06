@@ -91,6 +91,7 @@
     [cell.contentView addSubview:labDes];
     labDes.textAlignment=2;
     labDes.numberOfLines=2;
+    labDes.textColor=[UIColor grayColor];
     labDes.font=[UIFont systemFontOfSize:14];
     [labDes mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-20);

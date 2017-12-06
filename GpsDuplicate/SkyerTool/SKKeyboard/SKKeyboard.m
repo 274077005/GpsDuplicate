@@ -38,6 +38,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}];
     //设置返回按钮的颜色
     [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
+    //设置导航栏没有透明度,会出现适配问题
+//    [[UINavigationBar appearance] setTranslucent:NO];
     
     //自定义返回按钮
     UIImage *backButtonImage = [[UIImage imageNamed:@"back"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 0, 10, 0)];

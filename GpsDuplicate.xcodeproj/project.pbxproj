@@ -18,6 +18,7 @@
 		B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA0C1FD699DB00A6153F /* skClassMethod.m */; };
 		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
 		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
+		B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */; };
 		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
 		B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830241FD4E1C50092A00F /* skSelectView.m */; };
 		B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830271FD534E70092A00F /* OrderDetailsModel.m */; };
@@ -41,7 +42,6 @@
 		B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */; };
 		B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */; };
 		B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985651FCD38B5003A370A /* TableViewForOrder.m */; };
-		B6E985811FCD3CBA003A370A /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */; };
 		B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985871FCD5A71003A370A /* skJPUSHSet.m */; };
 		D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */; };
 /* End PBXBuildFile section */
@@ -72,6 +72,8 @@
 		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
 		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
 		B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverTableView.m; sourceTree = "<group>"; };
+		B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
+		B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
 		B6B830201FD4DD340092A00F /* SkScollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkScollPageView.h; sourceTree = "<group>"; };
 		B6B830211FD4DD340092A00F /* SkScollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkScollPageView.m; sourceTree = "<group>"; };
 		B6B830231FD4E1C50092A00F /* skSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSelectView.h; sourceTree = "<group>"; };
@@ -117,8 +119,6 @@
 		B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+skStrWidth.m"; sourceTree = "<group>"; };
 		B6E985641FCD38B5003A370A /* TableViewForOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewForOrder.h; sourceTree = "<group>"; };
 		B6E985651FCD38B5003A370A /* TableViewForOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewForOrder.m; sourceTree = "<group>"; };
-		B6E985721FCD3CBA003A370A /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
-		B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
 		B6E985861FCD5A71003A370A /* skJPUSHSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
 		B6E985871FCD5A71003A370A /* skJPUSHSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
 		B6E985891FCD606B003A370A /* GpsDuplicate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpsDuplicate.entitlements; sourceTree = "<group>"; };
@@ -378,6 +378,29 @@
 				B6C0FB581FD2449800061441 /* 关于我们 */,
 			);
 			path = "个人设置";
+			sourceTree = "<group>";
+		};
+		B69CB8B21FD79B120045A4F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */,
+				B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B69CB8B51FD79B120045A4F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B69CB8B61FD79B120045A4F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B6B8301F1FD4DD340092A00F /* 分页显示 */ = {
@@ -693,8 +716,9 @@
 		B6E985711FCD3CBA003A370A /* 订单主页 */ = {
 			isa = PBXGroup;
 			children = (
-				B6E985721FCD3CBA003A370A /* ManagerOrderViewController.h */,
-				B6E985731FCD3CBA003A370A /* ManagerOrderViewController.m */,
+				B69CB8B21FD79B120045A4F2 /* Controller */,
+				B69CB8B51FD79B120045A4F2 /* Models */,
+				B69CB8B61FD79B120045A4F2 /* Views */,
 			);
 			path = "订单主页";
 			sourceTree = "<group>";
@@ -881,6 +905,7 @@
 				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
 				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
 				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
+				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
@@ -896,7 +921,6 @@
 				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
 				B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */,
-				B6E985811FCD3CBA003A370A /* ManagerOrderViewController.m in Sources */,
 				B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */,
 				B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */,
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,

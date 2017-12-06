@@ -10,7 +10,7 @@
 static MBProgressHUD *HUD;
 @implementation SkyerHUD
 +(void)skyerShowToast:(NSString *)title{
-    [SkToast SkToastShow:title];
+    [SkToast SkToastShow:title withHight:200];
 }
 
 +(void) skyerShowProgOnWindow:(NSString *)title{

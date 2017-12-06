@@ -34,7 +34,7 @@
     [[_textFidld rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
         if (x.length>200) {
             
-            [SkToast SkToastShow:@"文字不能超过200" withHight:skScreenHeight/2];
+            [SkyerHUD skyerShowToast:@"文字不能超过200"];
             weakself.textFidld.text=[x substringToIndex:200];
             
         }

@@ -22,7 +22,6 @@
 - (void)initUI {
     self.title=@"设置";
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    [self.navigationController.navigationBar setTranslucent:NO];
     
     UITableView *tableview=[[UITableView alloc] initWithFrame:self.view.bounds];
     tableview.backgroundColor=skLineColor;
@@ -31,6 +30,9 @@
     self.tableView.dataSource=self;
     
     [self.view addSubview:self.tableView];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [self.navigationController.navigationBar setTranslucent:YES];
@@ -130,7 +132,11 @@
                 [cell.contentView addSubview:imageUser];
                 //用户名
                 UILabel *labUser=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 35, 200, 20)];
-                labUser.text=@"张师傅(粤B574OU)";
+                
+                NSString *UserName=UserLogin.sharedUserLogin.UserName;
+                NSString *VehicleNo=UserLogin.sharedUserLogin.VehicleNo;
+                
+                labUser.text=[NSString stringWithFormat:@"%@(%@)",UserName,VehicleNo];
                 labUser.textColor=[UIColor whiteColor];
                 [cell.contentView addSubview:labUser];
                 
@@ -139,7 +145,8 @@
                 //所属公司
                 UILabel *labCompany=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 60, SCREEN_WIDTH-CGRectGetMaxX(imageUser.frame)-20, 40)];
                 labCompany.numberOfLines=2;
-                labCompany.text=@"所属公司:深圳航通北斗信息科技有限责任公司";
+                NSString *EnterName=UserLogin.sharedUserLogin.EnterName;
+                labCompany.text=[NSString stringWithFormat:@"所属公司:%@",EnterName];
                 labCompany.textColor=[UIColor whiteColor];
                 labCompany.font=[UIFont systemFontOfSize:14];
                 [cell.contentView addSubview:labCompany];
@@ -222,7 +229,9 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    ResetPasswordViewController *view=[[ResetPasswordViewController alloc] init];
+                    UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    ResetPasswordViewController *view=[Main instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
+                    view.Tel=UserLogin.sharedUserLogin.UserName;
                     [self.navigationController pushViewController:view animated:YES];
                 }
                     break;

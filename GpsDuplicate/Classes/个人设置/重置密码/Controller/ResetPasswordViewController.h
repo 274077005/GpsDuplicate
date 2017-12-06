@@ -10,4 +10,10 @@
 
 @interface ResetPasswordViewController : SkyerBaseViewController
 
+
+@property (nonatomic,copy) NSString *Tel;
+@property (weak, nonatomic) IBOutlet UITextField *textPassword;
+@property (weak, nonatomic) IBOutlet UITextField *textPasswordAgain;
+@property (weak, nonatomic) IBOutlet UIButton *btnSure;
+
 @end

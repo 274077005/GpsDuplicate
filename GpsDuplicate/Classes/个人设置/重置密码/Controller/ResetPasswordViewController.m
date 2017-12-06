@@ -17,21 +17,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title=@"重置密码";
+    [self initUI];
+    kWeakSelf(self);
+    [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        
+        if ([weakself.textPassword.text isEqualToString:weakself.textPasswordAgain.text]) {
+            [weakself ResetPwd];
+        }else{
+            [SkyerHUD skyerShowToast:@"密码不一致"];
+        }
+        
+        
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)initUI{
+    [_btnSure skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)ResetPwd{
+    
+    
+    
+    NSDictionary *parameters=@{
+                               @"Tel":_Tel,
+                               @"PassWord":[_textPassword.text MD5]
+                               };
+    
+    
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"ResetPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        [SkyerHUD skyerShowToast:@"修改密码成功"];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
-*/
 
 @end

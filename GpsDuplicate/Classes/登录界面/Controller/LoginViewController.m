@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "DriverOrderViewController.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "ManagerOrderViewController.h"
 
 //缓存几个数据,账号\密码\和是否记住密码
 #define skPassWord @"skPassWord"
@@ -68,21 +69,7 @@
     [_btnRemamber setBackgroundImage:[UIImage imageNamed:remamberImage] forState:(UIControlStateNormal)];
 }
 
-/**
- 登录成功跳转
- */
-- (void)loginSuccess {
-    
-    [[NSUserDefaults standardUserDefaults] setObject:_textName.text forKey:skUserName];
-    [[NSUserDefaults standardUserDefaults] setObject:_textPassword.text forKey:skPassWord];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
-    DriverOrderViewController *view=[[DriverOrderViewController alloc] init];
-    UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
-    [self presentViewController:bdv animated:YES completion:nil];
-    
-}
+
 
 /**
  rac监控的点击事件
@@ -94,7 +81,6 @@
         if (weakself.textName.text.length==11) {
             
             [weakself userLogin];
-//            [self loginSuccess];
             
         }else{
             [SkToast SkToastShow:@"仅支持11位手机号"];
@@ -139,6 +125,41 @@
     } failure:^(NSError * _Nullable error) {
 
     }];
+    
+}
+
+/**
+ 登录成功跳转
+ */
+- (void)loginSuccess {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:_textName.text forKey:skUserName];
+    [[NSUserDefaults standardUserDefaults] setObject:_textPassword.text forKey:skPassWord];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //1司机、2工地管理员、3监理员
+    UserLogin.sharedUserLogin.UserType=@"1";
+    switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
+        case 1:
+        {
+            DriverOrderViewController *view=[[DriverOrderViewController alloc] init];
+            UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
+            [self presentViewController:bdv animated:YES completion:nil];
+        }
+            break;
+        case 2:case 3:
+            
+        {
+            ManagerOrderViewController *view=[[ManagerOrderViewController alloc] init];
+            UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
+            [self presentViewController:bdv animated:YES completion:nil];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     
 }
 
