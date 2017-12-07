@@ -23,12 +23,16 @@
     [[_btnSure rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
         if ([weakself.textPassword.text isEqualToString:weakself.textPasswordAgain.text]) {
-            [weakself ResetPwd];
+            
+            if ([weakself.textPassword.text length]>=6&&[weakself.textPassword.text length]<=16) {
+                [weakself ResetPwd];
+            }else{
+                [SkyerHUD skyerShowToast:@"密码限制为6-16位"];
+            }
+            
         }else{
-            [SkyerHUD skyerShowToast:@"密码不一致"];
+            [SkyerHUD skyerShowToast:@"确认密码与新密码不一致"];
         }
-        
-        
     }];
 }
 

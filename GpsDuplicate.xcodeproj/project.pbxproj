@@ -18,6 +18,10 @@
 		B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA0C1FD699DB00A6153F /* skClassMethod.m */; };
 		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
 		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
+		B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */; };
+		B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */; };
+		B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */; };
+		B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */; };
 		B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */; };
 		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
 		B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830241FD4E1C50092A00F /* skSelectView.m */; };
@@ -72,6 +76,14 @@
 		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
 		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
 		B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverTableView.m; sourceTree = "<group>"; };
+		B6578A141FD8DE4A001FB900 /* OrderDetailsDriverBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverBottomView.h; sourceTree = "<group>"; };
+		B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverBottomView.m; sourceTree = "<group>"; };
+		B6578A171FD8EA91001FB900 /* OrderDetailsManagerActionTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerActionTableView.h; sourceTree = "<group>"; };
+		B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerActionTableView.m; sourceTree = "<group>"; };
+		B6578A1A1FD90B2B001FB900 /* OrderDetailsManagerTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerTableView.h; sourceTree = "<group>"; };
+		B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerTableView.m; sourceTree = "<group>"; };
+		B6578A211FD92DCB001FB900 /* OrderSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderSearchViewController.h; sourceTree = "<group>"; };
+		B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderSearchViewController.m; sourceTree = "<group>"; };
 		B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
 		B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
 		B6B830201FD4DD340092A00F /* SkScollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkScollPageView.h; sourceTree = "<group>"; };
@@ -301,14 +313,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B64272501FD25503008F505C /* 订单详情(司机) */ = {
+		B64272501FD25503008F505C /* 订单详情 */ = {
 			isa = PBXGroup;
 			children = (
 				B64272511FD25503008F505C /* Controller */,
 				B64272521FD25503008F505C /* Models */,
 				B64272531FD25503008F505C /* Views */,
 			);
-			path = "订单详情(司机)";
+			path = "订单详情";
 			sourceTree = "<group>";
 		};
 		B64272511FD25503008F505C /* Controller */ = {
@@ -334,35 +346,43 @@
 			children = (
 				B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */,
 				B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */,
+				B6578A171FD8EA91001FB900 /* OrderDetailsManagerActionTableView.h */,
+				B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */,
+				B6578A1A1FD90B2B001FB900 /* OrderDetailsManagerTableView.h */,
+				B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */,
+				B6578A141FD8DE4A001FB900 /* OrderDetailsDriverBottomView.h */,
+				B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B64272541FD2552F008F505C /* 订单详情(监理) */ = {
+		B6578A1D1FD92DA1001FB900 /* 订单搜索 */ = {
 			isa = PBXGroup;
 			children = (
-				B64272551FD2552F008F505C /* Controller */,
-				B64272561FD2552F008F505C /* Models */,
-				B64272571FD2552F008F505C /* Views */,
+				B6578A1E1FD92DA1001FB900 /* Controller */,
+				B6578A1F1FD92DA1001FB900 /* Models */,
+				B6578A201FD92DA1001FB900 /* Views */,
 			);
-			path = "订单详情(监理)";
+			path = "订单搜索";
 			sourceTree = "<group>";
 		};
-		B64272551FD2552F008F505C /* Controller */ = {
+		B6578A1E1FD92DA1001FB900 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B6578A211FD92DCB001FB900 /* OrderSearchViewController.h */,
+				B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		B64272561FD2552F008F505C /* Models */ = {
+		B6578A1F1FD92DA1001FB900 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B64272571FD2552F008F505C /* Views */ = {
+		B6578A201FD92DA1001FB900 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -678,9 +698,9 @@
 		B6E985321FCD3721003A370A /* 全部订单 */ = {
 			isa = PBXGroup;
 			children = (
+				B6578A1D1FD92DA1001FB900 /* 订单搜索 */,
 				B61141E11FD54B9700C7C392 /* 异常上报 */,
-				B64272541FD2552F008F505C /* 订单详情(监理) */,
-				B64272501FD25503008F505C /* 订单详情(司机) */,
+				B64272501FD25503008F505C /* 订单详情 */,
 				B6E985671FCD3CBA003A370A /* 监理订单 */,
 				B6E985741FCD3CBA003A370A /* 司机订单 */,
 				B6E985621FCD38B4003A370A /* Models */,
@@ -904,9 +924,11 @@
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
 				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
 				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
+				B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */,
 				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
 				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
+				B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
@@ -924,6 +946,8 @@
 				B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */,
 				B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */,
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,
+				B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */,
+				B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */,
 				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
 				B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */,

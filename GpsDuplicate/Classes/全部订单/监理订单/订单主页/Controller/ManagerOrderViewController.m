@@ -44,6 +44,11 @@
     
     [[btnSearch rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
+        
+        UIStoryboard *main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        UIViewController *view=[main instantiateViewControllerWithIdentifier:@"OrderSearchViewController"];
+        [self.navigationController pushViewController:view animated:YES];
     }];
     
     

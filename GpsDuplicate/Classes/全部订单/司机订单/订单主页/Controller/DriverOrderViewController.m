@@ -156,6 +156,11 @@
 
 -(void)GetList:(NSString *)OrderType{
     
+    /*
+     OrderType==>这个参数在切换的时候会自己变
+     运单类型：司机登录：0已完成 1未完成
+     监管人员登录：0待确认 1待签认 2已签认
+     */
     NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
                                @"OrderType":OrderType,
                                @"UserType":UserLogin.sharedUserLogin.UserType,

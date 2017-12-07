@@ -213,12 +213,12 @@
             [btnLoginOut setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
             [btnLoginOut setTitleColor:[UIColor blackColor] forState:(UIControlStateHighlighted)];
             [cell.contentView addSubview:btnLoginOut];
-            kWeakSelf(self)
             //退出账号
+            @weakify(self)
             [[btnLoginOut rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                
+                @strongify(self)
                 [skClassMethod skAlerView:@"确认退出当前账号?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
-                    [weakself dismissViewControllerAnimated:YES completion:nil];
+                    [self LogOut];
                 }];
                 
             }];
@@ -276,6 +276,24 @@
         default:
             break;
     }
+}
+
+#pragma mark - 退出登录
+/**
+ 获取验证码
+ */
+-(void)LogOut{
+    
+    NSDictionary *parameters=@{
+                               @"UserID":UserLogin.sharedUserLogin.UserID
+                               };
+    
+    
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"LogOut") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 @end

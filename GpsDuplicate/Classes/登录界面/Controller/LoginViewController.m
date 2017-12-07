@@ -147,7 +147,7 @@
             [self presentViewController:bdv animated:YES completion:nil];
         }
             break;
-        case 2:case 3:
+        case 2:case 3:case 4:
             
         {
             ManagerOrderViewController *view=[[ManagerOrderViewController alloc] init];

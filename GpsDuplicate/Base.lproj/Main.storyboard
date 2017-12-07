@@ -357,6 +357,56 @@
             </objects>
             <point key="canvasLocation" x="1222.5" y="825"/>
         </scene>
+        <!--运单搜索-->
+        <scene sceneID="b1p-kC-zDO">
+            <objects>
+                <viewController storyboardIdentifier="OrderSearchViewController" title="运单搜索" id="5yq-eN-5n5" customClass="OrderSearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cx0-fy-KNv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入车牌号码查询" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-lZ-yZQ">
+                                <rect key="frame" x="16" y="40" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Af-u7-gQs"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQQ-go-Ybp">
+                                <rect key="frame" x="16" y="100" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.71764705880000002" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y6K-TT-qHh"/>
+                                </constraints>
+                                <state key="normal" title="搜索">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cLs-lZ-yZQ" firstAttribute="top" secondItem="1g4-7W-YE2" secondAttribute="top" constant="20" id="7wn-Hs-Pt5"/>
+                            <constraint firstItem="1g4-7W-YE2" firstAttribute="trailing" secondItem="UQQ-go-Ybp" secondAttribute="trailing" constant="16" id="9bA-dz-rdY"/>
+                            <constraint firstItem="UQQ-go-Ybp" firstAttribute="top" secondItem="cLs-lZ-yZQ" secondAttribute="bottom" constant="20" id="CDg-gh-dvM"/>
+                            <constraint firstItem="cLs-lZ-yZQ" firstAttribute="leading" secondItem="1g4-7W-YE2" secondAttribute="leading" constant="16" id="LFs-8H-dab"/>
+                            <constraint firstItem="UQQ-go-Ybp" firstAttribute="centerX" secondItem="cx0-fy-KNv" secondAttribute="centerX" id="cI9-kw-ehU"/>
+                            <constraint firstItem="cLs-lZ-yZQ" firstAttribute="centerX" secondItem="cx0-fy-KNv" secondAttribute="centerX" id="wMG-Bt-hJo"/>
+                            <constraint firstItem="UQQ-go-Ybp" firstAttribute="leading" secondItem="1g4-7W-YE2" secondAttribute="leading" constant="16" id="we0-cc-Hvv"/>
+                            <constraint firstItem="1g4-7W-YE2" firstAttribute="trailing" secondItem="cLs-lZ-yZQ" secondAttribute="trailing" constant="16" id="ySP-OR-8G2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1g4-7W-YE2"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnSearch" destination="UQQ-go-Ybp" id="fR9-DK-h39"/>
+                        <outlet property="textSearch" destination="cLs-lZ-yZQ" id="yeg-Kl-J8p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="il9-L5-iKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004.375" y="825"/>
+        </scene>
         <!--绑定-->
         <scene sceneID="eGG-g3-0zf">
             <objects>
