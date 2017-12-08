@@ -13,13 +13,15 @@
 #import "OrderDetailsDriverBottomView.h"
 #import "OrderDetailsManagerActionTableView.h"
 #import "OrderDetailsManagerTableView.h"
+#import "OrderDetailsManagerBottomView.h"
 
 @interface OrderDetailsDriverViewController ()
 @property (nonatomic,strong) OrderDetailsModel *model;
 
-//底部的界面
+//司机
 @property (nonatomic,strong) OrderDetailsDriverBottomView *orderDetailsDriverBottomView;
-
+//管理员
+@property (nonatomic,strong) OrderDetailsManagerBottomView *orderDetailsManagerBottomView;
 
 //司机的界面
 @property (nonatomic,strong) OrderDetailsDriverTableView *orderDetailsDriverTableView;
@@ -71,10 +73,26 @@
     if (_orderDetailsDriverBottomView==nil) {
         _orderDetailsDriverBottomView=[[OrderDetailsDriverBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
         [self.view addSubview:_orderDetailsDriverBottomView];
+        @weakify(self)
+        [[_orderDetailsDriverBottomView rac_signalForSelector:@selector(delegateOrderDetailsDataUpdate)] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self)
+            [self GetDetails];
+        }];
     }
     return _orderDetailsDriverBottomView;
 }
-
+-(OrderDetailsManagerBottomView *)orderDetailsManagerBottomView{
+    if (_orderDetailsManagerBottomView==nil) {
+        _orderDetailsManagerBottomView=[[OrderDetailsManagerBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
+        [self.view addSubview:_orderDetailsManagerBottomView];
+        @weakify(self)
+        [[_orderDetailsManagerBottomView rac_signalForSelector:@selector(delegateOrderDetailsDataUpdate)] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self)
+            [self GetDetails];
+        }];
+    }
+    return _orderDetailsManagerBottomView;
+}
 
 
 - (void)initUI {
@@ -128,6 +146,8 @@
         {
             self.orderDetailsDriverTableView.model=_model;
             [self.orderDetailsDriverTableView reloadData];
+            self.orderDetailsDriverBottomView.model=_model;
+            [self.orderDetailsDriverBottomView updateUI];
         }
             break;
         case 2:
@@ -140,12 +160,16 @@
                 self.orderDetailsManagerTableView.model=_model;
                 [self.orderDetailsManagerTableView reloadData];
             }
+            self.orderDetailsManagerBottomView.model=_model;
+            [self.orderDetailsManagerBottomView updateUI];
         }
         case 3:case 4:
             
         {
             self.orderDetailsManagerTableView.model=_model;
             [self.orderDetailsManagerTableView reloadData];
+            self.orderDetailsManagerBottomView.model=_model;
+            [self.orderDetailsManagerBottomView updateUI];
         }
             break;
             
@@ -154,8 +178,7 @@
     }
     
     
-    self.orderDetailsDriverBottomView.model=_model;
-    [self.orderDetailsDriverBottomView updateUI];
+    
 }
 
 

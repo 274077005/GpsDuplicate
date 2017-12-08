@@ -7,6 +7,7 @@
 //
 
 #import "OrderDetailsDriverBottomView.h"
+#import "AbnormalViewController.h"
 
 @implementation OrderDetailsDriverBottomView
 
@@ -34,7 +35,12 @@
         }];
         
         [[_btnAbnormal rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            AbnormalViewController *view=[Main instantiateViewControllerWithIdentifier:@"AbnormalViewController"];
+            view.OrderID=_model.OrderID;
             
+            UIViewController *viewVisible=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+            [viewVisible.navigationController pushViewController:view animated:YES];
         }];
     }
     return _btnAbnormal;
@@ -67,8 +73,8 @@
  出厂提示
  */
 -(void)userActionAlert{
-    //1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
     /*
+     1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
      OrderStatus
      (待签认-已经签认-和司机相同) (待确认 监理和处理=页面不同 )
      司机:       状态：11已激活、12待出场、15待处置、21已完成
@@ -126,10 +132,16 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
+        [self delegateOrderDetailsDataUpdate];
         
     } failure:^(NSError * _Nullable error) {
         
     }];
+}
+
+
+-(void)delegateOrderDetailsDataUpdate{
+    NSLog(@"代理请求更新详情数据");
 }
 //这个是司机的底部按钮的文字描述
 - (void)DriveBtnTitle{
@@ -169,28 +181,10 @@
     [self.btnSure setTitle:stateInfo forState:0];
 }
 
+
 -(void)updateUI{
     //1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
-    NSString *UserType=UserLogin.sharedUserLogin.UserType;
-    
-    switch ([UserType integerValue]) {
-        case 1:
-            {
-                [self DriveBtnTitle];
-            }
-            break;
-        case 2:
-        case 3:
-        case 4:
-        {
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
-    
+    [self DriveBtnTitle];
     
 }
 

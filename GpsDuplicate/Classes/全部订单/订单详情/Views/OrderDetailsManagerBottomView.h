@@ -1,15 +1,15 @@
 //
-//  OrderDetailsDriverBottomView.h
+//  OrderDetailsManagerBottomView.h
 //  GpsDuplicate
 //
-//  Created by SoKing on 2017/12/7.
+//  Created by SoKing on 2017/12/8.
 //  Copyright © 2017年 skyer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "OrderDetailsModel.h"
 
-@interface OrderDetailsDriverBottomView : UIView
+@interface OrderDetailsManagerBottomView : UIView
 @property (nonatomic,strong) OrderDetailsModel *model;
 @property (nonatomic,strong) UIButton *btnSure;
 @property (nonatomic,strong) UIButton *btnAbnormal;
@@ -18,6 +18,4 @@
 -(void)delegateOrderDetailsDataUpdate;
 
 -(void)updateUI;
-
-
 @end
