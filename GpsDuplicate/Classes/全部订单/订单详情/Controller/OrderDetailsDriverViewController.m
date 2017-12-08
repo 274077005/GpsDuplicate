@@ -37,6 +37,8 @@
 @implementation OrderDetailsDriverViewController
 
 /*-------------------------由于操作需要重复使用,则懒加载--------------------------*/
+
+//司机的
 -(OrderDetailsDriverTableView *)orderDetailsDriverTableView{
     
     if (!_orderDetailsDriverTableView) {
@@ -46,7 +48,7 @@
     return _orderDetailsDriverTableView;
     
 }
-
+//能修改运单信息的
 -(OrderDetailsManagerActionTableView *)orderDetailsManagerActionTableView{
     if (_orderDetailsManagerActionTableView==nil) {
         _orderDetailsManagerActionTableView=[[OrderDetailsManagerActionTableView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-120) style:(UITableViewStyleGrouped)];
@@ -54,7 +56,7 @@
     }
     return _orderDetailsManagerActionTableView;
 }
-
+//不能修改运动信息的
 -(OrderDetailsManagerTableView *)orderDetailsManagerTableView{
     if (_orderDetailsManagerTableView==nil) {
         //初始化这个没有操作的界面就把能操作的清除掉,反正没有用了
@@ -63,12 +65,12 @@
         }
         
         _orderDetailsManagerTableView=[[OrderDetailsManagerTableView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-120) style:(UITableViewStyleGrouped)];
-        [self.view addSubview:_orderDetailsManagerActionTableView];
+        [self.view addSubview:_orderDetailsManagerTableView];
     }
     return _orderDetailsManagerTableView;
 }
 
-
+//司机的底部
 -(OrderDetailsDriverBottomView *)orderDetailsDriverBottomView{
     if (_orderDetailsDriverBottomView==nil) {
         _orderDetailsDriverBottomView=[[OrderDetailsDriverBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
@@ -81,6 +83,7 @@
     }
     return _orderDetailsDriverBottomView;
 }
+//监理的底部
 -(OrderDetailsManagerBottomView *)orderDetailsManagerBottomView{
     if (_orderDetailsManagerBottomView==nil) {
         _orderDetailsManagerBottomView=[[OrderDetailsManagerBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
@@ -160,14 +163,18 @@
                 self.orderDetailsManagerTableView.model=_model;
                 [self.orderDetailsManagerTableView reloadData];
             }
+            
             self.orderDetailsManagerBottomView.model=_model;
             [self.orderDetailsManagerBottomView updateUI];
+            
         }
+            break;
         case 3:case 4:
             
         {
             self.orderDetailsManagerTableView.model=_model;
             [self.orderDetailsManagerTableView reloadData];
+            
             self.orderDetailsManagerBottomView.model=_model;
             [self.orderDetailsManagerBottomView updateUI];
         }

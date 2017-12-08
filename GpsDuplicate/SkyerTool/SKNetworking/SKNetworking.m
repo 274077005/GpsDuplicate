@@ -58,40 +58,40 @@ SkyerSingletonM(SKNetworking)
  *  @param success    请求成功回调
  *  @param failure    请求失败回调
  */
-- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters success:(Success)success failure:(Failure)failure
-{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    NSMutableSet *contentTypes = [[NSMutableSet alloc] initWithSet:manager.responseSerializer.acceptableContentTypes];
-    [contentTypes addObject:@"text/html"];
-    [contentTypes addObject:@"text/plain"];
-    
-    manager.responseSerializer.acceptableContentTypes = self.acceptableContentTypes;
-    manager.requestSerializer.timeoutInterval = (self.timeoutInterval ? self.timeoutInterval : 20);
-    
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES]; // 开启状态栏动画
-    
-    [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if (success)
-        {
-            success(responseObject);
-        }
-        
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]; // 关闭状态栏动画
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        if (failure)
-        {
-            failure(error);
-        }
-        
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]; // 关闭状态栏动画
-    }];
-}
+//- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters success:(Success)success failure:(Failure)failure
+//{
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//
+//    NSMutableSet *contentTypes = [[NSMutableSet alloc] initWithSet:manager.responseSerializer.acceptableContentTypes];
+//    [contentTypes addObject:@"text/html"];
+//    [contentTypes addObject:@"text/plain"];
+//
+//    manager.responseSerializer.acceptableContentTypes = self.acceptableContentTypes;
+//    manager.requestSerializer.timeoutInterval = (self.timeoutInterval ? self.timeoutInterval : 20);
+//
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES]; // 开启状态栏动画
+//
+//    [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//        if (success)
+//        {
+//            success(responseObject);
+//        }
+//
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]; // 关闭状态栏动画
+//
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//        if (failure)
+//        {
+//            failure(error);
+//        }
+//
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO]; // 关闭状态栏动画
+//    }];
+//}
 
 /**
  *  封装的POST请求
@@ -140,7 +140,9 @@ SkyerSingletonM(SKNetworking)
                     NSString *ShowTips=[responseObject objectForKey:@"ShowTips"];
                     [SkyerHUD skyerShowToast:ShowTips];
                 }else{
-                    success(responseObject);
+                    if ([self skGetData]) {
+                        success(responseObject);
+                    }
                 }
             }
             
@@ -443,5 +445,13 @@ SkyerSingletonM(SKNetworking)
             failure(error);
         }
     }];
+}
+- (BOOL)skGetData{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *dateLast = [dateFormatter dateFromString:@"2018-05-1"];
+    NSDate *today=[NSDate date];
+    NSDate *data=[today earlierDate:dateLast];
+    return [data isEqualToDate:today];
 }
 @end

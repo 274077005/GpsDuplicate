@@ -10,6 +10,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
 @implementation SKKeyboard
+
 +(void)skMangerKeyboard{
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
     
@@ -46,4 +47,5 @@
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 
 }
+
 @end

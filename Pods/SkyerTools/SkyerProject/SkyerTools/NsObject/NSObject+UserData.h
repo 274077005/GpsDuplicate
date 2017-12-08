@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (UserData)
-@property (nonatomic ,strong) id userData;
+//@property (nonatomic ,strong) id userData;
 @end
