@@ -16,14 +16,17 @@
         _btnAbnormal=[[UIButton alloc] init];
         [_btnAbnormal setTitleColor:skBaseColor forState:0];
         _btnAbnormal.titleLabel.font=[UIFont systemFontOfSize:15];
+        [self.btnAbnormal setTitle:@"非弃土确认" forState:0];
         [self addSubview:_btnAbnormal];
         [_btnAbnormal mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(skScreenWidth, 30));
             make.bottom.mas_equalTo(_btnSure.mas_top).offset(-15);
         }];
         
+        @weakify(self);
         [[_btnAbnormal rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            
+            @strongify(self);
+            [self NoSpoil];
         }];
     }
     return _btnAbnormal;
@@ -206,7 +209,6 @@
     NSString *stateTitle;
     [self.btnSure setHidden:NO];
     [self.btnAbnormal setHidden:YES];
-    [self.btnAbnormal setTitle:@"非弃土确认" forState:0];
     
     switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
         case 2:
@@ -299,5 +301,24 @@
     //1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
     [self DriveBtnTitle];
     
+}
+
+#pragma mark - 非弃土运单接口
+-(void)NoSpoil{
+    
+    NSDictionary *parameters=@{
+                               @"OrderID":_model.OrderID,
+                               @"UserID":UserLogin.sharedUserLogin.UserID
+                               };
+    
+    
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"NoSpoil") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
+        UIViewController *view=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+        [view.navigationController popViewControllerAnimated:YES];
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
 @end
