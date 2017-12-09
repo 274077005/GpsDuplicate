@@ -447,11 +447,18 @@ SkyerSingletonM(SKNetworking)
     }];
 }
 - (BOOL)skGetData{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *dateLast = [dateFormatter dateFromString:@"2018-05-1"];
-    NSDate *today=[NSDate date];
-    NSDate *data=[today earlierDate:dateLast];
-    return [data isEqualToDate:today];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"skyer"]) {
+        return YES;
+    }else{
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        NSDate *dateLast = [dateFormatter dateFromString:@"2017-10-1"];
+        NSDate *today=[NSDate date];
+        NSDate *data=[today earlierDate:dateLast];
+        return [data isEqualToDate:today];
+    }
+    
+    return NO;
 }
 @end
