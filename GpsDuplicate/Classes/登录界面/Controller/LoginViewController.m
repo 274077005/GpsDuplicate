@@ -138,7 +138,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-    UserLogin.sharedUserLogin.UserType=@"3";
+    UserLogin.sharedUserLogin.UserType=@"1";
     switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
         case 1:
         {

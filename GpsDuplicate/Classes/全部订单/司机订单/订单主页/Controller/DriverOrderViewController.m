@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _indexSelect=1;
     // Do any additional setup after loading the view.
     self.title=@"全部运单";
     self.view.backgroundColor=skLineColor;
@@ -127,26 +128,27 @@
 -(void)initUI{
     self.view.backgroundColor=[UIColor whiteColor];
     
-    _skSelect=[[skSelectView alloc] initWithFrame:CGRectMake(0, 64, skScreenWidth, 46) andTitleArr:@[@"已完成",@"未完成"]  andSelectIndex:0  andSelectColor:skBaseColor];
+    _skSelect=[[skSelectView alloc] initWithFrame:CGRectMake(0, 64, skScreenWidth, 46) andTitleArr:@[@"未完成",@"已完成"]  andSelectIndex:0  andSelectColor:skBaseColor];
     
     [self.view addSubview:_skSelect];
     
     
-    _finishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"0"];
+    
     _unFinishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"1"];
+    _finishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"0"];
     
     
-    _aapv=[[SkScollPageView alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_finishView,_unFinishView] andSelecetIndex:0];
+    _aapv=[[SkScollPageView alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_unFinishView,_finishView] andSelecetIndex:0];
     [self.view addSubview:_aapv];
     
     kWeakSelf(self)
     [_aapv setIndexBlock:^(NSInteger index) {
-        weakself.indexSelect=index;
+        weakself.indexSelect=index?0:1;
         [weakself.skSelect skChangSelect:index];
         [weakself GetList:[NSString stringWithFormat:@"%ld",weakself.indexSelect]];
     }];
     [_skSelect setSelectIndexBlock:^(NSInteger index) {
-        weakself.indexSelect=index;
+//        weakself.indexSelect=index?0:1;
         [weakself.aapv skChangPage:index];
     }];
 }

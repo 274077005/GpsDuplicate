@@ -32,8 +32,6 @@
     
     //设置导航栏的颜色
     [[UINavigationBar appearance] setBarTintColor:skBaseColor];
-    //取消导航栏半透明状态
-//    [[UINavigationBar appearance] setTranslucent:NO];
     
     //设置导航栏标题的属性
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName : [UIFont boldSystemFontOfSize:17]}];

@@ -9,6 +9,7 @@
 #import "TableViewForOrder.h"
 #import "OrderDetailsDriverViewController.h"
 #import "OrderListModel.h"
+#import "orderStateColor.h"
 
 #define skCellHigth  170
 
@@ -85,7 +86,7 @@
     //订单状态
     UILabel *labState=[[UILabel alloc] initWithFrame:CGRectMake(view.frame.size.width-70, 10, 60, 25)];
     labState.textColor=[UIColor whiteColor];
-    labState.backgroundColor=[UIColor orangeColor];
+    labState.backgroundColor=[orderStateColor skOrderState:model.OrderStatus];
     labState.font=[UIFont systemFontOfSize:15];
     labState.textAlignment=1;
     labState.text=model.StatusName;

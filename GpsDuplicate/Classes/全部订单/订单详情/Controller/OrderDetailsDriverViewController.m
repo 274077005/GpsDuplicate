@@ -110,8 +110,6 @@
     [self GetDetails];
 }
 
-
-
 //获取详情数据接口
 -(void)GetDetails{
     NSDictionary *parameters=@{@"No":@"GetDetails",

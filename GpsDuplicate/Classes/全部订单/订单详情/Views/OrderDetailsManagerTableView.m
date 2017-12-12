@@ -7,6 +7,7 @@
 //
 
 #import "OrderDetailsManagerTableView.h"
+#import "orderStateColor.h"
 
 @implementation OrderDetailsManagerTableView
 
@@ -99,7 +100,7 @@
             [cell.contentView addSubview:btnState];
             btnState.titleLabel.font=[UIFont systemFontOfSize:15];
             [btnState setTitle:_model.StatusName forState:UIControlStateNormal];
-            [btnState setBackgroundColor:[UIColor orangeColor]];
+            [btnState setBackgroundColor:[orderStateColor skOrderState:_model.OrderStatus]];
             [btnState mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.size.mas_equalTo(CGSizeMake(60, 26));
                 make.top.mas_equalTo(27);

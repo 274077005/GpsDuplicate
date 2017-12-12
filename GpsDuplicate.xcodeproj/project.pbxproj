@@ -22,6 +22,7 @@
 		B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */; };
 		B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */; };
 		B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */; };
+		B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B687A4791FDF7D12002965FC /* orderStateColor.m */; };
 		B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */; };
 		B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */; };
 		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
@@ -85,6 +86,8 @@
 		B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerTableView.m; sourceTree = "<group>"; };
 		B6578A211FD92DCB001FB900 /* OrderSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderSearchViewController.h; sourceTree = "<group>"; };
 		B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderSearchViewController.m; sourceTree = "<group>"; };
+		B687A4781FDF7D12002965FC /* orderStateColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderStateColor.h; sourceTree = "<group>"; };
+		B687A4791FDF7D12002965FC /* orderStateColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderStateColor.m; sourceTree = "<group>"; };
 		B68BC9BC1FDA5E7200762395 /* OrderDetailsManagerBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerBottomView.h; sourceTree = "<group>"; };
 		B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerBottomView.m; sourceTree = "<group>"; };
 		B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 			children = (
 				B6B830261FD534E70092A00F /* OrderDetailsModel.h */,
 				B6B830271FD534E70092A00F /* OrderDetailsModel.m */,
+				B687A4781FDF7D12002965FC /* orderStateColor.h */,
+				B687A4791FDF7D12002965FC /* orderStateColor.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -948,6 +953,7 @@
 				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
 				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
+				B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */,
 				B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */,
 				B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */,
 				B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */,
