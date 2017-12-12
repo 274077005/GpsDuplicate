@@ -84,10 +84,10 @@
     labOrder.textColor=[UIColor blackColor];
     [view addSubview:labOrder];
     //订单状态
-    UILabel *labState=[[UILabel alloc] initWithFrame:CGRectMake(view.frame.size.width-70, 10, 60, 25)];
+    UILabel *labState=[[UILabel alloc] initWithFrame:CGRectMake(view.frame.size.width-60, 12, 50, 20)];
     labState.textColor=[UIColor whiteColor];
     labState.backgroundColor=[orderStateColor skOrderState:model.OrderStatus];
-    labState.font=[UIFont systemFontOfSize:15];
+    labState.font=[UIFont systemFontOfSize:13];
     labState.textAlignment=1;
     labState.text=model.StatusName;
     [view addSubview:labState];
