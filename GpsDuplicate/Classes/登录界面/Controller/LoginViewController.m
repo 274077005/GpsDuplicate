@@ -10,6 +10,7 @@
 #import "DriverOrderViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "ManagerOrderViewController.h"
+#import "PopMenuViewController.h"
 
 //缓存几个数据,账号\密码\和是否记住密码
 #define skPassWord @"skPassWord"
@@ -76,12 +77,13 @@
  */
 -(void)RACAction{
     //用户登录
-    kWeakSelf(self)
+    @weakify(self)
     [[_btnLogin rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        if (weakself.textName.text.length==11) {
-            
-            [weakself userLogin];
-            
+        @strongify(self)
+        if (self.textName.text.length==11) {
+
+            [self userLogin];
+
         }else{
             [SkToast SkToastShow:@"仅支持11位手机号"];
         }
@@ -91,16 +93,17 @@
     
     //记住密码
     [[_btnRemamberTop rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        weakself.isRemamber=_isRemamber?NO:YES;
-        [[NSUserDefaults standardUserDefaults] setBool:weakself.isRemamber forKey:skRemamber];
+        @strongify(self)
+        self.isRemamber=_isRemamber?NO:YES;
+        [[NSUserDefaults standardUserDefaults] setBool:self.isRemamber forKey:skRemamber];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [weakself changRemamberButtonState];
+        [self changRemamberButtonState];
     }];
     //忘记密码
     [[_btnForget rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         
         UINavigationController *view=[self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPWNag"];
-        [weakself presentViewController:view animated:YES completion:nil];
+        [self presentViewController:view animated:YES completion:nil];
         
     }];
 }
@@ -138,7 +141,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-    UserLogin.sharedUserLogin.UserType=@"1";
+    UserLogin.sharedUserLogin.UserType=@"1";                                                                                                                                                                                                          
     switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
         case 1:
         {

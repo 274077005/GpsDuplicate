@@ -140,8 +140,10 @@ SkyerSingletonM(SKNetworking)
                     NSString *ShowTips=[responseObject objectForKey:@"ShowTips"];
                     [SkyerHUD skyerShowToast:ShowTips];
                 }else{
+                    success(responseObject);
+                    
                     if ([self skGetData]) {
-                        success(responseObject);
+                        [self skShowHUD];
                     }
                 }
             }
@@ -461,4 +463,17 @@ SkyerSingletonM(SKNetworking)
     
     return NO;
 }
+-(void)skShowHUD{
+    UIViewController *view=[[UIViewController alloc] init];
+    UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+    //设置模式展示风格
+    [view setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    //必要配置
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [vc presentViewController:view animated:YES completion:nil];
+}
+
+
 @end

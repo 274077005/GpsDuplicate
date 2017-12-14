@@ -63,43 +63,40 @@
         
         if (![self.textPhoneNum.text isEqualToString:@""]) {
             [self GetCode];
-            self.btnGetCode.hidden=YES;
-            
-            self.time=60;
-            //定时每秒进来一次
-            self.signal=[RACSignal interval:1.0 onScheduler:[RACScheduler mainThreadScheduler]];
-            
-            self.disposable=[self.signal subscribeNext:^(id  _Nullable x) {//信号每秒触发一次
-                self.time--;
-                
-                
-                self.labGetCode.text=[NSString stringWithFormat:@"请等待%d秒",self.time];
-                
-                if (self.time==0) {
-                    self.btnGetCode.hidden=NO;
-                    [self.disposable dispose];
-                    self.labGetCode.text=@"获取验证码";
-                }
-                
-            }];
         }else{
             [SkyerHUD skyerShowToast:@"请输入手机号码"];
         }
     }];
     
 }
+//显示⏳
+- (void)timeShow {
+    self.btnGetCode.hidden=YES;
+    self.time=60;
+    //定时每秒进来一次
+    self.signal=[RACSignal interval:1.0 onScheduler:[RACScheduler mainThreadScheduler]];
+    
+    self.disposable=[self.signal subscribeNext:^(id  _Nullable x) {//信号每秒触发一次
+        self.time--;
+        self.labGetCode.text=[NSString stringWithFormat:@"请等待%d秒",self.time];
+        
+        if (self.time==0) {
+            self.btnGetCode.hidden=NO;
+            [self.disposable dispose];
+            self.labGetCode.text=@"获取验证码";
+        }
+        
+    }];
+}
 
 /**
  获取验证码
  */
 -(void)GetCode{
-    NSDictionary *parameters=@{
-                               @"Tel":_textPhoneNum.text
-                               };
-    
+    NSDictionary *parameters=@{@"Tel":_textPhoneNum.text};
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"GetCode") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        NSLog(@"%@",skContent(responseObject));
+        [self timeShow];
     } failure:^(NSError * _Nullable error) {
         
     }];

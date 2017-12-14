@@ -13,6 +13,7 @@
 #import "SkScollPageView.h"
 #import "OrderListModel.h"
 #import "BindingViewController.h"
+#import "PopMenuViewController.h"
 
 
 @interface DriverOrderViewController ()
@@ -52,6 +53,7 @@
         [skClassMethod skAlerView:@"确定解绑车辆吗?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
             [self UnBindVehicle];
         }];
+        
     }];
     
     //0绑定、1未绑定

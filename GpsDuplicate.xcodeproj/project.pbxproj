@@ -18,6 +18,7 @@
 		B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA0C1FD699DB00A6153F /* skClassMethod.m */; };
 		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
 		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
+		B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6520E151FE2110E00CD252D /* PopMenuViewController.m */; };
 		B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */; };
 		B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */; };
 		B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */; };
@@ -78,6 +79,8 @@
 		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
 		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
 		B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverTableView.m; sourceTree = "<group>"; };
+		B6520E141FE2110E00CD252D /* PopMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopMenuViewController.h; sourceTree = "<group>"; };
+		B6520E151FE2110E00CD252D /* PopMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopMenuViewController.m; sourceTree = "<group>"; };
 		B6578A141FD8DE4A001FB900 /* OrderDetailsDriverBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverBottomView.h; sourceTree = "<group>"; };
 		B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverBottomView.m; sourceTree = "<group>"; };
 		B6578A171FD8EA91001FB900 /* OrderDetailsManagerActionTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerActionTableView.h; sourceTree = "<group>"; };
@@ -410,6 +413,15 @@
 			path = "个人设置";
 			sourceTree = "<group>";
 		};
+		B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				B6520E141FE2110E00CD252D /* PopMenuViewController.h */,
+				B6520E151FE2110E00CD252D /* PopMenuViewController.m */,
+			);
+			path = "弹出菜单";
+			sourceTree = "<group>";
+		};
 		B69CB8B21FD79B120045A4F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +622,7 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
+				B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */,
 				B6B8301F1FD4DD340092A00F /* 分页显示 */,
 				B6E985851FCD5A52003A370A /* JPUSHSet */,
 				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
@@ -946,6 +959,7 @@
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
 				B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */,
 				B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */,
+				B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */,
 				B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */,
 				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
 				B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */,

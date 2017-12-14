@@ -155,10 +155,10 @@
                 //用户名
                 UILabel *labUser=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 35, 200, 20)];
                 
-                NSString *UserName=UserLogin.sharedUserLogin.UserName;
+                NSString *RealName=UserLogin.sharedUserLogin.RealName;
                 NSString *VehicleNo=UserLogin.sharedUserLogin.VehicleNo;
                 
-                labUser.text=[NSString stringWithFormat:@"%@(%@)",UserName,VehicleNo];
+                labUser.text=[NSString stringWithFormat:@"%@(%@)",RealName,VehicleNo];
                 labUser.textColor=[UIColor whiteColor];
                 [cell.contentView addSubview:labUser];
                 

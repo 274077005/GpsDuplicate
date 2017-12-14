@@ -8,6 +8,7 @@
 
 #import "OrderDetailsManagerActionTableView.h"
 #import "orderStateColor.h"
+#import "PopMenuViewController.h"
 
 @implementation OrderDetailsManagerActionTableView
 
@@ -72,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    static NSString *cellIdentifier = @"OrderDetailsDriverTableView";
+    static NSString *cellIdentifier = @"OrderDetailsManagerActionTableView";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -172,6 +173,14 @@
                 make.bottom.mas_equalTo(labTrashType.mas_bottom);
                 make.left.mas_equalTo(labTrashType.mas_right);
             }];
+            
+            [[btnSelectTrashType rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                PopMenuViewController *view=[[PopMenuViewController alloc] init];
+                UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+                view.viewFrame=btnSelectTrashType.frame;
+                [vc presentViewController:view animated:YES completion:nil];
+            }];
+            
             
             
             

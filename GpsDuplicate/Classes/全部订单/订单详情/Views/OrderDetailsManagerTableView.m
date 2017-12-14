@@ -72,7 +72,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    static NSString *cellIdentifier = @"OrderDetailsDriverTableView";
+    static NSString *cellIdentifier = @"OrderDetailsManagerTableView";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];

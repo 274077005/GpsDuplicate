@@ -108,6 +108,7 @@
     // Do any additional setup after loading the view.
     [self initUI];
     [self GetDetails];
+    
 }
 
 //获取详情数据接口
