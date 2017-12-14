@@ -19,6 +19,7 @@ spec.source_files     = "GpsDuplicate/SkyerTool/skyer/**/*"                   #�
 
 spec.frameworks   = 'UIKit','AVFoundation','SkyerTools','AFNetworking'
 spec.libraries  = 'AFNetworking'
+spec.dependency  = 'AFNetworking'
 
 spec.pod_target_xcconfig = { "ONLY_ACTIVE_ARCH" => "No" }               #这个必须有，不要修改
 
