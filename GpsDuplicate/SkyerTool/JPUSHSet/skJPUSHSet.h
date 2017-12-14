@@ -14,6 +14,11 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
+#define kjpushKey @"49387c68bd79abf22f7b630b"
+#define kjpushChannel @"569965"
+#define kjpushIsProduction YES
+
+
 @interface skJPUSHSet : NSObject <JPUSHRegisterDelegate>
 SkyerSingletonH(skJPUSHSet)
 /**
