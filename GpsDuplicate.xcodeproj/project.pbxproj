@@ -29,6 +29,11 @@
 		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
 		B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830241FD4E1C50092A00F /* skSelectView.m */; };
 		B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830271FD534E70092A00F /* OrderDetailsModel.m */; };
+		B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */; };
+		B6BB4F901FE27118008B5F1B /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F871FE27118008B5F1B /* SkToast.m */; };
+		B6BB4F911FE27118008B5F1B /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F891FE27118008B5F1B /* SkyerHUD.m */; };
+		B6BB4F921FE27118008B5F1B /* SKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */; };
+		B6BB4F931FE27118008B5F1B /* SKPicModle.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */; };
 		B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB5D1FD24AD100061441 /* LoginViewController.m */; };
 		B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB671FD24BEF00061441 /* ForgetPWViewController.m */; };
@@ -40,12 +45,7 @@
 		B6D7EF3A1FC7C0ED00E669E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */; };
 		B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF3C1FC7C0ED00E669E3 /* main.m */; };
 		B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF451FC7C14300E669E3 /* AppDelegate.m */; };
-		B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */; };
-		B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */; };
-		B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */; };
-		B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF751FC7FFBF00E669E3 /* SkToast.m */; };
 		B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */; };
-		B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */; };
 		B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */; };
 		B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */; };
 		B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985651FCD38B5003A370A /* TableViewForOrder.m */; };
@@ -101,6 +101,16 @@
 		B6B830241FD4E1C50092A00F /* skSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSelectView.m; sourceTree = "<group>"; };
 		B6B830261FD534E70092A00F /* OrderDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsModel.h; sourceTree = "<group>"; };
 		B6B830271FD534E70092A00F /* OrderDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsModel.m; sourceTree = "<group>"; };
+		B6BB4F831FE27118008B5F1B /* SkyerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerBaseViewController.h; sourceTree = "<group>"; };
+		B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerBaseViewController.m; sourceTree = "<group>"; };
+		B6BB4F861FE27118008B5F1B /* SkToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkToast.h; sourceTree = "<group>"; };
+		B6BB4F871FE27118008B5F1B /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
+		B6BB4F881FE27118008B5F1B /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
+		B6BB4F891FE27118008B5F1B /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
+		B6BB4F8B1FE27118008B5F1B /* SKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworking.h; sourceTree = "<group>"; };
+		B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworking.m; sourceTree = "<group>"; };
+		B6BB4F8D1FE27118008B5F1B /* SKPicModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPicModle.h; sourceTree = "<group>"; };
+		B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPicModle.m; sourceTree = "<group>"; };
 		B6C0FB551FD23FBF00061441 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
 		B6C0FB561FD23FBF00061441 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		B6C0FB5C1FD24AD100061441 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -121,19 +131,9 @@
 		B6D7EF3C1FC7C0ED00E669E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6D7EF441FC7C14300E669E3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6D7EF451FC7C14300E669E3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B6D7EF581FC7EDD700E669E3 /* SKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworking.h; sourceTree = "<group>"; };
-		B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworking.m; sourceTree = "<group>"; };
-		B6D7EF5A1FC7EDD700E669E3 /* SKPicModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPicModle.h; sourceTree = "<group>"; };
-		B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPicModle.m; sourceTree = "<group>"; };
 		B6D7EF671FC7FAA300E669E3 /* GpsDuplicate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GpsDuplicate-Prefix.pch"; sourceTree = "<group>"; };
-		B6D7EF6B1FC7FF5F00E669E3 /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
-		B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
-		B6D7EF751FC7FFBF00E669E3 /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
-		B6D7EF761FC7FFBF00E669E3 /* SkToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkToast.h; sourceTree = "<group>"; };
 		B6D7EF881FC803FA00E669E3 /* SKKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKKeyboard.h; sourceTree = "<group>"; };
 		B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
-		B6D7EF8C1FC8067600E669E3 /* SkyerBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyerBaseViewController.h; sourceTree = "<group>"; };
-		B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyerBaseViewController.m; sourceTree = "<group>"; };
 		B6D7EF901FC81A6100E669E3 /* UIView+skBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+skBoard.h"; sourceTree = "<group>"; };
 		B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+skBoard.m"; sourceTree = "<group>"; };
 		B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+skStrWidth.h"; sourceTree = "<group>"; };
@@ -456,6 +456,47 @@
 			path = "分页显示";
 			sourceTree = "<group>";
 		};
+		B6BB4F811FE27118008B5F1B /* skyer */ = {
+			isa = PBXGroup;
+			children = (
+				B6BB4F821FE27118008B5F1B /* BaseViewController */,
+				B6BB4F851FE27118008B5F1B /* SKHUD */,
+				B6BB4F8A1FE27118008B5F1B /* SKNetworking */,
+			);
+			path = skyer;
+			sourceTree = "<group>";
+		};
+		B6BB4F821FE27118008B5F1B /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6BB4F831FE27118008B5F1B /* SkyerBaseViewController.h */,
+				B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		B6BB4F851FE27118008B5F1B /* SKHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B6BB4F861FE27118008B5F1B /* SkToast.h */,
+				B6BB4F871FE27118008B5F1B /* SkToast.m */,
+				B6BB4F881FE27118008B5F1B /* SkyerHUD.h */,
+				B6BB4F891FE27118008B5F1B /* SkyerHUD.m */,
+			);
+			path = SKHUD;
+			sourceTree = "<group>";
+		};
+		B6BB4F8A1FE27118008B5F1B /* SKNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B6BB4F8B1FE27118008B5F1B /* SKNetworking.h */,
+				B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */,
+				B6BB4F8D1FE27118008B5F1B /* SKPicModle.h */,
+				B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */,
+			);
+			path = SKNetworking;
+			sourceTree = "<group>";
+		};
 		B6C0FB581FD2449800061441 /* 关于我们 */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,28 +663,15 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
+				B6BB4F811FE27118008B5F1B /* skyer */,
 				B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */,
 				B6B8301F1FD4DD340092A00F /* 分页显示 */,
 				B6E985851FCD5A52003A370A /* JPUSHSet */,
 				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
 				B6D7EF8F1FC81A2B00E669E3 /* Category */,
-				B6D7EF8B1FC8065900E669E3 /* BaseViewController */,
 				B6D7EF841FC8038C00E669E3 /* SKKeyboard */,
-				B6D7EF6A1FC7FF5F00E669E3 /* SKHUD */,
-				B6D7EF571FC7EDD700E669E3 /* SKNetworking */,
 			);
 			path = SkyerTool;
-			sourceTree = "<group>";
-		};
-		B6D7EF571FC7EDD700E669E3 /* SKNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				B6D7EF581FC7EDD700E669E3 /* SKNetworking.h */,
-				B6D7EF591FC7EDD700E669E3 /* SKNetworking.m */,
-				B6D7EF5A1FC7EDD700E669E3 /* SKPicModle.h */,
-				B6D7EF5B1FC7EDD700E669E3 /* SKPicModle.m */,
-			);
-			path = SKNetworking;
 			sourceTree = "<group>";
 		};
 		B6D7EF5E1FC7F7DA00E669E3 /* 登录界面 */ = {
@@ -666,17 +694,6 @@
 			path = "绑定界面";
 			sourceTree = "<group>";
 		};
-		B6D7EF6A1FC7FF5F00E669E3 /* SKHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B6D7EF761FC7FFBF00E669E3 /* SkToast.h */,
-				B6D7EF751FC7FFBF00E669E3 /* SkToast.m */,
-				B6D7EF6B1FC7FF5F00E669E3 /* SkyerHUD.h */,
-				B6D7EF6C1FC7FF5F00E669E3 /* SkyerHUD.m */,
-			);
-			path = SKHUD;
-			sourceTree = "<group>";
-		};
 		B6D7EF841FC8038C00E669E3 /* SKKeyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,15 +701,6 @@
 				B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */,
 			);
 			path = SKKeyboard;
-			sourceTree = "<group>";
-		};
-		B6D7EF8B1FC8065900E669E3 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B6D7EF8C1FC8067600E669E3 /* SkyerBaseViewController.h */,
-				B6D7EF8D1FC8067600E669E3 /* SkyerBaseViewController.m */,
-			);
-			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		B6D7EF8F1FC81A2B00E669E3 /* Category */ = {
@@ -940,28 +948,26 @@
 			files = (
 				B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */,
 				B640D9FD1FD68A7F00A6153F /* ResetPasswordViewController.m in Sources */,
-				B6D7EF8E1FC8067600E669E3 /* SkyerBaseViewController.m in Sources */,
 				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
 				B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */,
 				B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
-				B6D7EF6D1FC7FF5F00E669E3 /* SkyerHUD.m in Sources */,
 				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
 				B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */,
-				B6D7EF5D1FC7EDD700E669E3 /* SKPicModle.m in Sources */,
 				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
+				B6BB4F931FE27118008B5F1B /* SKPicModle.m in Sources */,
 				B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
+				B6BB4F901FE27118008B5F1B /* SkToast.m in Sources */,
 				B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */,
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
+				B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */,
 				B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */,
 				B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */,
 				B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */,
-				B6D7EF771FC7FFBF00E669E3 /* SkToast.m in Sources */,
-				B6D7EF5C1FC7EDD700E669E3 /* SKNetworking.m in Sources */,
 				B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */,
 				B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */,
 				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
@@ -974,9 +980,11 @@
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,
 				B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */,
 				B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */,
+				B6BB4F921FE27118008B5F1B /* SKNetworking.m in Sources */,
 				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
 				B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */,
+				B6BB4F911FE27118008B5F1B /* SkyerHUD.m in Sources */,
 				B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
