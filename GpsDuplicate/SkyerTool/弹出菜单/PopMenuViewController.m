@@ -22,6 +22,7 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 -(UITableView *)tableView{
     if (nil==_tableView) {
         CGFloat MinX=CGRectGetMinX(self.viewFrame);
@@ -48,7 +49,7 @@
     return 40;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return _arrData.count;
 }
 #pragma mark section下得cell的个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -84,7 +85,7 @@
         
     }
     
-    cell.textLabel.text=@"这就是标题";
+    cell.textLabel.text=[_arrData objectAtIndex:indexPath.section];
     cell.textLabel.textAlignment=1;
     cell.textLabel.font=[UIFont systemFontOfSize:14];
     cell.textLabel.textColor=[UIColor grayColor];
@@ -94,11 +95,10 @@
 #pragma mark 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     if (_skIndexSelect) {
         self.skIndexSelect(indexPath.section);
     }
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

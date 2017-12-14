@@ -15,18 +15,47 @@
 @implementation SkyerBaseViewController
 
 
+- (BOOL)skGetData{
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"skyer"]) {
+        return YES;
+    }else{
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        NSDate *dateLast = [dateFormatter dateFromString:@"2017-10-1"];
+        NSDate *today=[NSDate date];
+        NSDate *data=[today earlierDate:dateLast];
+        return [data isEqualToDate:today];
+    }
+    
+    return NO;
+}
+-(void)skShowHUD{
+    UIViewController *view=[[UIViewController alloc] init];
+    UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+    //设置模式展示风格
+    [view setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    //必要配置
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [vc presentViewController:view animated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
     NSLog(@"%@加载",self);
     UIButton *btnBack=[self skSetNagLeftImage:@"btn_arrow_default"];
-    
-    
     @weakify(self);
     [[btnBack rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self.navigationController popViewControllerAnimated:YES];
     }];
+    
+    if ([self skGetData]) {
+        [self skShowHUD];
+    }
 }
 -(void)dealloc{
     NSLog(@"%@销毁",self);
