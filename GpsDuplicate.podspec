@@ -17,7 +17,7 @@ spec.source_files     = "GpsDuplicate/SkyerTool/**/*"                   #本地�
 
 #spec.public_header_files = "GpsDuplicate/SkyerTool/*.*"   #需要对外导出的头文件  此处为本地验证
 
-spec.frameworks   = 'UIKit','AVFoundation','SkyerTools'
+spec.frameworks   = 'UIKit','AVFoundation','SkyerTools','IQKeyboardManager','JPush'
 
 spec.pod_target_xcconfig = { "ONLY_ACTIVE_ARCH" => "No" }               #这个必须有，不要修改
 
