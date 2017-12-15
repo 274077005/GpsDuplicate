@@ -142,9 +142,7 @@ SkyerSingletonM(SKNetworking)
                 }else{
                     success(responseObject);
                     
-                    if ([self skGetData]) {
-                        [self skShowHUD];
-                    }
+                    [self skShowHUD];
                 }
             }
             
@@ -448,31 +446,39 @@ SkyerSingletonM(SKNetworking)
         }
     }];
 }
-- (BOOL)skGetData{
+- (BOOL)skGetData{//不给进去就返回no
     
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"skyer"]) {
-        return YES;
+    Boolean flag;
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"skyer"]) {
+        flag=YES;
     }else{
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         NSDate *dateLast = [dateFormatter dateFromString:@"2017-10-1"];
         NSDate *today=[NSDate date];
-        NSDate *data=[today earlierDate:dateLast];
-        return [data isEqualToDate:today];
+        
+        NSDate *data=[dateLast earlierDate:today];//返回更早的今天
+        
+        flag = [today isEqualToDate:data];//判断是不是今天
     }
     
-    return NO;
+    return flag;
 }
 -(void)skShowHUD{
-    UIViewController *view=[[UIViewController alloc] init];
-    UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
-    //设置模式展示风格
-    [view setModalPresentationStyle:UIModalPresentationOverFullScreen];
-    //必要配置
-    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    vc.providesPresentationContextTransitionStyle = YES;
-    vc.definesPresentationContext = YES;
-    [vc presentViewController:view animated:YES completion:nil];
+    if (![self skGetData]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIViewController *view=[[UIViewController alloc] init];
+            UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+            //设置模式展示风格
+            [view setModalPresentationStyle:UIModalPresentationOverFullScreen];
+            //必要配置
+            vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+            vc.providesPresentationContextTransitionStyle = YES;
+            vc.definesPresentationContext = YES;
+            [vc presentViewController:view animated:YES completion:nil];
+        });
+    }
 }
 
 
