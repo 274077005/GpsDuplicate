@@ -15,6 +15,11 @@
 SkyerSingletonM(skJPUSHSet)
 #pragma mark 极光推送的初始化设置
 - (void)skJpushSet:(NSDictionary * _Nullable)launchOptions {
+    //接收自定义消息的时候需要写
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
+    
+    
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
@@ -28,14 +33,19 @@ SkyerSingletonM(skJPUSHSet)
 }
 
 #pragma mark- JPUSHRegisterDelegate
-
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    
+    NSLog(@"消息%@",userInfo);
+    
+}
 // iOS 10 Support
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
     
     NSLog(@"willPresentNotification");
     // Required
     NSDictionary * userInfo = notification.request.content.userInfo;
-    [self skReceiveJPUSH:userInfo];
+    [self skReceiveJPUSHNotification:userInfo];
     if (@available(iOS 10.0, *)) {
         if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
@@ -53,7 +63,7 @@ SkyerSingletonM(skJPUSHSet)
     NSLog(@"didReceiveNotificationResponse");
     // Required
     NSDictionary * userInfo = response.notification.request.content.userInfo;
-    [self skReceiveJPUSH:userInfo];
+    [self skReceiveJPUSHNotification:userInfo];
     if (@available(iOS 10.0, *)) {
         if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
@@ -66,8 +76,16 @@ SkyerSingletonM(skJPUSHSet)
 
 
 #pragma mark - 对收到的消息进行处理
--(void)skReceiveJPUSH:(NSDictionary *_Nullable)info{
-    NSLog(@"收到了啥?=%@",info);
+-(void)skReceiveJPUSHNotification:(NSDictionary *_Nullable)info{
+    NSLog(@"接收到通知=%@",info);
+    [self skReceiveJush:info];
+}
+-(void)skReceiveJPUSHMessage:(NSDictionary *_Nullable)info{
+    NSLog(@"接收到消息=%@",info);
+    [self skReceiveJush:info];
+}
+-(void)skReceiveJush:(NSDictionary *_Nullable)info{
+    NSLog(@"接收到消息都在这里=%@",info);
 }
 
 @end

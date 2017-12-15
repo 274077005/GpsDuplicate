@@ -29,9 +29,23 @@ SkyerSingletonH(skJPUSHSet)
 - (void)skJpushSet:(NSDictionary * _Nullable)launchOptions;
 
 /**
- 接收到极光推送的消息
+ 接收到极光推送的通知
 
  @param info 详情信息
  */
--(void)skReceiveJPUSH:(NSDictionary *_Nullable)info;
+-(void)skReceiveJPUSHNotification:(NSDictionary *_Nullable)info;
+
+/**
+ 接收自定义消息的
+
+ @param info 这个是消息内容
+ */
+-(void)skReceiveJPUSHMessage:(NSDictionary *_Nullable)info;
+
+/**
+ 接收到消息和通知都在这里接收
+
+ @param info 信息详情
+ */
+-(void)skReceiveJush:(NSDictionary *_Nullable)info;
 @end

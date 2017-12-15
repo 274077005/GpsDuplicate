@@ -13,6 +13,7 @@
 #import "SkScollPageView.h"
 #import "OrderListModel.h"
 #import "BindingViewController.h"
+#import "skJPUSHSet.h"
 
 @interface ManagerOrderViewController ()
 
@@ -53,11 +54,12 @@
     
     
     [self initUI];
+    [self jpushRefreshList];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
     
-    [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+    [self GetList];
     
 }
 
@@ -85,7 +87,7 @@
     [_aapv setIndexBlock:^(NSInteger index) {
         weakself.indexSelect=index;
         [weakself.skSelect skChangSelect:index];
-        [weakself GetList:[NSString stringWithFormat:@"%ld",weakself.indexSelect]];
+        [weakself GetList];
     }];
     [_skSelect setSelectIndexBlock:^(NSInteger index) {
         weakself.indexSelect=index;
@@ -94,12 +96,23 @@
 }
 
 #pragma mark - 获取列表数据
+-(void)jpushRefreshList{
+    skJPUSHSet *jpset=[skJPUSHSet sharedskJPUSHSet];
+    @weakify(self);
+    [[jpset rac_signalForSelector:@selector(skJpushSet:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self GetList];
+    }];
+}
 
-
--(void)GetList:(NSString *)OrderType{
-    
+-(void)GetList{
+    /*
+     OrderType==>这个参数在切换的时候会自己变
+     运单类型：司机登录：0已完成 1未完成
+     监管人员登录：0待确认 1待签认 2已签认
+     */
     NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
-                               @"OrderType":OrderType,
+                               @"OrderType":[NSString stringWithFormat:@"%ld",_indexSelect],
                                @"UserType":UserLogin.sharedUserLogin.UserType,
                                @"No":@"GetList"
                                };

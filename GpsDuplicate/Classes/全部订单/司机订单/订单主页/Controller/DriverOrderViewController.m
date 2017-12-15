@@ -14,6 +14,7 @@
 #import "OrderListModel.h"
 #import "BindingViewController.h"
 #import "PopMenuViewController.h"
+#import "skJPUSHSet.h"
 
 
 @interface DriverOrderViewController ()
@@ -62,9 +63,9 @@
     }else{
         [self initUI];
         [self changVehicleNo];
-        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+        [self GetList];
     }
-    
+    [self jpushRefreshList];
 }
 -(UIButton *)btnLeft{
     if (_btnLeft==nil) {
@@ -95,7 +96,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     if (![UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
-        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+        [self GetList];
     }
     
 }
@@ -111,7 +112,7 @@
     [bind setBindBlock:^{
         [self changVehicleNo];
         [self initUI];
-        [self GetList:[NSString stringWithFormat:@"%ld",_indexSelect]];
+        [self GetList];
     }];
     
     //设置模式展示风格
@@ -147,18 +148,24 @@
     [_aapv setIndexBlock:^(NSInteger index) {
         weakself.indexSelect=index?0:1;
         [weakself.skSelect skChangSelect:index];
-        [weakself GetList:[NSString stringWithFormat:@"%ld",weakself.indexSelect]];
+        [weakself GetList];
     }];
     [_skSelect setSelectIndexBlock:^(NSInteger index) {
-//        weakself.indexSelect=index?0:1;
         [weakself.aapv skChangPage:index];
     }];
 }
 
 #pragma mark - 获取列表数据
+-(void)jpushRefreshList{
+    skJPUSHSet *jpset=[skJPUSHSet sharedskJPUSHSet];
+    @weakify(self);
+    [[jpset rac_signalForSelector:@selector(skJpushSet:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self GetList];
+    }];
+}
 
-
--(void)GetList:(NSString *)OrderType{
+-(void)GetList{
     
     /*
      OrderType==>这个参数在切换的时候会自己变
@@ -166,7 +173,7 @@
      监管人员登录：0待确认 1待签认 2已签认
      */
     NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
-                               @"OrderType":OrderType,
+                               @"OrderType":[NSString stringWithFormat:@"%ld",_indexSelect],
                                @"UserType":UserLogin.sharedUserLogin.UserType,
                                @"No":@"GetList"
                                };
