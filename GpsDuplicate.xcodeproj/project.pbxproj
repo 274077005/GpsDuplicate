@@ -456,14 +456,6 @@
 			path = "分页显示";
 			sourceTree = "<group>";
 		};
-		B6BB4F811FE27118008B5F1B /* skyer */ = {
-			isa = PBXGroup;
-			children = (
-				B6BB4F851FE27118008B5F1B /* SKHUD */,
-			);
-			path = skyer;
-			sourceTree = "<group>";
-		};
 		B6BB4F821FE27118008B5F1B /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,9 +653,9 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
+				B6BB4F851FE27118008B5F1B /* SKHUD */,
 				B6BB4F8A1FE27118008B5F1B /* SKNetworking */,
 				B6BB4F821FE27118008B5F1B /* BaseViewController */,
-				B6BB4F811FE27118008B5F1B /* skyer */,
 				B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */,
 				B6B8301F1FD4DD340092A00F /* 分页显示 */,
 				B6E985851FCD5A52003A370A /* JPUSHSet */,
