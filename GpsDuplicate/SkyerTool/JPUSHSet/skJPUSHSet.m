@@ -7,7 +7,7 @@
 //
 
 #import "skJPUSHSet.h"
-
+#import <AdSupport/AdSupport.h>
 
 
 
@@ -18,7 +18,7 @@ SkyerSingletonM(skJPUSHSet)
     //接收自定义消息的时候需要写
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
-    
+    NSString *advertisingId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     
@@ -29,7 +29,7 @@ SkyerSingletonM(skJPUSHSet)
                            appKey:kjpushKey
                           channel:kjpushChannel
                  apsForProduction:kjpushIsProduction
-            advertisingIdentifier:NULL];
+            advertisingIdentifier:advertisingId];
     
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
