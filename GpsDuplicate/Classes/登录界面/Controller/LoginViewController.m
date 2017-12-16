@@ -113,11 +113,13 @@
 - (void)userLogin{
     
     NSString *password=_textPassword.text;
+    NSString *DeviceID=[skJPUSHSet sharedskJPUSHSet].skRegistrationID;
+    
     
     NSDictionary *params=@{@"UserName":_textName.text
                            ,@"PassWord":[password MD5]
                            ,@"RememberPwd":_isRemamber?@"0":@"1"
-                           ,@"DeviceID":_textName.text
+                           ,@"DeviceID":DeviceID?DeviceID:@"用户没有授权推送"
                            ,@"NO":@"UserLogin"
                            };
     

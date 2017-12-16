@@ -30,6 +30,15 @@ SkyerSingletonM(skJPUSHSet)
                           channel:kjpushChannel
                  apsForProduction:kjpushIsProduction
             advertisingIdentifier:NULL];
+    
+    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+        if(resCode == 0){
+            NSLog(@"registrationID获取成功：%@",registrationID);
+        }else{
+            NSLog(@"registrationID获取失败，code：%d",resCode);
+        }
+        self.skRegistrationID=registrationID;
+    }];
 }
 
 #pragma mark- JPUSHRegisterDelegate
@@ -76,7 +85,7 @@ SkyerSingletonM(skJPUSHSet)
 }
 
 #pragma mark - 设置别名
--(void)skSetAlias:(NSString *)name{
+-(void)skSetAlias:(NSString *_Nullable)name{
     [JPUSHService setAlias:name completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
         if (iResCode==0) {
             NSLog(@"设置别名成功");
@@ -85,8 +94,6 @@ SkyerSingletonM(skJPUSHSet)
         }
     } seq:0];
 }
-
-
 #pragma mark - 对收到的消息进行处理
 -(void)skReceiveJPUSHNotification:(NSDictionary *_Nullable)info{
     NSLog(@"接收到通知=%@",info);

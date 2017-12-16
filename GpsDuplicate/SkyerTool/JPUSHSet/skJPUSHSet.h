@@ -20,6 +20,9 @@
 
 
 @interface skJPUSHSet : NSObject <JPUSHRegisterDelegate>
+
+@property (nonatomic,strong) NSString *skRegistrationID;
+
 SkyerSingletonH(skJPUSHSet)
 /**
  极光推送的配置(AppDelegate的didFinishLaunchingWithOptions中调用)
@@ -54,6 +57,9 @@ SkyerSingletonH(skJPUSHSet)
 
  @param name 名字
  */
--(void)skSetAlias:(NSString *)name;
+-(void)skSetAlias:(NSString *_Nullable)name;
+
+
+
 @end
 
