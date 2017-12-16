@@ -45,10 +45,10 @@ SkyerSingletonM(skJPUSHSet)
     NSLog(@"willPresentNotification");
     // Required
     NSDictionary * userInfo = notification.request.content.userInfo;
-    [self skReceiveJPUSHNotification:userInfo];
     if (@available(iOS 10.0, *)) {
         if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
+            [self skReceiveJPUSHNotification:userInfo];
         }
         completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户
     } else {
@@ -63,15 +63,27 @@ SkyerSingletonM(skJPUSHSet)
     NSLog(@"didReceiveNotificationResponse");
     // Required
     NSDictionary * userInfo = response.notification.request.content.userInfo;
-    [self skReceiveJPUSHNotification:userInfo];
+    
     if (@available(iOS 10.0, *)) {
         if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
+            [self skReceiveJPUSHNotification:userInfo];
         }
         completionHandler();  // 系统要求执行这个方法
     } else {
         // Fallback on earlier versions
     }
+}
+
+#pragma mark - 设置别名
+-(void)skSetAlias:(NSString *)name{
+    [JPUSHService setAlias:name completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+        if (iResCode==0) {
+            NSLog(@"设置别名成功");
+        }else{
+            NSLog(@"设置别名失败");
+        }
+    } seq:0];
 }
 
 

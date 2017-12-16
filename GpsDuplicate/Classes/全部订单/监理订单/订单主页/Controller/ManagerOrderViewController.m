@@ -99,7 +99,7 @@
 -(void)jpushRefreshList{
     skJPUSHSet *jpset=[skJPUSHSet sharedskJPUSHSet];
     @weakify(self);
-    [[jpset rac_signalForSelector:@selector(skJpushSet:)] subscribeNext:^(RACTuple * _Nullable x) {
+    [[jpset rac_signalForSelector:@selector(skReceiveJush:)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
         [self GetList];
     }];

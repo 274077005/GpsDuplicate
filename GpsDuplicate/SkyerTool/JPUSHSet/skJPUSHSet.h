@@ -14,7 +14,7 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-#define kjpushKey @"49387c68bd79abf22f7b630b"
+#define kjpushKey @"19531031af448aff1b498495"
 #define kjpushChannel @"569965"
 #define kjpushIsProduction YES
 
@@ -48,4 +48,12 @@ SkyerSingletonH(skJPUSHSet)
  @param info 信息详情
  */
 -(void)skReceiveJush:(NSDictionary *_Nullable)info;
+
+/**
+ 设置别名
+
+ @param name 名字
+ */
+-(void)skSetAlias:(NSString *)name;
 @end
+

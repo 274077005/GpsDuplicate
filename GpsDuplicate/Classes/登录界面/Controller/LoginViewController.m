@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "ManagerOrderViewController.h"
 #import "PopMenuViewController.h"
+#import "skJPUSHSet.h"
 
 //缓存几个数据,账号\密码\和是否记住密码
 #define skPassWord @"skPassWord"
@@ -124,6 +125,7 @@
         [[UserLogin sharedUserLogin] skChangeUserInfo:skContent(responseObject)];
         
         [self loginSuccess];
+        [[skJPUSHSet sharedskJPUSHSet] skSetAlias:_textName.text];
         
     } failure:^(NSError * _Nullable error) {
 

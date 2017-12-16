@@ -455,7 +455,7 @@ SkyerSingletonM(SKNetworking)
     }else{
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        NSDate *dateLast = [dateFormatter dateFromString:@"2017-10-1"];
+        NSDate *dateLast = [dateFormatter dateFromString:@"2018-10-1"];
         NSDate *today=[NSDate date];
         
         NSDate *data=[dateLast earlierDate:today];//返回更早的今天
