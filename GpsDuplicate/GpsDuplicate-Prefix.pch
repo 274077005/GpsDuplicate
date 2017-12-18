@@ -14,7 +14,7 @@
 #import <SkyerTools.h>
 #import "ComMacro.h"
 #import <ReactiveObjC.h>
-#import "SKNetworking.h"
+#import <SKNetworkingSDK/SKNetworking.h>
 #import "SkyerHUD.h"
 #import <Masonry.h>
 #import "SkyerBaseViewController.h"

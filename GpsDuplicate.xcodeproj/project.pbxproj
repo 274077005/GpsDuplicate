@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60351F31FE7977C0029FBCA /* SKNetworkingSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60351F21FE7977C0029FBCA /* SKNetworkingSDK.framework */; };
 		B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61141E61FD54BDA00C7C392 /* AbnormalViewController.m */; };
 		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
 		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
@@ -32,8 +33,6 @@
 		B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */; };
 		B6BB4F901FE27118008B5F1B /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F871FE27118008B5F1B /* SkToast.m */; };
 		B6BB4F911FE27118008B5F1B /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F891FE27118008B5F1B /* SkyerHUD.m */; };
-		B6BB4F921FE27118008B5F1B /* SKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */; };
-		B6BB4F931FE27118008B5F1B /* SKPicModle.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */; };
 		B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB5D1FD24AD100061441 /* LoginViewController.m */; };
 		B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB671FD24BEF00061441 /* ForgetPWViewController.m */; };
@@ -57,6 +56,7 @@
 		1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.debug.xcconfig"; sourceTree = "<group>"; };
 		407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.release.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.release.xcconfig"; sourceTree = "<group>"; };
 		A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GpsDuplicate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60351F21FE7977C0029FBCA /* SKNetworkingSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SKNetworkingSDK.framework; sourceTree = "<group>"; };
 		B61141E51FD54BDA00C7C392 /* AbnormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbnormalViewController.h; sourceTree = "<group>"; };
 		B61141E61FD54BDA00C7C392 /* AbnormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbnormalViewController.m; sourceTree = "<group>"; };
 		B62CFDCA1FCBB09C00776F72 /* UserLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserLogin.h; sourceTree = "<group>"; };
@@ -107,10 +107,6 @@
 		B6BB4F871FE27118008B5F1B /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
 		B6BB4F881FE27118008B5F1B /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
 		B6BB4F891FE27118008B5F1B /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
-		B6BB4F8B1FE27118008B5F1B /* SKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworking.h; sourceTree = "<group>"; };
-		B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworking.m; sourceTree = "<group>"; };
-		B6BB4F8D1FE27118008B5F1B /* SKPicModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPicModle.h; sourceTree = "<group>"; };
-		B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPicModle.m; sourceTree = "<group>"; };
 		B6C0FB551FD23FBF00061441 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
 		B6C0FB561FD23FBF00061441 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		B6C0FB5C1FD24AD100061441 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -151,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */,
+				B60351F31FE7977C0029FBCA /* SKNetworkingSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +476,7 @@
 		B6BB4F8A1FE27118008B5F1B /* SKNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				B6BB4F8B1FE27118008B5F1B /* SKNetworking.h */,
-				B6BB4F8C1FE27118008B5F1B /* SKNetworking.m */,
-				B6BB4F8D1FE27118008B5F1B /* SKPicModle.h */,
-				B6BB4F8E1FE27118008B5F1B /* SKPicModle.m */,
+				B60351F21FE7977C0029FBCA /* SKNetworkingSDK.framework */,
 			);
 			path = SKNetworking;
 			sourceTree = "<group>";
@@ -948,7 +942,6 @@
 				B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */,
 				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
-				B6BB4F931FE27118008B5F1B /* SKPicModle.m in Sources */,
 				B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
@@ -972,7 +965,6 @@
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,
 				B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */,
 				B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */,
-				B6BB4F921FE27118008B5F1B /* SKNetworking.m in Sources */,
 				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
 				B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */,
@@ -1115,6 +1107,11 @@
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GpsDuplicate/SkyerTool/SKNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/htwx/Desktop/电子联单(电子外包)/GpsDuplicate/GpsDuplicate/GpsDuplicate-Prefix.pch";
 				INFOPLIST_FILE = GpsDuplicate/Info.plist;
@@ -1134,6 +1131,11 @@
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F474Y7ZN3P;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GpsDuplicate/SkyerTool/SKNetworking",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/htwx/Desktop/电子联单(电子外包)/GpsDuplicate/GpsDuplicate/GpsDuplicate-Prefix.pch";
 				INFOPLIST_FILE = GpsDuplicate/Info.plist;
