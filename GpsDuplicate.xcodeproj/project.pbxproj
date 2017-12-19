@@ -11,12 +11,14 @@
 		B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61141E61FD54BDA00C7C392 /* AbnormalViewController.m */; };
 		B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDCB1FCBB09C00776F72 /* UserLogin.m */; };
 		B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = B62CFDD21FCBB3CD00776F72 /* ComMacro.m */; };
+		B63572341FE9151000F26023 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B63572331FE9151000F26023 /* MessageModel.m */; };
+		B63572371FE916F600F26023 /* MessageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B63572361FE916F600F26023 /* MessageTableView.m */; };
+		B635723A1FE91CA500F26023 /* skSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B63572381FE91CA500F26023 /* skSelectView.m */; };
 		B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9F91FD68A5A00A6153F /* MessageViewController.m */; };
 		B640D9FD1FD68A7F00A6153F /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FC1FD68A7F00A6153F /* ResetPasswordViewController.m */; };
 		B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FF1FD68AA400A6153F /* AboutUsViewController.m */; };
 		B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA041FD68CAA00A6153F /* UserSetViewController.m */; };
 		B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA091FD68E6F00A6153F /* AboutUsModel.m */; };
-		B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA0C1FD699DB00A6153F /* skClassMethod.m */; };
 		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
 		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
 		B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6520E151FE2110E00CD252D /* PopMenuViewController.m */; };
@@ -27,12 +29,8 @@
 		B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B687A4791FDF7D12002965FC /* orderStateColor.m */; };
 		B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */; };
 		B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */; };
-		B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830211FD4DD340092A00F /* SkScollPageView.m */; };
-		B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830241FD4E1C50092A00F /* skSelectView.m */; };
 		B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830271FD534E70092A00F /* OrderDetailsModel.m */; };
 		B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */; };
-		B6BB4F901FE27118008B5F1B /* SkToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F871FE27118008B5F1B /* SkToast.m */; };
-		B6BB4F911FE27118008B5F1B /* SkyerHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F891FE27118008B5F1B /* SkyerHUD.m */; };
 		B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB5D1FD24AD100061441 /* LoginViewController.m */; };
 		B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB671FD24BEF00061441 /* ForgetPWViewController.m */; };
@@ -45,8 +43,6 @@
 		B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF3C1FC7C0ED00E669E3 /* main.m */; };
 		B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF451FC7C14300E669E3 /* AppDelegate.m */; };
 		B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */; };
-		B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */; };
-		B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */; };
 		B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985651FCD38B5003A370A /* TableViewForOrder.m */; };
 		B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E985871FCD5A71003A370A /* skJPUSHSet.m */; };
 		D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */; };
@@ -63,6 +59,12 @@
 		B62CFDCB1FCBB09C00776F72 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
 		B62CFDD11FCBB3CD00776F72 /* ComMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComMacro.h; sourceTree = "<group>"; };
 		B62CFDD21FCBB3CD00776F72 /* ComMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComMacro.m; sourceTree = "<group>"; };
+		B63572321FE9151000F26023 /* MessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		B63572331FE9151000F26023 /* MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		B63572351FE916F600F26023 /* MessageTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableView.h; sourceTree = "<group>"; };
+		B63572361FE916F600F26023 /* MessageTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableView.m; sourceTree = "<group>"; };
+		B63572381FE91CA500F26023 /* skSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skSelectView.m; sourceTree = "<group>"; };
+		B63572391FE91CA500F26023 /* skSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skSelectView.h; sourceTree = "<group>"; };
 		B640D9F81FD68A5A00A6153F /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		B640D9F91FD68A5A00A6153F /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		B640D9FB1FD68A7F00A6153F /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
@@ -73,8 +75,6 @@
 		B640DA041FD68CAA00A6153F /* UserSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetViewController.m; sourceTree = "<group>"; };
 		B640DA081FD68E6F00A6153F /* AboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsModel.h; sourceTree = "<group>"; };
 		B640DA091FD68E6F00A6153F /* AboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsModel.m; sourceTree = "<group>"; };
-		B640DA0B1FD699DB00A6153F /* skClassMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skClassMethod.h; sourceTree = "<group>"; };
-		B640DA0C1FD699DB00A6153F /* skClassMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skClassMethod.m; sourceTree = "<group>"; };
 		B64272581FD25663008F505C /* OrderDetailsDriverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverViewController.h; sourceTree = "<group>"; };
 		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
 		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
@@ -95,18 +95,10 @@
 		B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerBottomView.m; sourceTree = "<group>"; };
 		B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
 		B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
-		B6B830201FD4DD340092A00F /* SkScollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkScollPageView.h; sourceTree = "<group>"; };
-		B6B830211FD4DD340092A00F /* SkScollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkScollPageView.m; sourceTree = "<group>"; };
-		B6B830231FD4E1C50092A00F /* skSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSelectView.h; sourceTree = "<group>"; };
-		B6B830241FD4E1C50092A00F /* skSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSelectView.m; sourceTree = "<group>"; };
 		B6B830261FD534E70092A00F /* OrderDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsModel.h; sourceTree = "<group>"; };
 		B6B830271FD534E70092A00F /* OrderDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsModel.m; sourceTree = "<group>"; };
 		B6BB4F831FE27118008B5F1B /* SkyerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerBaseViewController.h; sourceTree = "<group>"; };
 		B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerBaseViewController.m; sourceTree = "<group>"; };
-		B6BB4F861FE27118008B5F1B /* SkToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkToast.h; sourceTree = "<group>"; };
-		B6BB4F871FE27118008B5F1B /* SkToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkToast.m; sourceTree = "<group>"; };
-		B6BB4F881FE27118008B5F1B /* SkyerHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerHUD.h; sourceTree = "<group>"; };
-		B6BB4F891FE27118008B5F1B /* SkyerHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerHUD.m; sourceTree = "<group>"; };
 		B6C0FB551FD23FBF00061441 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
 		B6C0FB561FD23FBF00061441 /* OrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListModel.m; sourceTree = "<group>"; };
 		B6C0FB5C1FD24AD100061441 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -130,10 +122,6 @@
 		B6D7EF671FC7FAA300E669E3 /* GpsDuplicate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GpsDuplicate-Prefix.pch"; sourceTree = "<group>"; };
 		B6D7EF881FC803FA00E669E3 /* SKKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKKeyboard.h; sourceTree = "<group>"; };
 		B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
-		B6D7EF901FC81A6100E669E3 /* UIView+skBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+skBoard.h"; sourceTree = "<group>"; };
-		B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+skBoard.m"; sourceTree = "<group>"; };
-		B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+skStrWidth.h"; sourceTree = "<group>"; };
-		B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+skStrWidth.m"; sourceTree = "<group>"; };
 		B6E985641FCD38B5003A370A /* TableViewForOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewForOrder.h; sourceTree = "<group>"; };
 		B6E985651FCD38B5003A370A /* TableViewForOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewForOrder.m; sourceTree = "<group>"; };
 		B6E985861FCD5A71003A370A /* skJPUSHSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
@@ -242,6 +230,8 @@
 		B640D9F21FD68A3600A6153F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B63572321FE9151000F26023 /* MessageModel.h */,
+				B63572331FE9151000F26023 /* MessageModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +239,8 @@
 		B640D9F31FD68A3600A6153F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B63572351FE916F600F26023 /* MessageTableView.h */,
+				B63572361FE916F600F26023 /* MessageTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,6 +405,8 @@
 		B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */ = {
 			isa = PBXGroup;
 			children = (
+				B63572391FE91CA500F26023 /* skSelectView.h */,
+				B63572381FE91CA500F26023 /* skSelectView.m */,
 				B6520E141FE2110E00CD252D /* PopMenuViewController.h */,
 				B6520E151FE2110E00CD252D /* PopMenuViewController.m */,
 			);
@@ -442,17 +436,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B6B8301F1FD4DD340092A00F /* 分页显示 */ = {
-			isa = PBXGroup;
-			children = (
-				B6B830201FD4DD340092A00F /* SkScollPageView.h */,
-				B6B830211FD4DD340092A00F /* SkScollPageView.m */,
-				B6B830231FD4E1C50092A00F /* skSelectView.h */,
-				B6B830241FD4E1C50092A00F /* skSelectView.m */,
-			);
-			path = "分页显示";
-			sourceTree = "<group>";
-		};
 		B6BB4F821FE27118008B5F1B /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,17 +443,6 @@
 				B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */,
 			);
 			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		B6BB4F851FE27118008B5F1B /* SKHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B6BB4F861FE27118008B5F1B /* SkToast.h */,
-				B6BB4F871FE27118008B5F1B /* SkToast.m */,
-				B6BB4F881FE27118008B5F1B /* SkyerHUD.h */,
-				B6BB4F891FE27118008B5F1B /* SkyerHUD.m */,
-			);
-			path = SKHUD;
 			sourceTree = "<group>";
 		};
 		B6BB4F8A1FE27118008B5F1B /* SKNetworking */ = {
@@ -647,14 +619,11 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
-				B6BB4F851FE27118008B5F1B /* SKHUD */,
 				B6BB4F8A1FE27118008B5F1B /* SKNetworking */,
 				B6BB4F821FE27118008B5F1B /* BaseViewController */,
 				B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */,
-				B6B8301F1FD4DD340092A00F /* 分页显示 */,
 				B6E985851FCD5A52003A370A /* JPUSHSet */,
 				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
-				B6D7EF8F1FC81A2B00E669E3 /* Category */,
 				B6D7EF841FC8038C00E669E3 /* SKKeyboard */,
 			);
 			path = SkyerTool;
@@ -687,19 +656,6 @@
 				B6D7EF891FC803FA00E669E3 /* SKKeyboard.m */,
 			);
 			path = SKKeyboard;
-			sourceTree = "<group>";
-		};
-		B6D7EF8F1FC81A2B00E669E3 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				B6D7EF901FC81A6100E669E3 /* UIView+skBoard.h */,
-				B6D7EF911FC81A6100E669E3 /* UIView+skBoard.m */,
-				B6E9851A1FCD06FA003A370A /* NSString+skStrWidth.h */,
-				B6E9851B1FCD06FA003A370A /* NSString+skStrWidth.m */,
-				B640DA0B1FD699DB00A6153F /* skClassMethod.h */,
-				B640DA0C1FD699DB00A6153F /* skClassMethod.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		B6D7EF931FC824BA00E669E3 /* 忘记密码 */ = {
@@ -937,16 +893,18 @@
 				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
 				B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */,
 				B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */,
+				B63572371FE916F600F26023 /* MessageTableView.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
 				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
+				B635723A1FE91CA500F26023 /* skSelectView.m in Sources */,
 				B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */,
+				B63572341FE9151000F26023 /* MessageModel.m in Sources */,
 				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
 				B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
-				B6BB4F901FE27118008B5F1B /* SkToast.m in Sources */,
 				B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */,
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
 				B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */,
@@ -954,9 +912,6 @@
 				B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */,
 				B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */,
 				B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */,
-				B6B830251FD4E1C50092A00F /* skSelectView.m in Sources */,
-				B6E9851C1FCD06FA003A370A /* NSString+skStrWidth.m in Sources */,
-				B6D7EF921FC81A6100E669E3 /* UIView+skBoard.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
 				B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */,
 				B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */,
@@ -967,9 +922,6 @@
 				B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */,
 				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
-				B640DA0D1FD699DB00A6153F /* skClassMethod.m in Sources */,
-				B6BB4F911FE27118008B5F1B /* SkyerHUD.m in Sources */,
-				B6B830221FD4DD340092A00F /* SkScollPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

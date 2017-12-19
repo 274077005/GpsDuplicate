@@ -1,1 +1,1 @@
-../../../SkyerTools/SkyerProject/SkyerTools/音频播放工具/VoiceTool.h
+../../../SkyerTools/SkyerProject/SkyerTools/skTools/VoiceTool.h

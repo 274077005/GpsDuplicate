@@ -176,7 +176,7 @@
             
             [[btnSelectTrashType rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
                 PopMenuViewController *view=[[PopMenuViewController alloc] init];
-                UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+                UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
                 view.viewFrame=btnSelectTrashType.frame;
                 [vc presentViewController:view animated:YES completion:nil];
             }];

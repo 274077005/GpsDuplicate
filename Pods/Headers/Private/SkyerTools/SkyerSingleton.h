@@ -1,1 +1,1 @@
-../../../SkyerTools/SkyerProject/SkyerTools/Singleton/SkyerSingleton.h
+../../../SkyerTools/SkyerProject/SkyerTools/skTools/SkyerSingleton.h

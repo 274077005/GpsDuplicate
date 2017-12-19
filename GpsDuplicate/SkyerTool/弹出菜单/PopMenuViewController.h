@@ -22,7 +22,7 @@
 
 /*
  PopMenuViewController *view=[[PopMenuViewController alloc] init];
- UIViewController *vc=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+ UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
  view.skIndexSelect = ^(NSInteger index) {
  NSLog(@"点击了哪一行%ld",index);
  };

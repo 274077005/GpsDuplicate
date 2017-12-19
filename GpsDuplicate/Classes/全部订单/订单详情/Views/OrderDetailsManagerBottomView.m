@@ -314,7 +314,7 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"NoSpoil") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
-        UIViewController *view=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+        UIViewController *view=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
         [view.navigationController popViewControllerAnimated:YES];
         
     } failure:^(NSError * _Nullable error) {

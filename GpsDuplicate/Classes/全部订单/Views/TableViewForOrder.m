@@ -174,7 +174,7 @@
     OrderDetailsDriverViewController *OrderDetailsView=[[OrderDetailsDriverViewController alloc] init];
     OrderDetailsView.orderListModel=model;
     
-    UIViewController *visibleView=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+    UIViewController *visibleView=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
     [visibleView.navigationController pushViewController:OrderDetailsView animated:YES];
 }
 -(void)skReloadDataWithData:(NSArray *)data{

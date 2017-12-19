@@ -263,7 +263,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </string>
 			<key>License</key>
-			<string>BSD</string>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>SkyerTools</string>
 			<key>Type</key>

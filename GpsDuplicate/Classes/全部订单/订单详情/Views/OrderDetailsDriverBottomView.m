@@ -39,7 +39,7 @@
             AbnormalViewController *view=[Main instantiateViewControllerWithIdentifier:@"AbnormalViewController"];
             view.OrderID=_model.OrderID;
             
-            UIViewController *viewVisible=[[SkyerGetVisibleViewController sharedInstance] skyerVisibleViewController];
+            UIViewController *viewVisible=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
             [viewVisible.navigationController pushViewController:view animated:YES];
         }];
     }
