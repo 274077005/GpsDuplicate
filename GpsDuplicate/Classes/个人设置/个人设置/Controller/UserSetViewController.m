@@ -155,8 +155,8 @@
                 //用户名
                 UILabel *labUser=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 35, 200, 20)];
                 
-                NSString *RealName=UserLogin.sharedUserLogin.RealName;
-                NSString *VehicleNo=UserLogin.sharedUserLogin.VehicleNo;
+                NSString *RealName=skUser.RealName;
+                NSString *VehicleNo=skUser.VehicleNo;
                 
                 labUser.text=[NSString stringWithFormat:@"%@(%@)",RealName,VehicleNo];
                 labUser.textColor=[UIColor whiteColor];
@@ -167,7 +167,7 @@
                 //所属公司
                 UILabel *labCompany=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 60, SCREEN_WIDTH-CGRectGetMaxX(imageUser.frame)-20, 40)];
                 labCompany.numberOfLines=2;
-                NSString *EnterName=UserLogin.sharedUserLogin.EnterName;
+                NSString *EnterName=skUser.EnterName;
                 labCompany.text=[NSString stringWithFormat:@"所属公司:%@",EnterName];
                 labCompany.textColor=[UIColor whiteColor];
                 labCompany.font=[UIFont systemFontOfSize:14];
@@ -253,7 +253,7 @@
                 {
                     UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     ResetPasswordViewController *view=[Main instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
-                    view.Tel=UserLogin.sharedUserLogin.UserName;
+                    view.Tel=skUser.UserName;
                     [self.navigationController pushViewController:view animated:YES];
                 }
                     break;
@@ -285,7 +285,7 @@
 -(void)LogOut{
     
     NSDictionary *parameters=@{
-                               @"UserID":UserLogin.sharedUserLogin.UserID
+                               @"UserID":skUser.UserID
                                };
     
     

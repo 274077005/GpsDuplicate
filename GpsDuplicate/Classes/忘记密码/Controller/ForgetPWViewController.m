@@ -113,7 +113,7 @@
         
         UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResetPasswordViewController *view=[Main instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
-        view.Tel=UserLogin.sharedUserLogin.UserName;
+        view.Tel=skUser.UserName;
         [self.navigationController pushViewController:view animated:YES];
         
     } failure:^(NSError * _Nullable error) {

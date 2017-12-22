@@ -46,7 +46,7 @@
     
     NSDictionary *parameters=@{
                                @"VehicleNo":_textSearch.text,
-                               @"UserType":UserLogin.sharedUserLogin.UserType
+                               @"UserType":skUser.UserType
                                };
     
     

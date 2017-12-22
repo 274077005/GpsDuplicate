@@ -38,7 +38,7 @@
 -(void)GetMessage{
     
     NSDictionary *parameters=@{
-                               @"UserID":UserLogin.sharedUserLogin.UserID
+                               @"UserID":skUser.UserID
                                };
     
     

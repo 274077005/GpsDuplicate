@@ -58,7 +58,7 @@
     }];
     
     //0绑定、1未绑定
-    if ([UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
+    if ([skUser.IsBindVehicle isEqualToString:@"1"]) {
         [self showBingdView];
     }else{
         [self initUI];
@@ -83,11 +83,11 @@
  */
 -(void)changVehicleNo{
     //0绑定、1未绑定
-    if ([UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
+    if ([skUser.IsBindVehicle isEqualToString:@"1"]) {
         self.btnLeft.hidden=YES;
     }else{
         self.btnLeft.hidden=NO;
-        [self.btnLeft setTitle:UserLogin.sharedUserLogin.VehicleNo forState:0];
+        [self.btnLeft setTitle:skUser.VehicleNo forState:0];
         [_btnLeft setBackgroundImage:[UIImage imageNamed:@"btn_license_locked_default"] forState:UIControlStateNormal];
     }
     
@@ -95,7 +95,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    if (![UserLogin.sharedUserLogin.IsBindVehicle isEqualToString:@"1"]) {
+    if (![skUser.IsBindVehicle isEqualToString:@"1"]) {
         [self GetList];
     }
     
@@ -172,9 +172,9 @@
      运单类型：司机登录：0已完成 1未完成
      监管人员登录：0待确认 1待签认 2已签认
      */
-    NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
+    NSDictionary *parameters=@{@"UserID":skUser.UserID,
                                @"OrderType":[NSString stringWithFormat:@"%ld",_indexSelect],
-                               @"UserType":UserLogin.sharedUserLogin.UserType,
+                               @"UserType":skUser.UserType,
                                @"No":@"GetList"
                                };
     
@@ -220,7 +220,7 @@
     
     
     NSDictionary *parameters=@{
-                               @"UserName":UserLogin.sharedUserLogin.UserName
+                               @"UserName":skUser.UserName
                                };
     
     

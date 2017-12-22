@@ -39,15 +39,15 @@
 
 -(void)BindVehicle{
     NSDictionary *parameters=@{@"No":@"BindVehicle",
-                               @"UserName":UserLogin.sharedUserLogin.UserName,
+                               @"UserName":skUser.UserName,
                                @"VehicleNo":_textNum.text
                                };
     
     kWeakSelf(self)
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //绑定成功后修改绑定车牌号和是否绑定的字段//0绑定、1未绑定
-        UserLogin.sharedUserLogin.VehicleNo=_textNum.text;
-        UserLogin.sharedUserLogin.IsBindVehicle=@"0";
+        skUser.VehicleNo=_textNum.text;
+        skUser.IsBindVehicle=@"0";
         weakself.bindBlock();
         [weakself dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError * _Nullable error) {

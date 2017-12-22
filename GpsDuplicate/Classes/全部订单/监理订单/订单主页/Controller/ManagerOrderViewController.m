@@ -111,9 +111,9 @@
      运单类型：司机登录：0已完成 1未完成
      监管人员登录：0待确认 1待签认 2已签认
      */
-    NSDictionary *parameters=@{@"UserID":UserLogin.sharedUserLogin.UserID,
+    NSDictionary *parameters=@{@"UserID":skUser.UserID,
                                @"OrderType":[NSString stringWithFormat:@"%ld",_indexSelect],
-                               @"UserType":UserLogin.sharedUserLogin.UserType,
+                               @"UserType":skUser.UserType,
                                @"No":@"GetList"
                                };
     

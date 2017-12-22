@@ -47,7 +47,7 @@
 -(void)UploadError{
     
     NSDictionary *parameters=@{@"No":@"UploadError",
-                               @"UserID":UserLogin.sharedUserLogin.UserID,
+                               @"UserID":skUser.UserID,
                                @"OrderID":_OrderID,
                                @"Describe":_textFidld.text
                                };

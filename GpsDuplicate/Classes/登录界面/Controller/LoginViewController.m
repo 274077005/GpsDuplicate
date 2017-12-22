@@ -29,7 +29,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self initUI];
-    
     [self RACAction];
     
 }
@@ -145,8 +144,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-    UserLogin.sharedUserLogin.UserType=@"1";                                                                                                                                                                                                          
-    switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
+    skUser.UserType=@"1";                                                                                                                                                                                                          
+    switch ([skUser.UserType integerValue]) {
         case 1:
         {
             DriverOrderViewController *view=[[DriverOrderViewController alloc] init];

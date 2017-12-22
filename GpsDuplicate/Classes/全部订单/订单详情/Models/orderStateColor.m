@@ -18,7 +18,7 @@
      处置场处理员: 状态：15待确认、21待签认、22已签认
      */
     UIColor *OrderStatusColor;
-    switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
+    switch ([skUser.UserType integerValue]) {
         case 1:
         {
             switch ([state integerValue]) {

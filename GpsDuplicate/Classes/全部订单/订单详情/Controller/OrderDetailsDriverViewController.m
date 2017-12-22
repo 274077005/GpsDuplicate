@@ -114,9 +114,9 @@
 //获取详情数据接口
 -(void)GetDetails{
     NSDictionary *parameters=@{@"No":@"GetDetails",
-                               @"UserID":UserLogin.sharedUserLogin.UserID,
+                               @"UserID":skUser.UserID,
                                @"OrderID":self.orderListModel.OrderID,
-                               @"UserType":UserLogin.sharedUserLogin.UserType
+                               @"UserType":skUser.UserType
                                };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
@@ -133,7 +133,7 @@
 //请求完数据更新UI
 - (void)updataUI {
     
-    NSString *UserType=UserLogin.sharedUserLogin.UserType;
+    NSString *UserType=skUser.UserType;
     //1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
     /*
      OrderStatus

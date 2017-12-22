@@ -124,10 +124,10 @@
 #pragma mark - 司机操作订单的接口
 -(void)Confirm{
     NSDictionary *parameters=@{@"No":@"Confirm",
-                               @"UserID":UserLogin.sharedUserLogin.UserID,
+                               @"UserID":skUser.UserID,
                                @"OrderID":self.model.OrderID,
                                @"OrderStatus":self.model.OrderStatus,
-                               @"UserType":UserLogin.sharedUserLogin.UserType,
+                               @"UserType":skUser.UserType,
                                };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {

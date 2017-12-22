@@ -41,7 +41,7 @@
         [self addSubview:_btnSure];
         [_btnSure mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            if ([UserLogin.sharedUserLogin.UserType integerValue]==2&&[_model.OrderStatus integerValue]==12) {
+            if ([skUser.UserType integerValue]==2&&[_model.OrderStatus integerValue]==12) {
                 make.left.mas_equalTo(50);
                 make.right.mas_equalTo(-50);
                 make.bottom.mas_equalTo(-30);
@@ -78,7 +78,7 @@
      处置场处理员: 状态：15待确认、21待签认、22已签认
      */
     kWeakSelf(self)
-    switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
+    switch ([skUser.UserType integerValue]) {
         case 2:
         {
             //工地施工单位: 状态：12待确认、15待签认、14已签认
@@ -178,10 +178,10 @@
 #pragma mark - 司机操作订单的接口
 -(void)Confirm{
     NSDictionary *parameters=@{@"No":@"Confirm",
-                               @"UserID":UserLogin.sharedUserLogin.UserID,
+                               @"UserID":skUser.UserID,
                                @"OrderID":self.model.OrderID,
                                @"OrderStatus":self.model.OrderStatus,
-                               @"UserType":UserLogin.sharedUserLogin.UserType,
+                               @"UserType":skUser.UserType,
                                };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
@@ -210,7 +210,7 @@
     [self.btnSure setHidden:NO];
     [self.btnAbnormal setHidden:YES];
     
-    switch ([UserLogin.sharedUserLogin.UserType integerValue]) {
+    switch ([skUser.UserType integerValue]) {
         case 2:
         {
             //工地施工单位: 状态：12待确认、15待签认、14已签认
@@ -308,7 +308,7 @@
     
     NSDictionary *parameters=@{
                                @"OrderID":_model.OrderID,
-                               @"UserID":UserLogin.sharedUserLogin.UserID
+                               @"UserID":skUser.UserID
                                };
     
     
