@@ -73,9 +73,9 @@
      OrderStatus
      (待签认-已经签认-和司机相同) (待确认 监理和处理=页面不同 )
      司机:       状态：11已激活、12待出场、15待处置、21已完成
-     工地施工单位: 状态：12待确认、15待签认、14已签认
-     工地监理单位: 状态：12待确认、15待签认、13已签认
-     处置场处理员: 状态：15待确认、21待签认、22已签认
+     工地施工单位: 状态：12待确认、17待签认、14已签认
+     工地监理单位: 状态：12待确认、17待签认、13已签认
+     处置场处理员: 状态：15待确认、17待签认、22已签认
      */
     kWeakSelf(self)
     switch ([skUser.UserType integerValue]) {
@@ -90,7 +90,7 @@
                     }];
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
@@ -120,7 +120,7 @@
                     }];
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
@@ -141,7 +141,7 @@
             break;
         case 4:
         {
-            //处置场处理员: 状态：15待确认、21待签认、22已签认
+            //处置场处理员: 状态：15待确认、17待签认、22已签认
             switch ([_model.OrderStatus integerValue]) {
                 case 15:
                 {
@@ -150,7 +150,7 @@
                     }];
                 }
                     break;
-                case 21:
+                case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
@@ -185,9 +185,9 @@
      OrderStatus
      (待签认-已经签认-和司机相同) (待确认 监理和处理=页面不同 )
      司机:       状态：11已激活、12待出场、15待处置、21已完成
-     工地施工单位: 状态：12待确认、15待签认、14已签认
-     工地监理单位: 状态：12待确认、15待签认、13已签认
-     处置场处理员: 状态：15待确认、21待签认、22已签认
+     工地施工单位: 状态：12待确认、17待签认、14已签认
+     工地监理单位: 状态：12待确认、17待签认、13已签认
+     处置场处理员: 状态：15待确认、17待签认、22已签认
      */
     NSString *stateTitle;
     [self.btnSure setHidden:NO];
@@ -204,7 +204,7 @@
                     [self.btnAbnormal setHidden:NO];
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     stateTitle=@"出厂确认";
                 }
@@ -229,7 +229,7 @@
                     stateTitle=@"提交运单信息";
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     stateTitle=@"出厂确认";
                 }
@@ -247,14 +247,14 @@
             break;
         case 4:
         {
-            //处置场处理员: 状态：15待确认、21待签认、22已签认
+            //处置场处理员: 状态：15待确认、17待签认、22已签认
             switch ([_model.OrderStatus integerValue]) {
                 case 15:
                 {
                     stateTitle=@"确认运单信息";
                 }
                     break;
-                case 21:
+                case 17:
                 {
                     stateTitle=@"入厂确认";
                 }

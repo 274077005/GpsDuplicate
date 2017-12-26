@@ -13,9 +13,9 @@
 +(UIColor *)skOrderState:(NSString *)state{
     /*
      司机:       状态：11已激活、12待出场、15待处置、21已完成
-     工地施工单位: 状态：12待确认、15待签认、14已签认
-     工地监理单位: 状态：12待确认、15待签认、13已签认
-     处置场处理员: 状态：15待确认、21待签认、22已签认
+     工地施工单位: 状态：12待确认、17待签认、14已签认
+     工地监理单位: 状态：12待确认、17待签认、13已签认
+     处置场处理员: 状态：15待确认、17待签认、22已签认
      */
     UIColor *OrderStatusColor;
     switch ([skUser.UserType integerValue]) {
@@ -58,7 +58,7 @@
                     OrderStatusColor=skUIColorFromRGB(0xF24D30);
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     OrderStatusColor=skUIColorFromRGB(0x2AB3A3);
                 }
@@ -83,7 +83,7 @@
                     OrderStatusColor=skUIColorFromRGB(0xF24D30);
                 }
                     break;
-                case 15:
+                case 17:
                 {
                     OrderStatusColor=skUIColorFromRGB(0x2AB3A3);
                 }
@@ -108,7 +108,7 @@
                     OrderStatusColor=skUIColorFromRGB(0xF24D30);
                 }
                     break;
-                case 21:
+                case 17:
                 {
                     OrderStatusColor=skUIColorFromRGB(0x2AB3A3);
                 }

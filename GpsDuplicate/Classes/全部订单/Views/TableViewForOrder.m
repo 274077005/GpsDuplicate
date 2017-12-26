@@ -158,17 +158,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
-    /*
-     UserType
-     1:司机 2:施工单位管理员 3:工地理监单位监理员 4:处置场处理员
-     
-     OrderStatus
-     司机:状态：11已激活、12待出场、15待处置、21已完成
-     (待签认-已经签认-和司机相同) (待确认 监理和处理=页面不同 )
-     监理:状态：12待确认、15待签认、14已签认
-     处理:状态：15待确认、21待签认、22已签认
-     */
     OrderListModel *model=[_arrCellData objectAtIndex:indexPath.section];
     
     OrderDetailsDriverViewController *OrderDetailsView=[[OrderDetailsDriverViewController alloc] init];
