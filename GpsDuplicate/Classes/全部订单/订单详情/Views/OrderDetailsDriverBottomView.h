@@ -14,8 +14,11 @@
 @property (nonatomic,strong) UIButton *btnSure;
 @property (nonatomic,strong) UIButton *btnAbnormal;
 
-//一个代理给详情界面,表示已经对订单进行了操作
--(void)delegateOrderDetailsDataUpdate;
+
+/**
+ 用户点击操作的按钮
+ */
+-(void)delegateBtnSure;
 
 -(void)updateUI;
 

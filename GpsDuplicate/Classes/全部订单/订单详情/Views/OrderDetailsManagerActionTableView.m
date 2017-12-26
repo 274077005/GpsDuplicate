@@ -8,7 +8,6 @@
 
 #import "OrderDetailsManagerActionTableView.h"
 #import "orderStateColor.h"
-#import "PopMenuViewController.h"
 
 @implementation OrderDetailsManagerActionTableView
 
@@ -166,24 +165,18 @@
             [btnSelectTrashType skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
             btnSelectTrashType.titleLabel.font=[UIFont systemFontOfSize:12];
             [btnSelectTrashType setTitleColor:[UIColor lightGrayColor] forState:0];
-            [btnSelectTrashType setTitle:@"请选择" forState:0];
+            [btnSelectTrashType setTitle:_wasteModel.WasteName forState:0];
             [btnSelectTrashType mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(100);
                 make.top.mas_equalTo(labTrashType.mas_top);
                 make.bottom.mas_equalTo(labTrashType.mas_bottom);
                 make.left.mas_equalTo(labTrashType.mas_right);
             }];
-            
+            @weakify(self);
             [[btnSelectTrashType rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                PopMenuViewController *view=[[PopMenuViewController alloc] init];
-                UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
-                view.viewFrame=btnSelectTrashType.frame;
-                [vc presentViewController:view animated:YES completion:nil];
+                @strongify(self);
+                [self btnWaste:btnSelectTrashType.frame];
             }];
-            
-            
-            
-            
             //装载量
             UILabel *labLoading=[[UILabel alloc] init];
             [cell.contentView addSubview:labLoading];
@@ -225,9 +218,6 @@
                 make.height.mas_equalTo(20);
                 make.top.mas_equalTo(labLoading.mas_top);
             }];
-            
-            
-            
         }
             break;
         case 1:
@@ -308,15 +298,18 @@
             [btnEndAddress skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
             btnEndAddress.titleLabel.font=[UIFont systemFontOfSize:12];
             [btnEndAddress setTitleColor:[UIColor lightGrayColor] forState:0];
-            [btnEndAddress setTitle:@"请选择" forState:0];
+            [btnEndAddress setTitle:_receivingModel.ReceivingName forState:0];
             [btnEndAddress mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(150);
                 make.top.mas_equalTo(labEnd.mas_top).offset(5);
                 make.bottom.mas_equalTo(labEnd.mas_bottom).offset(-5);
                 make.left.mas_equalTo(labEnd.mas_right).offset(10);
             }];
-            
-            
+            @weakify(self);
+            [[btnEndAddress rac_signalForControlEvents:(UIControlEventTouchDragInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                @strongify(self);
+                [self btnReceiving:btnEndAddress.frame];
+            }];
         }
             break;
         case 2:
@@ -403,5 +396,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+-(void)btnWaste:(CGRect)frame{
+    
+}
+-(void)btnReceiving:(CGRect)frame{
+    
+}
 @end

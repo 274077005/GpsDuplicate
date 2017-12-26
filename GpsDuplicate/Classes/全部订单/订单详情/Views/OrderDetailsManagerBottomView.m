@@ -86,7 +86,7 @@
                 case 12:
                 {
                     [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -94,7 +94,7 @@
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -116,7 +116,7 @@
                 case 12:
                 {
                     [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -124,7 +124,7 @@
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -146,7 +146,7 @@
                 case 15:
                 {
                     [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -154,7 +154,7 @@
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
                     [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
-                        [weakself Confirm];
+                        [weakself delegateBtnSure];
                     }];
                 }
                     break;
@@ -175,24 +175,7 @@
     }
     
 }
-#pragma mark - 司机操作订单的接口
--(void)Confirm{
-    NSDictionary *parameters=@{@"No":@"Confirm",
-                               @"UserID":skUser.UserID,
-                               @"OrderID":self.model.OrderID,
-                               @"OrderStatus":self.model.OrderStatus,
-                               @"UserType":skUser.UserType,
-                               };
-    
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        
-        [self delegateOrderDetailsDataUpdate];
-        
-    } failure:^(NSError * _Nullable error) {
-        
-    }];
-}
--(void)delegateOrderDetailsDataUpdate{
+-(void)delegateBtnSure{
     NSLog(@"代理请求更新详情数据");
 }
 //这个是司机的底部按钮的文字描述

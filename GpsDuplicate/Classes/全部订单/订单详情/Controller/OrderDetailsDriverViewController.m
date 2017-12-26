@@ -14,6 +14,7 @@
 #import "OrderDetailsManagerActionTableView.h"
 #import "OrderDetailsManagerTableView.h"
 #import "OrderDetailsManagerBottomView.h"
+#import "PopMenuViewController.h"
 
 @interface OrderDetailsDriverViewController ()
 @property (nonatomic,strong) OrderDetailsModel *model;
@@ -51,11 +52,72 @@
 //能修改运单信息的
 -(OrderDetailsManagerActionTableView *)orderDetailsManagerActionTableView{
     if (_orderDetailsManagerActionTableView==nil) {
+        
         _orderDetailsManagerActionTableView=[[OrderDetailsManagerActionTableView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-120) style:(UITableViewStyleGrouped)];
         [self.view addSubview:_orderDetailsManagerActionTableView];
+        
+        //废弃物的点击事件
+        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnReceiving:)] subscribeNext:^(RACTuple * _Nullable x) {
+            
+        }];
+        //终点
+        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnWaste:)] subscribeNext:^(RACTuple * _Nullable x) {
+            
+            
+        }];
+        
     }
     return _orderDetailsManagerActionTableView;
 }
+
+/**
+ 设置那个废弃物的
+
+ @param frame 显示的frame
+ */
+-(void)selectWaste:(CGRect)frame{
+    PopMenuViewController *pop=[[PopMenuViewController alloc] init];
+    pop.viewFrame=frame;
+    NSMutableArray *arrTitle=[[NSMutableArray alloc] init];
+    for (int i=0; i<_arrReceivingModel.count; ++i) {
+        WasteModel *rmodel=[_arrWasteModel objectAtIndex:i];
+        [arrTitle addObject:rmodel.WasteName];
+    }
+    
+    pop.arrData=arrTitle;
+    [self presentViewController:pop animated:YES completion:nil];
+    pop.skIndexSelect = ^(NSInteger index) {
+        self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel objectAtIndex:index];
+        [self updataUI];
+    };
+}
+
+/**
+ 设置终点
+
+ @param frame 显示的frame
+ */
+-(void)selectReceiving:(CGRect)frame{
+    PopMenuViewController *pop=[[PopMenuViewController alloc] init];
+    pop.viewFrame=frame;
+    
+    NSMutableArray *arrTitle=[[NSMutableArray alloc] init];
+    for (int i=0; i<_arrReceivingModel.count; ++i) {
+        ReceivingModel *rmodel=[_arrReceivingModel objectAtIndex:i];
+        [arrTitle addObject:rmodel.ReceivingName];
+    }
+    
+    pop.arrData=arrTitle;
+    [self presentViewController:pop animated:YES completion:nil];
+    pop.skIndexSelect = ^(NSInteger index) {
+        self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel objectAtIndex:index];
+        [self updataUI];
+    };
+}
+
+
+
+
 //不能修改运动信息的
 -(OrderDetailsManagerTableView *)orderDetailsManagerTableView{
     if (_orderDetailsManagerTableView==nil) {
@@ -76,9 +138,9 @@
         _orderDetailsDriverBottomView=[[OrderDetailsDriverBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
         [self.view addSubview:_orderDetailsDriverBottomView];
         @weakify(self)
-        [[_orderDetailsDriverBottomView rac_signalForSelector:@selector(delegateOrderDetailsDataUpdate)] subscribeNext:^(RACTuple * _Nullable x) {
+        [[_orderDetailsDriverBottomView rac_signalForSelector:@selector(delegateBtnSure)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)
-            [self GetDetails];
+            [self Confirm];
         }];
     }
     return _orderDetailsDriverBottomView;
@@ -89,9 +151,9 @@
         _orderDetailsManagerBottomView=[[OrderDetailsManagerBottomView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
         [self.view addSubview:_orderDetailsManagerBottomView];
         @weakify(self)
-        [[_orderDetailsManagerBottomView rac_signalForSelector:@selector(delegateOrderDetailsDataUpdate)] subscribeNext:^(RACTuple * _Nullable x) {
+        [[_orderDetailsManagerBottomView rac_signalForSelector:@selector(delegateBtnSure)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)
-            [self GetDetails];
+            [self Confirm];
         }];
     }
     return _orderDetailsManagerBottomView;
@@ -103,14 +165,27 @@
     self.title=@"运单详情";
 }
 
+/**
+ 获取订单详情
+ */
+- (void)getOrderDetails {
+    if ([self isOrderAction]) {
+        [self EditOrderDetails];
+    }else{
+        [self GetDetails];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initUI];
-    [self GetDetails];
+    [self getOrderDetails];
+    
     
 }
 
+#pragma mark - 获取不能修改的订单详情
 //获取详情数据接口
 -(void)GetDetails{
     NSDictionary *parameters=@{@"No":@"GetDetails",
@@ -130,8 +205,55 @@
         
     }];
 }
+
+#pragma mark - 获取修改的订单详情
+/**
+ 获取修改的订单详情
+ */
+-(void)EditOrderDetails{
+    NSDictionary *parameters=@{
+                               @"OrderID":_model.OrderID
+                               };
+    
+    
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
+        _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
+        _arrWasteModel=[ReceivingModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
+        _arrReceivingModel=[ReceivingModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Receiving"]];
+        
+        //请求完数据更新UI
+        [self updataUI];
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+
+
+
+
+/**
+ 提交订单详情
+ */
+-(void)Confirm{
+    NSDictionary *parameters=@{@"No":@"Confirm",
+                               @"UserID":skUser.UserID,
+                               @"OrderID":self.model.OrderID,
+                               @"OrderStatus":self.model.OrderStatus,
+                               @"UserType":skUser.UserType,
+                               };
+    kWeakSelf(self);
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        [weakself getOrderDetails];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 //请求完数据更新UI
-- (void)updataUI {
+- (void)updataUI{
     
     NSString *UserType=skUser.UserType;
     //1、司机 2、施工单位管理员(具有修改功能) 3、工地理监单位监理员 4、处置场处理员
@@ -154,9 +276,10 @@
             break;
         case 2:
         {
-            NSString *OrderStatus=_model.OrderStatus;
-            if ([OrderStatus isEqualToString:@"12"]) {//只有这个状态是可以进行修改操作的
+            if ([self isOrderAction]) {
                 self.orderDetailsManagerActionTableView.model=_model;
+                self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel firstObject];
+                self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel firstObject];
                 [self.orderDetailsManagerActionTableView reloadData];
             }else{
                 self.orderDetailsManagerTableView.model=_model;
@@ -182,10 +305,18 @@
         default:
             break;
     }
-    
-    
-    
 }
 
+/**
+ 判断是否有修改订单的功能
+
+ @return yes就有,no就没有
+ */
+-(Boolean)isOrderAction{
+    if ([skUser.UserType integerValue]==2&&[_model.OrderStatus integerValue]==12) {
+        return true;
+    }
+    return false;
+}
 
 @end

@@ -19,17 +19,19 @@
 		B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FF1FD68AA400A6153F /* AboutUsViewController.m */; };
 		B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA041FD68CAA00A6153F /* UserSetViewController.m */; };
 		B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA091FD68E6F00A6153F /* AboutUsModel.m */; };
-		B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */; };
-		B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */; };
+		B64A8B4D1FF244E200F6E56D /* OrderDetailsDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B381FF244E200F6E56D /* OrderDetailsDriverViewController.m */; };
+		B64A8B4E1FF244E200F6E56D /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B3B1FF244E200F6E56D /* OrderDetailsModel.m */; };
+		B64A8B4F1FF244E200F6E56D /* orderStateColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B3D1FF244E200F6E56D /* orderStateColor.m */; };
+		B64A8B501FF244E200F6E56D /* ReceivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B3F1FF244E200F6E56D /* ReceivingModel.m */; };
+		B64A8B511FF244E200F6E56D /* WasteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B411FF244E200F6E56D /* WasteModel.m */; };
+		B64A8B521FF244E200F6E56D /* OrderDetailsDriverBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B441FF244E200F6E56D /* OrderDetailsDriverBottomView.m */; };
+		B64A8B531FF244E200F6E56D /* OrderDetailsDriverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B461FF244E200F6E56D /* OrderDetailsDriverTableView.m */; };
+		B64A8B541FF244E200F6E56D /* OrderDetailsManagerActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B481FF244E200F6E56D /* OrderDetailsManagerActionTableView.m */; };
+		B64A8B551FF244E200F6E56D /* OrderDetailsManagerBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B4A1FF244E200F6E56D /* OrderDetailsManagerBottomView.m */; };
+		B64A8B561FF244E200F6E56D /* OrderDetailsManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B4C1FF244E200F6E56D /* OrderDetailsManagerTableView.m */; };
 		B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6520E151FE2110E00CD252D /* PopMenuViewController.m */; };
-		B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */; };
-		B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */; };
-		B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */; };
 		B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */; };
-		B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B687A4791FDF7D12002965FC /* orderStateColor.m */; };
-		B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */; };
 		B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */; };
-		B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B830271FD534E70092A00F /* OrderDetailsModel.m */; };
 		B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */; };
 		B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB5D1FD24AD100061441 /* LoginViewController.m */; };
@@ -75,28 +77,32 @@
 		B640DA041FD68CAA00A6153F /* UserSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetViewController.m; sourceTree = "<group>"; };
 		B640DA081FD68E6F00A6153F /* AboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsModel.h; sourceTree = "<group>"; };
 		B640DA091FD68E6F00A6153F /* AboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsModel.m; sourceTree = "<group>"; };
-		B64272581FD25663008F505C /* OrderDetailsDriverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverViewController.h; sourceTree = "<group>"; };
-		B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
-		B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
-		B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverTableView.m; sourceTree = "<group>"; };
+		B64A8B371FF244E200F6E56D /* OrderDetailsDriverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverViewController.h; sourceTree = "<group>"; };
+		B64A8B381FF244E200F6E56D /* OrderDetailsDriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverViewController.m; sourceTree = "<group>"; };
+		B64A8B3A1FF244E200F6E56D /* OrderDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsModel.h; sourceTree = "<group>"; };
+		B64A8B3B1FF244E200F6E56D /* OrderDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsModel.m; sourceTree = "<group>"; };
+		B64A8B3C1FF244E200F6E56D /* orderStateColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderStateColor.h; sourceTree = "<group>"; };
+		B64A8B3D1FF244E200F6E56D /* orderStateColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderStateColor.m; sourceTree = "<group>"; };
+		B64A8B3E1FF244E200F6E56D /* ReceivingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivingModel.h; sourceTree = "<group>"; };
+		B64A8B3F1FF244E200F6E56D /* ReceivingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivingModel.m; sourceTree = "<group>"; };
+		B64A8B401FF244E200F6E56D /* WasteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasteModel.h; sourceTree = "<group>"; };
+		B64A8B411FF244E200F6E56D /* WasteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WasteModel.m; sourceTree = "<group>"; };
+		B64A8B431FF244E200F6E56D /* OrderDetailsDriverBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverBottomView.h; sourceTree = "<group>"; };
+		B64A8B441FF244E200F6E56D /* OrderDetailsDriverBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverBottomView.m; sourceTree = "<group>"; };
+		B64A8B451FF244E200F6E56D /* OrderDetailsDriverTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverTableView.h; sourceTree = "<group>"; };
+		B64A8B461FF244E200F6E56D /* OrderDetailsDriverTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverTableView.m; sourceTree = "<group>"; };
+		B64A8B471FF244E200F6E56D /* OrderDetailsManagerActionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerActionTableView.h; sourceTree = "<group>"; };
+		B64A8B481FF244E200F6E56D /* OrderDetailsManagerActionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerActionTableView.m; sourceTree = "<group>"; };
+		B64A8B491FF244E200F6E56D /* OrderDetailsManagerBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerBottomView.h; sourceTree = "<group>"; };
+		B64A8B4A1FF244E200F6E56D /* OrderDetailsManagerBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerBottomView.m; sourceTree = "<group>"; };
+		B64A8B4B1FF244E200F6E56D /* OrderDetailsManagerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerTableView.h; sourceTree = "<group>"; };
+		B64A8B4C1FF244E200F6E56D /* OrderDetailsManagerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerTableView.m; sourceTree = "<group>"; };
 		B6520E141FE2110E00CD252D /* PopMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopMenuViewController.h; sourceTree = "<group>"; };
 		B6520E151FE2110E00CD252D /* PopMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopMenuViewController.m; sourceTree = "<group>"; };
-		B6578A141FD8DE4A001FB900 /* OrderDetailsDriverBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsDriverBottomView.h; sourceTree = "<group>"; };
-		B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsDriverBottomView.m; sourceTree = "<group>"; };
-		B6578A171FD8EA91001FB900 /* OrderDetailsManagerActionTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerActionTableView.h; sourceTree = "<group>"; };
-		B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerActionTableView.m; sourceTree = "<group>"; };
-		B6578A1A1FD90B2B001FB900 /* OrderDetailsManagerTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerTableView.h; sourceTree = "<group>"; };
-		B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerTableView.m; sourceTree = "<group>"; };
 		B6578A211FD92DCB001FB900 /* OrderSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderSearchViewController.h; sourceTree = "<group>"; };
 		B6578A221FD92DCB001FB900 /* OrderSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderSearchViewController.m; sourceTree = "<group>"; };
-		B687A4781FDF7D12002965FC /* orderStateColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderStateColor.h; sourceTree = "<group>"; };
-		B687A4791FDF7D12002965FC /* orderStateColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderStateColor.m; sourceTree = "<group>"; };
-		B68BC9BC1FDA5E7200762395 /* OrderDetailsManagerBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsManagerBottomView.h; sourceTree = "<group>"; };
-		B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsManagerBottomView.m; sourceTree = "<group>"; };
 		B69CB8B31FD79B120045A4F2 /* ManagerOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerOrderViewController.h; sourceTree = "<group>"; };
 		B69CB8B41FD79B120045A4F2 /* ManagerOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerOrderViewController.m; sourceTree = "<group>"; };
-		B6B830261FD534E70092A00F /* OrderDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailsModel.h; sourceTree = "<group>"; };
-		B6B830271FD534E70092A00F /* OrderDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailsModel.m; sourceTree = "<group>"; };
 		B6BB4F831FE27118008B5F1B /* SkyerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyerBaseViewController.h; sourceTree = "<group>"; };
 		B6BB4F841FE27118008B5F1B /* SkyerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyerBaseViewController.m; sourceTree = "<group>"; };
 		B6C0FB551FD23FBF00061441 /* OrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListModel.h; sourceTree = "<group>"; };
@@ -312,49 +318,53 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B64272501FD25503008F505C /* 订单详情 */ = {
+		B64A8B351FF244E200F6E56D /* 订单详情 */ = {
 			isa = PBXGroup;
 			children = (
-				B64272511FD25503008F505C /* Controller */,
-				B64272521FD25503008F505C /* Models */,
-				B64272531FD25503008F505C /* Views */,
+				B64A8B361FF244E200F6E56D /* Controller */,
+				B64A8B391FF244E200F6E56D /* Models */,
+				B64A8B421FF244E200F6E56D /* Views */,
 			);
 			path = "订单详情";
 			sourceTree = "<group>";
 		};
-		B64272511FD25503008F505C /* Controller */ = {
+		B64A8B361FF244E200F6E56D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B64272581FD25663008F505C /* OrderDetailsDriverViewController.h */,
-				B64272591FD25663008F505C /* OrderDetailsDriverViewController.m */,
+				B64A8B371FF244E200F6E56D /* OrderDetailsDriverViewController.h */,
+				B64A8B381FF244E200F6E56D /* OrderDetailsDriverViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		B64272521FD25503008F505C /* Models */ = {
+		B64A8B391FF244E200F6E56D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B6B830261FD534E70092A00F /* OrderDetailsModel.h */,
-				B6B830271FD534E70092A00F /* OrderDetailsModel.m */,
-				B687A4781FDF7D12002965FC /* orderStateColor.h */,
-				B687A4791FDF7D12002965FC /* orderStateColor.m */,
+				B64A8B3A1FF244E200F6E56D /* OrderDetailsModel.h */,
+				B64A8B3B1FF244E200F6E56D /* OrderDetailsModel.m */,
+				B64A8B3C1FF244E200F6E56D /* orderStateColor.h */,
+				B64A8B3D1FF244E200F6E56D /* orderStateColor.m */,
+				B64A8B3E1FF244E200F6E56D /* ReceivingModel.h */,
+				B64A8B3F1FF244E200F6E56D /* ReceivingModel.m */,
+				B64A8B401FF244E200F6E56D /* WasteModel.h */,
+				B64A8B411FF244E200F6E56D /* WasteModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B64272531FD25503008F505C /* Views */ = {
+		B64A8B421FF244E200F6E56D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B642725B1FD25692008F505C /* OrderDetailsDriverTableView.h */,
-				B642725C1FD25692008F505C /* OrderDetailsDriverTableView.m */,
-				B6578A171FD8EA91001FB900 /* OrderDetailsManagerActionTableView.h */,
-				B6578A181FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m */,
-				B6578A1A1FD90B2B001FB900 /* OrderDetailsManagerTableView.h */,
-				B6578A1B1FD90B2B001FB900 /* OrderDetailsManagerTableView.m */,
-				B6578A141FD8DE4A001FB900 /* OrderDetailsDriverBottomView.h */,
-				B6578A151FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m */,
-				B68BC9BC1FDA5E7200762395 /* OrderDetailsManagerBottomView.h */,
-				B68BC9BD1FDA5E7200762395 /* OrderDetailsManagerBottomView.m */,
+				B64A8B431FF244E200F6E56D /* OrderDetailsDriverBottomView.h */,
+				B64A8B441FF244E200F6E56D /* OrderDetailsDriverBottomView.m */,
+				B64A8B451FF244E200F6E56D /* OrderDetailsDriverTableView.h */,
+				B64A8B461FF244E200F6E56D /* OrderDetailsDriverTableView.m */,
+				B64A8B471FF244E200F6E56D /* OrderDetailsManagerActionTableView.h */,
+				B64A8B481FF244E200F6E56D /* OrderDetailsManagerActionTableView.m */,
+				B64A8B491FF244E200F6E56D /* OrderDetailsManagerBottomView.h */,
+				B64A8B4A1FF244E200F6E56D /* OrderDetailsManagerBottomView.m */,
+				B64A8B4B1FF244E200F6E56D /* OrderDetailsManagerTableView.h */,
+				B64A8B4C1FF244E200F6E56D /* OrderDetailsManagerTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -663,9 +673,9 @@
 		B6E985321FCD3721003A370A /* 全部订单 */ = {
 			isa = PBXGroup;
 			children = (
+				B64A8B351FF244E200F6E56D /* 订单详情 */,
 				B6578A1D1FD92DA1001FB900 /* 订单搜索 */,
 				B61141E11FD54B9700C7C392 /* 异常上报 */,
-				B64272501FD25503008F505C /* 订单详情 */,
 				B6E985671FCD3CBA003A370A /* 监理订单 */,
 				B6E985741FCD3CBA003A370A /* 司机订单 */,
 				B6E985621FCD38B4003A370A /* Models */,
@@ -881,36 +891,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61141E71FD54BDA00C7C392 /* AbnormalViewController.m in Sources */,
+				B64A8B4F1FF244E200F6E56D /* orderStateColor.m in Sources */,
 				B640D9FD1FD68A7F00A6153F /* ResetPasswordViewController.m in Sources */,
 				B6E985881FCD5A71003A370A /* skJPUSHSet.m in Sources */,
-				B6B830281FD534E70092A00F /* OrderDetailsModel.m in Sources */,
+				B64A8B531FF244E200F6E56D /* OrderDetailsDriverTableView.m in Sources */,
+				B64A8B511FF244E200F6E56D /* WasteModel.m in Sources */,
 				B6C0FB5E1FD24AD100061441 /* LoginViewController.m in Sources */,
+				B64A8B541FF244E200F6E56D /* OrderDetailsManagerActionTableView.m in Sources */,
 				B63572371FE916F600F26023 /* MessageTableView.m in Sources */,
+				B64A8B561FF244E200F6E56D /* OrderDetailsManagerTableView.m in Sources */,
 				B62CFDCC1FCBB09C00776F72 /* UserLogin.m in Sources */,
 				B640DA001FD68AA400A6153F /* AboutUsViewController.m in Sources */,
 				B635723A1FE91CA500F26023 /* skSelectView.m in Sources */,
-				B6578A1C1FD90B2B001FB900 /* OrderDetailsManagerTableView.m in Sources */,
 				B63572341FE9151000F26023 /* MessageModel.m in Sources */,
+				B64A8B501FF244E200F6E56D /* ReceivingModel.m in Sources */,
+				B64A8B4E1FF244E200F6E56D /* OrderDetailsModel.m in Sources */,
 				B69CB8B71FD79B130045A4F2 /* ManagerOrderViewController.m in Sources */,
 				B6D7EF481FC7C14300E669E3 /* AppDelegate.m in Sources */,
-				B6578A191FD8EA91001FB900 /* OrderDetailsManagerActionTableView.m in Sources */,
 				B6CB578C1FCE67AE00D4FE02 /* AppDelegate+Jpush.m in Sources */,
 				B6D7EF3D1FC7C0ED00E669E3 /* main.m in Sources */,
 				B6D7EF8A1FC803FA00E669E3 /* SKKeyboard.m in Sources */,
-				B642725D1FD25692008F505C /* OrderDetailsDriverTableView.m in Sources */,
 				B6E985661FCD38B5003A370A /* TableViewForOrder.m in Sources */,
 				B6BB4F8F1FE27118008B5F1B /* SkyerBaseViewController.m in Sources */,
-				B642725A1FD25663008F505C /* OrderDetailsDriverViewController.m in Sources */,
 				B640DA071FD68CAB00A6153F /* UserSetViewController.m in Sources */,
+				B64A8B551FF244E200F6E56D /* OrderDetailsManagerBottomView.m in Sources */,
 				B6520E161FE2110E00CD252D /* PopMenuViewController.m in Sources */,
-				B68BC9BE1FDA5E7200762395 /* OrderDetailsManagerBottomView.m in Sources */,
 				B62CFDD31FCBB3CD00776F72 /* ComMacro.m in Sources */,
-				B687A47A1FDF7D12002965FC /* orderStateColor.m in Sources */,
+				B64A8B521FF244E200F6E56D /* OrderDetailsDriverBottomView.m in Sources */,
 				B640D9FA1FD68A5A00A6153F /* MessageViewController.m in Sources */,
 				B6C0FB691FD24BEF00061441 /* ForgetPWViewController.m in Sources */,
 				B6C0FB6F1FD24C0400061441 /* BindingViewController.m in Sources */,
+				B64A8B4D1FF244E200F6E56D /* OrderDetailsDriverViewController.m in Sources */,
 				B6C0FB811FD24C5F00061441 /* DriverOrderViewController.m in Sources */,
-				B6578A161FD8DE4A001FB900 /* OrderDetailsDriverBottomView.m in Sources */,
 				B6578A231FD92DCB001FB900 /* OrderSearchViewController.m in Sources */,
 				B640DA0A1FD68E6F00A6153F /* AboutUsModel.m in Sources */,
 				B6C0FB571FD23FBF00061441 /* OrderListModel.m in Sources */,
