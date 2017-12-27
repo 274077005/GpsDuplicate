@@ -355,16 +355,16 @@
 		B64A8B421FF244E200F6E56D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B64A8B431FF244E200F6E56D /* OrderDetailsDriverBottomView.h */,
-				B64A8B441FF244E200F6E56D /* OrderDetailsDriverBottomView.m */,
 				B64A8B451FF244E200F6E56D /* OrderDetailsDriverTableView.h */,
 				B64A8B461FF244E200F6E56D /* OrderDetailsDriverTableView.m */,
 				B64A8B471FF244E200F6E56D /* OrderDetailsManagerActionTableView.h */,
 				B64A8B481FF244E200F6E56D /* OrderDetailsManagerActionTableView.m */,
-				B64A8B491FF244E200F6E56D /* OrderDetailsManagerBottomView.h */,
-				B64A8B4A1FF244E200F6E56D /* OrderDetailsManagerBottomView.m */,
 				B64A8B4B1FF244E200F6E56D /* OrderDetailsManagerTableView.h */,
 				B64A8B4C1FF244E200F6E56D /* OrderDetailsManagerTableView.m */,
+				B64A8B431FF244E200F6E56D /* OrderDetailsDriverBottomView.h */,
+				B64A8B441FF244E200F6E56D /* OrderDetailsDriverBottomView.m */,
+				B64A8B491FF244E200F6E56D /* OrderDetailsManagerBottomView.h */,
+				B64A8B4A1FF244E200F6E56D /* OrderDetailsManagerBottomView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";

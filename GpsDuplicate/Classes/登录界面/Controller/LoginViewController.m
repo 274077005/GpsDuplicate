@@ -144,7 +144,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-    skUser.UserType=@"1";                                                                                                                                                                                                          
+//    skUser.UserType=@"1";                                                                                                                                                                                                          
     switch ([skUser.UserType integerValue]) {
         case 1:
         {

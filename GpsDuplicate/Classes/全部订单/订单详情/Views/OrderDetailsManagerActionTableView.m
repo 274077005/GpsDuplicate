@@ -192,14 +192,14 @@
             }];
             
             //一个填写装载量的文本框
-            UITextField *textLoading=[[UITextField alloc] init];
-            [textLoading skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
-            [cell.contentView addSubview:textLoading];
-            textLoading.textAlignment=1;
-            textLoading.font=[UIFont systemFontOfSize:13];
-            textLoading.keyboardType=UIKeyboardTypeNumberPad;
+            _textLoading=[[UITextField alloc] init];
+            [_textLoading skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
+            [cell.contentView addSubview:_textLoading];
+            _textLoading.textAlignment=1;
+            _textLoading.font=[UIFont systemFontOfSize:13];
+            _textLoading.keyboardType=UIKeyboardTypeNumberPad;
             
-            [textLoading mas_makeConstraints:^(MASConstraintMaker *make) {
+            [_textLoading mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.mas_equalTo(btnSelectTrashType.mas_left);
                 make.top.mas_equalTo(labLoading.mas_top);
                 make.bottom.mas_equalTo(labLoading.mas_bottom);
@@ -213,7 +213,7 @@
             labLoadingwei.textColor=[UIColor grayColor];
             labLoadingwei.textAlignment=0;
             [labLoadingwei mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(textLoading.mas_right).offset(5);
+                make.left.mas_equalTo(_textLoading.mas_right).offset(5);
                 make.right.mas_equalTo(-20);
                 make.height.mas_equalTo(20);
                 make.top.mas_equalTo(labLoading.mas_top);
@@ -397,9 +397,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 -(void)btnWaste:(CGRect)frame{
-    
+    NSLog(@"设置废弃物种类");
 }
 -(void)btnReceiving:(CGRect)frame{
-    
+    NSLog(@"设置废弃物种类");
 }
 @end

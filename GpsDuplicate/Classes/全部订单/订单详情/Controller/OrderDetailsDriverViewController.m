@@ -57,12 +57,24 @@
         [self.view addSubview:_orderDetailsManagerActionTableView];
         
         //废弃物的点击事件
-        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnReceiving:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @weakify(self)
+        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnWaste:)] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self);
+            if (_arrWasteModel.count>1) {
+                RACTupleUnpack(NSString *string)=x;
+                CGRect frame = CGRectFromString([NSString stringWithFormat:@"%@",string]);
+                [self selectWaste:frame];
+            }
             
         }];
         //终点
-        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnWaste:)] subscribeNext:^(RACTuple * _Nullable x) {
-            
+        [[_orderDetailsManagerActionTableView rac_signalForSelector:@selector(btnReceiving:)] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self);
+            if (_arrReceivingModel.count>1) {
+                RACTupleUnpack(NSString *string)=x;
+                CGRect frame = CGRectFromString([NSString stringWithFormat:@"%@",string]);
+                [self selectReceiving:frame];
+            }
             
         }];
         
@@ -79,17 +91,26 @@
     PopMenuViewController *pop=[[PopMenuViewController alloc] init];
     pop.viewFrame=frame;
     NSMutableArray *arrTitle=[[NSMutableArray alloc] init];
-    for (int i=0; i<_arrReceivingModel.count; ++i) {
+    for (int i=0; i<_arrWasteModel.count; ++i) {
         WasteModel *rmodel=[_arrWasteModel objectAtIndex:i];
         [arrTitle addObject:rmodel.WasteName];
     }
     
     pop.arrData=arrTitle;
+    //设置模式展示风格
+    UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
+    [pop setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    //必要配置
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
         self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel objectAtIndex:index];
         [self updataUI];
     };
+    
+    
 }
 
 /**
@@ -108,6 +129,13 @@
     }
     
     pop.arrData=arrTitle;
+    //设置模式展示风格
+    UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
+    [pop setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    //必要配置
+    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
         self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel objectAtIndex:index];
@@ -153,7 +181,13 @@
         @weakify(self)
         [[_orderDetailsManagerBottomView rac_signalForSelector:@selector(delegateBtnSure)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)
-            [self Confirm];
+            
+            if ([self isOrderAction]) {
+                [self SaveOrderDetails];
+            }else{
+                [self Confirm];
+            }
+            
         }];
     }
     return _orderDetailsManagerBottomView;
@@ -211,15 +245,15 @@
  获取修改的订单详情
  */
 -(void)EditOrderDetails{
-    NSDictionary *parameters=@{
-                               @"OrderID":_model.OrderID
-                               };
+    NSDictionary *parameters=@{@"OrderID":self.orderListModel.OrderID};
     
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
-        _arrWasteModel=[ReceivingModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
+        _arrWasteModel=[WasteModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
+        
+        
         _arrReceivingModel=[ReceivingModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Receiving"]];
         
         //请求完数据更新UI
@@ -251,6 +285,27 @@
         
     }];
 }
+
+/**
+ 获取验证码
+ */
+-(void)SaveOrderDetails{
+    NSDictionary *parameters=@{
+                               @"OrderID":_model.OrderID,
+                               @"WasteType":self.orderDetailsManagerActionTableView.wasteModel.WasteName,
+                               @"Loading":self.orderDetailsManagerActionTableView.textLoading.text,
+                               @"ReceivingID":self.orderDetailsManagerActionTableView.receivingModel.ReceivingName,
+                               @"UserID":skUser.UserID
+                               };
+    
+    kWeakSelf(self);
+    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"SaveOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        [weakself getOrderDetails];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 
 //请求完数据更新UI
 - (void)updataUI{
@@ -313,7 +368,8 @@
  @return yes就有,no就没有
  */
 -(Boolean)isOrderAction{
-    if ([skUser.UserType integerValue]==2&&[_model.OrderStatus integerValue]==12) {
+    
+    if ([skUser.UserType integerValue]==2||[_model.OrderStatus integerValue]==12) {
         return true;
     }
     return false;

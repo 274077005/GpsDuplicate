@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor clearColor];
+    self.view.backgroundColor=[[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     [self tableView];
 }
 
@@ -28,7 +28,7 @@
         CGFloat MinX=CGRectGetMinX(self.viewFrame);
         CGFloat MaxY=CGRectGetMaxY(self.viewFrame);
         CGFloat Width=CGRectGetWidth(self.viewFrame);
-        _tableView=[[UITableView alloc] initWithFrame:CGRectMake(MinX, MaxY+64+22, Width, skScreenHeight-MaxY-64-22) style:(UITableViewStyleGrouped)];
+        _tableView=[[UITableView alloc] initWithFrame:CGRectMake(MinX, MaxY+64, Width, skScreenHeight-MaxY-64) style:(UITableViewStyleGrouped)];
         _tableView.delegate=self;
         _tableView.dataSource=self;
         _tableView.backgroundColor=[UIColor clearColor];
