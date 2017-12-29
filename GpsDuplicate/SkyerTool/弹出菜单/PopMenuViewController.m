@@ -16,89 +16,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
-    [self tableView];
+    
+    [self.view addSubview:self.pickerView];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(UITableView *)tableView{
-    if (nil==_tableView) {
-        CGFloat MinX=CGRectGetMinX(self.viewFrame);
-        CGFloat MaxY=CGRectGetMaxY(self.viewFrame);
-        CGFloat Width=CGRectGetWidth(self.viewFrame);
-        _tableView=[[UITableView alloc] initWithFrame:CGRectMake(MinX, MaxY+64, Width, skScreenHeight-MaxY-64) style:(UITableViewStyleGrouped)];
-        _tableView.delegate=self;
-        _tableView.dataSource=self;
-        _tableView.backgroundColor=[UIColor clearColor];
-        [self.view addSubview:_tableView];
-        if (@available(iOS 11.0, *)) {
-            self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
+-(UIPickerView *)pickerView{
+    if (nil==_pickerView) {
+        _pickerView=[[UIPickerView alloc] initWithFrame:CGRectMake(0, skScreenHeight-120, skScreenWidth, 120)];
+        _pickerView.delegate=self;
+        _pickerView.dataSource=self;
+        _pickerView.backgroundColor=[UIColor whiteColor];
     }
-    return _tableView;
+    return _pickerView;
 }
 
-#pragma mark - cell的代理
-#pragma mark cell 的高度
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 40;
+//UIPickerViewDataSource中定义的方法，该方法的返回值决定该控件包含的列数
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView*)pickerView
+{
+    return 1; // 返回1表明该控件只包含1列
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+//UIPickerViewDataSource中定义的方法，该方法的返回值决定该控件指定列包含多少个列表项
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    // 由于该控件只包含一列，因此无须理会列序号参数component
+    // 该方法返回teams.count，表明teams包含多少个元素，该控件就包含多少行
     return _arrData.count;
 }
-#pragma mark section下得cell的个数
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+
+// UIPickerViewDelegate中定义的方法，该方法返回的NSString将作为UIPickerView
+// 中指定列和列表项的标题文本
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    // 由于该控件只包含一列，因此无须理会列序号参数component
+    // 该方法根据row参数返回teams中的元素，row参数代表列表项的编号，
+    // 因此该方法表示第几个列表项，就使用teams中的第几个元素
     
-    return 1;
-}
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 0)];
-    view.backgroundColor=skLineColor;
-    return view;
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 1)];
-    view.backgroundColor=skLineColor;
-    return view;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 1;
+    return [_arrData objectAtIndex:row];
 }
 
-#pragma mark 绘制一个cell
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    static NSString *cellIdentifier = @"PopMenuViewController";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        
-    }
-    
-    cell.textLabel.text=[_arrData objectAtIndex:indexPath.section];
-    cell.textLabel.textAlignment=1;
-    cell.textLabel.font=[UIFont systemFontOfSize:14];
-    cell.textLabel.textColor=[UIColor grayColor];
-    
-    return cell;
-}
-#pragma mark 点击cell
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+// 当用户选中UIPickerViewDataSource中指定列和列表项时激发该方法
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:
+(NSInteger)row inComponent:(NSInteger)component
+{
     if (_skIndexSelect) {
-        self.skIndexSelect(indexPath.section);
+        _skIndexSelect(row);
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

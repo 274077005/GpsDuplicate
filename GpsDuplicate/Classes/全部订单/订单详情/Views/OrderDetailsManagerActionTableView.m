@@ -17,6 +17,7 @@
         self.backgroundColor=skLineColor;
         self.delegate=self;
         self.dataSource=self;
+        
     }
     return self;
 }
@@ -165,6 +166,7 @@
             [btnSelectTrashType skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
             btnSelectTrashType.titleLabel.font=[UIFont systemFontOfSize:12];
             [btnSelectTrashType setTitleColor:[UIColor lightGrayColor] forState:0];
+    
             [btnSelectTrashType setTitle:_wasteModel.WasteName forState:0];
             [btnSelectTrashType mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(100);
@@ -196,6 +198,7 @@
             [_textLoading skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
             [cell.contentView addSubview:_textLoading];
             _textLoading.textAlignment=1;
+            _textLoading.text=_textLoadingCount;
             _textLoading.font=[UIFont systemFontOfSize:13];
             _textLoading.keyboardType=UIKeyboardTypeNumberPad;
             
@@ -204,6 +207,9 @@
                 make.top.mas_equalTo(labLoading.mas_top);
                 make.bottom.mas_equalTo(labLoading.mas_bottom);
                 make.width.mas_equalTo(50);
+            }];
+            [RACObserve(self.textLoading, text) subscribeNext:^(id  _Nullable x) {
+                _textLoadingCount=x;
             }];
             //继续完善
             UILabel *labLoadingwei=[[UILabel alloc] init];
@@ -306,7 +312,7 @@
                 make.left.mas_equalTo(labEnd.mas_right).offset(10);
             }];
             @weakify(self);
-            [[btnEndAddress rac_signalForControlEvents:(UIControlEventTouchDragInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            [[btnEndAddress rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
                 @strongify(self);
                 [self btnReceiving:btnEndAddress.frame];
             }];

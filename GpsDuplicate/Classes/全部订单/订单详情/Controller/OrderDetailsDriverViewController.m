@@ -31,7 +31,8 @@
 //2、施工单位管理员 3、工地理监单位监理员 4、处置场处理员
 @property (nonatomic,strong) OrderDetailsManagerTableView *orderDetailsManagerTableView;
 
-
+@property (nonatomic,assign) NSInteger wasIndex;
+@property (nonatomic,assign) NSInteger recIndex;
 
 @end
 
@@ -89,7 +90,6 @@
  */
 -(void)selectWaste:(CGRect)frame{
     PopMenuViewController *pop=[[PopMenuViewController alloc] init];
-    pop.viewFrame=frame;
     NSMutableArray *arrTitle=[[NSMutableArray alloc] init];
     for (int i=0; i<_arrWasteModel.count; ++i) {
         WasteModel *rmodel=[_arrWasteModel objectAtIndex:i];
@@ -106,7 +106,7 @@
     vc.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
-        self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel objectAtIndex:index];
+        _wasIndex=index;
         [self updataUI];
     };
     
@@ -120,7 +120,6 @@
  */
 -(void)selectReceiving:(CGRect)frame{
     PopMenuViewController *pop=[[PopMenuViewController alloc] init];
-    pop.viewFrame=frame;
     
     NSMutableArray *arrTitle=[[NSMutableArray alloc] init];
     for (int i=0; i<_arrReceivingModel.count; ++i) {
@@ -138,7 +137,7 @@
     vc.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
-        self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel objectAtIndex:index];
+        _recIndex=index;
         [self updataUI];
     };
 }
@@ -215,7 +214,7 @@
     // Do any additional setup after loading the view.
     [self initUI];
     [self getOrderDetails];
-    
+    NSLog(@"%@\n%@",skUser.UserType,self.orderListModel.OrderStatus);
     
 }
 
@@ -230,6 +229,7 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //获取数据成功.首先更新tableview.再更新bottom的界面
+        NSLog(@"%@",responseObject);
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         
         //请求完数据更新UI
@@ -249,6 +249,9 @@
     
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
+        NSLog(@"%@",[responseObject objectForKey:@"Receiving"]);
+        
         
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         _arrWasteModel=[WasteModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
@@ -333,8 +336,8 @@
         {
             if ([self isOrderAction]) {
                 self.orderDetailsManagerActionTableView.model=_model;
-                self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel firstObject];
-                self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel firstObject];
+                self.orderDetailsManagerActionTableView.wasteModel=[_arrWasteModel objectAtIndex:_wasIndex];
+                self.orderDetailsManagerActionTableView.receivingModel=[_arrReceivingModel objectAtIndex:_recIndex];
                 [self.orderDetailsManagerActionTableView reloadData];
             }else{
                 self.orderDetailsManagerTableView.model=_model;
@@ -369,7 +372,7 @@
  */
 -(Boolean)isOrderAction{
     
-    if ([skUser.UserType integerValue]==2||[_model.OrderStatus integerValue]==12) {
+    if ([skUser.UserType integerValue]==2&&[_orderListModel.OrderStatus integerValue]==12) {
         return true;
     }
     return false;

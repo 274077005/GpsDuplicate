@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopMenuViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface PopMenuViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (nonatomic,assign) CGRect viewFrame;
 
 @property (nonatomic,strong) NSArray *arrData;//需要显示的数据
-
-@property (nonatomic,strong) UITableView *tableView;
-
+@property (nonatomic,strong) UIPickerView *pickerView;//选择
 
 @property (nonatomic,strong) void (^skIndexSelect)(NSInteger index);
 

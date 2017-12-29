@@ -13,6 +13,7 @@
 //这个是监理可以设置废物物种类和装载量还有终点位置的
 @interface OrderDetailsManagerActionTableView : UITableView <UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic,copy) NSString *textLoadingCount;
 @property (nonatomic,strong) UITextField *textLoading;
 @property (nonatomic,strong) WasteModel *wasteModel;
 @property (nonatomic,strong) ReceivingModel *receivingModel;
