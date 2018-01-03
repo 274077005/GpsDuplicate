@@ -68,6 +68,12 @@
         
     }
 
+    for(UIView *view in cell.contentView.subviews){
+        
+        [view removeFromSuperview];
+        
+    }
+    
     OrderListModel *model=[_arrCellData objectAtIndex:indexPath.section];
     
     cell.backgroundColor=skLineColor;
@@ -170,8 +176,5 @@
     _arrCellData=data;
     [self reloadData];
 }
-
-
-
 
 @end

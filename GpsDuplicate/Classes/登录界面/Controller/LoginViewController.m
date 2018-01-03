@@ -131,7 +131,6 @@
     } failure:^(NSError * _Nullable error) {
 
     }];
-    
 }
 
 /**
@@ -144,7 +143,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-//    skUser.UserType=@"1";                                                                                                                                                                                                          
+//    skUser.UserType=@"1";
+    
+    
+    
     switch ([skUser.UserType integerValue]) {
         case 1:
         {
@@ -153,8 +155,9 @@
             [self presentViewController:bdv animated:YES completion:nil];
         }
             break;
-        case 2:case 3:case 4:
-            
+        case 2:
+//        case 3:
+//        case 4:
         {
             ManagerOrderViewController *view=[[ManagerOrderViewController alloc] init];
             UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
