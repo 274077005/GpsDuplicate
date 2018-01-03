@@ -28,7 +28,7 @@
     return 44;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return _arrData.count;
 }
 #pragma mark section下得cell的个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -65,6 +65,11 @@
     }
     MessageModel *model=[_arrData objectAtIndex:indexPath.section];
     cell.textLabel.text=model.PushTitle;
+    cell.textLabel.font=[UIFont systemFontOfSize:14];
+    UIImage *imageRed=[UIImage imageNamed:@"red"];
+    cell.imageView.image=imageRed;
+    
+    
     return cell;
 }
 #pragma mark 点击cell

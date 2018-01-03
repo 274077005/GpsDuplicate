@@ -115,21 +115,19 @@
     NSString *DeviceID=[skJPUSHSet sharedskJPUSHSet].skRegistrationID;
     
     
-    NSDictionary *params=@{@"UserName":_textName.text
+    NSDictionary *params=@{ @"UserName":_textName.text
                            ,@"PassWord":[password MD5]
                            ,@"RememberPwd":_isRemamber?@"0":@"1"
                            ,@"DeviceID":DeviceID?DeviceID:@"用户没有授权推送"
                            ,@"NO":@"UserLogin"
+                            
                            };
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [[UserLogin sharedUserLogin] skChangeUserInfo:skContent(responseObject)];
-        
         [self loginSuccess];
         [[skJPUSHSet sharedskJPUSHSet] skSetAlias:_textName.text];
-        
     } failure:^(NSError * _Nullable error) {
-
     }];
 }
 
