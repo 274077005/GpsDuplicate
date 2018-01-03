@@ -214,8 +214,6 @@
     // Do any additional setup after loading the view.
     [self initUI];
     [self getOrderDetails];
-    NSLog(@"%@\n%@",skUser.UserType,self.orderListModel.OrderStatus);
-    
 }
 
 #pragma mark - 获取不能修改的订单详情
@@ -229,7 +227,7 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //获取数据成功.首先更新tableview.再更新bottom的界面
-        NSLog(@"%@",responseObject);
+        NSLog(@"获取不能修改的订单详情%@",responseObject);
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         
         //请求完数据更新UI
@@ -250,8 +248,7 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
-        NSLog(@"%@",[responseObject objectForKey:@"Receiving"]);
-        
+        NSLog(@"获取修改订单的详情=%@",responseObject);
         
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         _arrWasteModel=[WasteModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
@@ -295,14 +292,19 @@
 -(void)SaveOrderDetails{
     NSDictionary *parameters=@{
                                @"OrderID":_model.OrderID,
-                               @"WasteType":self.orderDetailsManagerActionTableView.wasteModel.WasteName,
+                               @"WasteType":self.orderDetailsManagerActionTableView.wasteModel.WasteID,
                                @"Loading":self.orderDetailsManagerActionTableView.textLoading.text,
-                               @"ReceivingID":self.orderDetailsManagerActionTableView.receivingModel.ReceivingName,
+                               @"ReceivingID":self.orderDetailsManagerActionTableView.receivingModel.ReceivingID,
                                @"UserID":skUser.UserID
                                };
     
+    
+    
+    NSLog(@"保存订单的参数=%@",parameters);
+    
     kWeakSelf(self);
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"SaveOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+        _model.OrderStatus=@"17";
         [weakself getOrderDetails];
     } failure:^(NSError * _Nullable error) {
         
@@ -372,9 +374,18 @@
  */
 -(Boolean)isOrderAction{
     
-    if ([skUser.UserType integerValue]==2&&[_orderListModel.OrderStatus integerValue]==12) {
-        return true;
+    
+    if (nil==_model.ProjectName) {
+        if ([skUser.UserType integerValue]==2&&[_orderListModel.OrderStatus integerValue]==12) { NSLog(@"orderListModel==%@\n%@",skUser.UserType,self.orderListModel.OrderStatus);
+            return true;
+        }
+    }else{
+        if ([skUser.UserType integerValue]==2&&[_model.OrderStatus integerValue]==12) {
+            NSLog(@"_model==%@\n%@",skUser.UserType,_model.OrderStatus);
+            return true;
+        }
     }
+    
     return false;
 }
 

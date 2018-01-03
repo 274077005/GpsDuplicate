@@ -198,7 +198,7 @@
             [_textLoading skSetBoardRadius:2 Width:1 andBorderColor:[UIColor lightGrayColor]];
             [cell.contentView addSubview:_textLoading];
             _textLoading.textAlignment=1;
-            _textLoading.text=_textLoadingCount;
+            _textLoading.text=_model.Loading;
             _textLoading.font=[UIFont systemFontOfSize:13];
             _textLoading.keyboardType=UIKeyboardTypeNumberPad;
             
