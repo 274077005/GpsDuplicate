@@ -18,4 +18,19 @@
  @param borderColor 边框的颜色
  */
 -(void)skSetBoardRadius:(CGFloat)Radius Width:(CGFloat)Width andBorderColor:(UIColor *)borderColor;
+
+/**
+ 给view添加一个basc动画
+
+ @param view 无返回
+ */
+- (void)skCABasicAnimationForView:(UIView *)view;
+
+/**
+ 给View自定义一个动画
+
+ @param view 需要加动画的view
+ @param duration 无返回
+ */
+- (void)skAnimationWithView:(UIView *)view duration:(CFTimeInterval)duration;
 @end

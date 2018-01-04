@@ -13,6 +13,7 @@
 #import "PopMenuViewController.h"
 #import "skJPUSHSet.h"
 
+
 //缓存几个数据,账号\密码\和是否记住密码
 #define skPassWord @"skPassWord"
 #define skUserName @"skUserName"

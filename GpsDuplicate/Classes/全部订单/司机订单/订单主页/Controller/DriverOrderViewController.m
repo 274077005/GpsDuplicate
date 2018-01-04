@@ -10,7 +10,7 @@
 #import "UserSetViewController.h"
 #import "TableViewForOrder.h"
 #import "skSelectView.h"
-#import "SkScollPageView.h"
+#import <SkPageViews.h>
 #import "OrderListModel.h"
 #import "BindingViewController.h"
 #import "PopMenuViewController.h"
@@ -20,7 +20,7 @@
 @interface DriverOrderViewController ()
 
 @property (nonatomic,strong) skSelectView *skSelect;
-@property (nonatomic,strong) SkScollPageView *aapv;
+@property (nonatomic,strong) SkPageViews *aapv;
 @property (nonatomic,strong) TableViewForOrder *finishView;
 @property (nonatomic,strong) TableViewForOrder *unFinishView;
 @property (nonatomic,assign) NSInteger indexSelect;
@@ -51,7 +51,7 @@
         
         
         @strongify(self)
-        [skClassMethod skAlerView:@"确定解绑车辆吗?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+        [SkClassMethod skAlerView:@"确定解绑车辆吗?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
             [self UnBindVehicle];
         }];
         
@@ -141,7 +141,7 @@
     _finishView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"0"];
     
     
-    _aapv=[[SkScollPageView alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_unFinishView,_finishView] andSelecetIndex:0];
+    _aapv=[[SkPageViews alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_unFinishView,_finishView] andSelecetIndex:0];
     [self.view addSubview:_aapv];
     
     kWeakSelf(self)

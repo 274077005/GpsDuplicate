@@ -217,7 +217,7 @@
             @weakify(self)
             [[btnLoginOut rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
                 @strongify(self)
-                [skClassMethod skAlerView:@"确认退出当前账号?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                [SkClassMethod skAlerView:@"确认退出当前账号?" message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                     [self LogOut];
                 }];
                 

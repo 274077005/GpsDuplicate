@@ -85,7 +85,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -93,7 +93,7 @@
                 case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
-                    [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -115,7 +115,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -123,7 +123,7 @@
                 case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
-                    [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -145,7 +145,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 15:
                 {
-                    [skClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -153,7 +153,7 @@
                 case 17:
                 {
                     NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
-                    [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                    [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -297,8 +297,8 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"NoSpoil") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
-        UIViewController *view=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
-        [view.navigationController popViewControllerAnimated:YES];
+        
+        [skVSView.navigationController popViewControllerAnimated:YES];
         
     } failure:^(NSError * _Nullable error) {
         

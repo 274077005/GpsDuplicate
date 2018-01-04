@@ -9,7 +9,7 @@
 #import "ManagerOrderViewController.h"
 #import "UserSetViewController.h"
 #import "TableViewForOrder.h"
-#import "SkScollPageView.h"
+#import <SkPageViews.h>
 #import "OrderListModel.h"
 #import "BindingViewController.h"
 #import "skSelectView.h"
@@ -18,7 +18,7 @@
 @interface ManagerOrderViewController ()
 
 @property (nonatomic,strong) skSelectView *skSelect;
-@property (nonatomic,strong) SkScollPageView *aapv;
+@property (nonatomic,strong) SkPageViews *aapv;
 @property (nonatomic,strong) TableViewForOrder *sureWaitingView;
 @property (nonatomic,strong) TableViewForOrder *signWaitingView;
 @property (nonatomic,strong) TableViewForOrder *signWaitedView;
@@ -79,7 +79,7 @@
     _signWaitedView=[[TableViewForOrder alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, skScreenHeight-64-46) style:(UITableViewStyleGrouped) andType:@"2"];
     
     
-    _aapv=[[SkScollPageView alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_sureWaitingView,_signWaitingView,_signWaitedView] andSelecetIndex:0];
+    _aapv=[[SkPageViews alloc] initWithFrame:CGRectMake(0, 64+46, skScreenWidth, skScreenHeight-64-46) andArrViews:@[_sureWaitingView,_signWaitingView,_signWaitedView] andSelecetIndex:0];
     
     [self.view addSubview:_aapv];
     

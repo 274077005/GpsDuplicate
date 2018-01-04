@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SkyerGetVisibleViewController.h"
-#import "dataTool.h"
-#import "SkyerSingleton.h"
-#import "SkyerMacro.h"
-#import "SkDataOperation.h"
-#import "SkScollPageView.h"
-#import "skClassMethod.h"
-#import "VoiceTool.h"
-#import "SkyerHUD.h"
-#import "SkScollPageView.h"
+#import "SkHUD.h"
+#import "SkDate.h"
+#import "SkLocation.h"
+#import "SkPageViews.h"
+#import "SkChildViews.h"
+#import "SkClassMethod.h"
+
+

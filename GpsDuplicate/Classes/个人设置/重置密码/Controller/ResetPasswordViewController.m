@@ -27,11 +27,11 @@
             if ([weakself.textPassword.text length]>=6&&[weakself.textPassword.text length]<=16) {
                 [weakself ResetPwd];
             }else{
-                [SkyerHUD skyerShowToast:@"密码限制为6-16位"];
+                [SkHUD skyerShowToast:@"密码限制为6-16位"];
             }
             
         }else{
-            [SkyerHUD skyerShowToast:@"确认密码与新密码不一致"];
+            [SkHUD skyerShowToast:@"确认密码与新密码不一致"];
         }
     }];
 }
@@ -52,7 +52,7 @@
     
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"ResetPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        [SkyerHUD skyerShowToast:@"修改密码成功"];
+        [SkHUD skyerShowToast:@"修改密码成功"];
     } failure:^(NSError * _Nullable error) {
         
     }];

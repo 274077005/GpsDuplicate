@@ -1,5 +1,5 @@
 // 帮助实现单例设计模式
-NS_ASSUME_NONNULL_BEGIN
+
 // .h文件的实现
 #define SkyerSingletonH(methodName) + (instancetype)shared##methodName;
 
@@ -95,4 +95,4 @@ return 1; \
 }
 
 #endif
-NS_ASSUME_NONNULL_END
+

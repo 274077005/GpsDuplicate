@@ -64,7 +64,7 @@
         if (![self.textPhoneNum.text isEqualToString:@""]) {
             [self GetCode];
         }else{
-            [SkyerHUD skyerShowToast:@"请输入手机号码"];
+            [SkHUD skyerShowToast:@"请输入手机号码"];
         }
     }];
     

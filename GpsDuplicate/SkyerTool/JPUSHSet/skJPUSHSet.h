@@ -21,7 +21,7 @@
 
 @interface skJPUSHSet : NSObject <JPUSHRegisterDelegate>
 
-@property (nonatomic,strong) NSString *skRegistrationID;
+    @property (nonatomic,strong) NSString * _Nullable skRegistrationID;
 
 SkyerSingletonH(skJPUSHSet)
 /**

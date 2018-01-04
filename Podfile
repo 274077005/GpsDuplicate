@@ -6,7 +6,7 @@ target 'GpsDuplicate' do
   # use_frameworks!
 
   # Pods for GpsDuplicate
-pod 'SkyerTools','~>1.1.0'
+pod 'SkyerTools'
 pod 'ReactiveObjC'
 pod 'AFNetworking'
 pod 'JPush'

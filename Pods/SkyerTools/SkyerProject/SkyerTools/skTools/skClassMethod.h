@@ -1,5 +1,5 @@
 //
-//  skClassMethod.h
+//  SkClassMethod.h
 //  GpsDuplicate
 //
 //  Created by SoKing on 2017/12/5.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SkyerGetVisibleViewController.h"
+#import "SkMacro.h"
 
-@interface skClassMethod : NSObject
+@interface SkClassMethod : NSObject
 
 /**
  UIAlertView的类方法

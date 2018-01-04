@@ -34,7 +34,7 @@
     [[_textFidld rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
         if (x.length>200) {
             
-            [SkyerHUD skyerShowToast:@"文字不能超过200"];
+            [SkHUD skyerShowToast:@"文字不能超过200"];
             weakself.textFidld.text=[x substringToIndex:200];
             
         }
@@ -54,7 +54,7 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
-        [SkyerHUD skyerShowToast:@"异常已经提交"];
+        [SkHUD skyerShowToast:@"异常已经提交"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
         });

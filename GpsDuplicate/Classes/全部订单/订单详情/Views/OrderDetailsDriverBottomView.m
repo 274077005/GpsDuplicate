@@ -39,8 +39,7 @@
             AbnormalViewController *view=[Main instantiateViewControllerWithIdentifier:@"AbnormalViewController"];
             view.OrderID=_model.OrderID;
             
-            UIViewController *viewVisible=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
-            [viewVisible.navigationController pushViewController:view animated:YES];
+            [skVSView.navigationController pushViewController:view animated:YES];
         }];
     }
     return _btnAbnormal;
@@ -86,7 +85,7 @@
     switch ([_model.OrderStatus integerValue]) {
         case 11:
         {
-            [skClassMethod skAlerView:@"确认并提交运单" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+            [SkClassMethod skAlerView:@"确认并提交运单" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                 [weakself delegateBtnSure];
             }];
             
@@ -97,7 +96,7 @@
         {
             NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
             
-            [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+            [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                 [weakself delegateBtnSure];
             }];
         }
@@ -106,7 +105,7 @@
         {
             NSString *title=[NSString stringWithFormat:@"确认车辆是(%@)已进入处置场",self.model.VehicleNo];
             
-            [skClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+            [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                 [weakself delegateBtnSure];
             }];
         }

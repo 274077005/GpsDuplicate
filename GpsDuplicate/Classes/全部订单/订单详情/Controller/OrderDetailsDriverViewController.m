@@ -98,12 +98,11 @@
     
     pop.arrData=arrTitle;
     //设置模式展示风格
-    UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
     [pop setModalPresentationStyle:UIModalPresentationOverFullScreen];
     //必要配置
-    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    vc.providesPresentationContextTransitionStyle = YES;
-    vc.definesPresentationContext = YES;
+    skVSView.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    skVSView.providesPresentationContextTransitionStyle = YES;
+    skVSView.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
         _wasIndex=index;
@@ -129,12 +128,11 @@
     
     pop.arrData=arrTitle;
     //设置模式展示风格
-    UIViewController *vc=[[SkyerGetVisibleViewController sharedSkyerGetVisibleViewController] skyerVisibleViewController];
     [pop setModalPresentationStyle:UIModalPresentationOverFullScreen];
     //必要配置
-    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    vc.providesPresentationContextTransitionStyle = YES;
-    vc.definesPresentationContext = YES;
+    skVSView.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    skVSView.providesPresentationContextTransitionStyle = YES;
+    skVSView.definesPresentationContext = YES;
     [self presentViewController:pop animated:YES completion:nil];
     pop.skIndexSelect = ^(NSInteger index) {
         _recIndex=index;
@@ -227,7 +225,6 @@
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //获取数据成功.首先更新tableview.再更新bottom的界面
-        NSLog(@"获取不能修改的订单详情%@",responseObject);
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         
         //请求完数据更新UI
@@ -247,8 +244,6 @@
     
     
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        
-        NSLog(@"获取修改订单的详情=%@",responseObject);
         
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         _arrWasteModel=[WasteModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
@@ -297,10 +292,6 @@
                                @"ReceivingID":self.orderDetailsManagerActionTableView.receivingModel.ReceivingID,
                                @"UserID":skUser.UserID
                                };
-    
-    
-    
-    NSLog(@"保存订单的参数=%@",parameters);
     
     kWeakSelf(self);
     [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"SaveOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
