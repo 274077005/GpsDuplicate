@@ -118,7 +118,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         [self getListModelArr:responseObject];
         

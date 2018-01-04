@@ -124,7 +124,7 @@
                             
                            };
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [[UserLogin sharedUserLogin] skChangeUserInfo:skContent(responseObject)];
         [self loginSuccess];
         [[skJPUSHSet sharedskJPUSHSet] skSetAlias:_textName.text];

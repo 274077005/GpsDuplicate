@@ -223,7 +223,7 @@
                                @"UserType":skUser.UserType
                                };
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //获取数据成功.首先更新tableview.再更新bottom的界面
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         
@@ -243,7 +243,7 @@
     NSDictionary *parameters=@{@"OrderID":self.orderListModel.OrderID};
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"EditOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         _model=[OrderDetailsModel mj_objectWithKeyValues:skContent(responseObject)];
         _arrWasteModel=[WasteModel mj_objectArrayWithKeyValuesArray:[responseObject objectForKey:@"Waste"]];
@@ -274,7 +274,7 @@
                                @"UserType":skUser.UserType,
                                };
     kWeakSelf(self);
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [weakself getOrderDetails];
     } failure:^(NSError * _Nullable error) {
         
@@ -294,7 +294,7 @@
                                };
     
     kWeakSelf(self);
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"SaveOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"SaveOrderDetails") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         _model.OrderStatus=@"17";
         [weakself getOrderDetails];
     } failure:^(NSError * _Nullable error) {

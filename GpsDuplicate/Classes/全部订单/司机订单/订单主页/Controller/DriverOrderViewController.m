@@ -179,7 +179,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLString parameters:parameters showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         [self getListModelArr:responseObject];
         
@@ -224,7 +224,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"UnBindVehicle") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"UnBindVehicle") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [self showBingdView];
     } failure:^(NSError * _Nullable error) {
         

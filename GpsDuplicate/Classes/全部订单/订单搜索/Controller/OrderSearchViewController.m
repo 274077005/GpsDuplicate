@@ -50,7 +50,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"SearchOrder") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"SearchOrder") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [self getListModelArr:responseObject];
     } failure:^(NSError * _Nullable error) {
         

@@ -95,7 +95,7 @@
 -(void)GetCode{
     NSDictionary *parameters=@{@"Tel":_textPhoneNum.text};
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"GetCode") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"GetCode") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [self timeShow];
     } failure:^(NSError * _Nullable error) {
         
@@ -109,7 +109,7 @@
                                @"Code":self.textCode.text
                                };
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"FoundPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"FoundPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResetPasswordViewController *view=[Main instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];

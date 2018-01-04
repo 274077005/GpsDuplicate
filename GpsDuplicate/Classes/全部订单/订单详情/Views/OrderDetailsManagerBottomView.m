@@ -295,7 +295,7 @@
                                };
     
     
-    [[SKNetworking sharedSKNetworking] SKPOST:skURLWithPort(@"NoSpoil") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"NoSpoil") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         
         
         [skVSView.navigationController popViewControllerAnimated:YES];
