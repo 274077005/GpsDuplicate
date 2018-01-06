@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
+typedef enum : NSUInteger {
+    skUserTypeDriver=1,
+    skUserTypeManager0,
+    skUserTypeManager1,
+    skUserTypeManager2,
+} skUserType;
 
 @interface LoginViewController : SkyerBaseViewController
 

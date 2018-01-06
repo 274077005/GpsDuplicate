@@ -289,7 +289,7 @@
                                };
     
     
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"LogOut") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLWithPort(@"LogOut") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError * _Nullable error) {
         

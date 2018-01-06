@@ -42,7 +42,7 @@
                                };
     
     
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"GetMessage") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLWithPort(@"GetMessage") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [self GetMessageModel:responseObject];
     } failure:^(NSError * _Nullable error) {
         

@@ -51,7 +51,7 @@
                                };
     
     
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLWithPort(@"ResetPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLWithPort(@"ResetPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [SkHUD skyerShowToast:@"修改密码成功"];
     } failure:^(NSError * _Nullable error) {
         

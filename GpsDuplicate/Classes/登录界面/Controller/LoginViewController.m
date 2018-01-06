@@ -124,7 +124,7 @@
                             
                            };
     
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLString parameters:params showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         [[UserLogin sharedUserLogin] skChangeUserInfo:skContent(responseObject)];
         [self loginSuccess];
         [[skJPUSHSet sharedskJPUSHSet] skSetAlias:_textName.text];
@@ -147,16 +147,16 @@
     
     
     switch ([skUser.UserType integerValue]) {
-        case 1:
+        case skUserTypeDriver:
         {
             DriverOrderViewController *view=[[DriverOrderViewController alloc] init];
             UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
             [self presentViewController:bdv animated:YES completion:nil];
         }
             break;
-        case 2:
-//        case 3:
-//        case 4:
+        case skUserTypeManager0:
+//        case skUserTypeManager1:
+//        case skUserTypeManager2:
         {
             ManagerOrderViewController *view=[[ManagerOrderViewController alloc] init];
             UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];
@@ -165,6 +165,7 @@
             break;
             
         default:
+            [SkHUD skyerShowToast:@"不存在的用户类型"];
             break;
     }
     

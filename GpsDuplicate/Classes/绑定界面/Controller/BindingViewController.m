@@ -44,7 +44,7 @@
                                };
     
     kWeakSelf(self)
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         //绑定成功后修改绑定车牌号和是否绑定的字段//0绑定、1未绑定
         skUser.VehicleNo=_textNum.text;
         skUser.IsBindVehicle=@"0";

@@ -168,7 +168,7 @@
                                };
     
     
-    [[SkNetwork sharedSkNetwork] SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [SkNetwork.sharedSkNetwork SKPOST:skURLString parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
         _model=[AboutUsModel mj_objectWithKeyValues:skContent(responseObject)];
         _tableView=[[UITableView alloc] initWithFrame:self.view.bounds style:(UITableViewStyleGrouped)];
         _tableView.delegate=self;
