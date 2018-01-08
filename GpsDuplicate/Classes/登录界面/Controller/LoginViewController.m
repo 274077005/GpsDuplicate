@@ -142,9 +142,6 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //1司机、2工地管理员、3监理员
-//    skUser.UserType=@"1";
-    
-    
     
     switch ([skUser.UserType integerValue]) {
         case skUserTypeDriver:
@@ -155,8 +152,8 @@
         }
             break;
         case skUserTypeManager0:
-//        case skUserTypeManager1:
-//        case skUserTypeManager2:
+        case skUserTypeManager1:
+        case skUserTypeManager2:
         {
             ManagerOrderViewController *view=[[ManagerOrderViewController alloc] init];
             UINavigationController *bdv=[[UINavigationController alloc] initWithRootViewController:view];

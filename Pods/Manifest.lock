@@ -39,7 +39,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - ReactiveObjC
-  - SkyerTools (~> 1.1.0)
+  - SkyerTools
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67

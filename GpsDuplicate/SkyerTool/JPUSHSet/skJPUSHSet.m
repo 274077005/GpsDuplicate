@@ -96,15 +96,20 @@ SkyerSingletonM(skJPUSHSet)
 }
 #pragma mark - 对收到的消息进行处理
 -(void)skReceiveJPUSHNotification:(NSDictionary *_Nullable)info{
-    NSLog(@"接收到通知=%@",info);
+//    NSLog(@"接收到通知=%@",info);
     [self skReceiveJush:info];
 }
 -(void)skReceiveJPUSHMessage:(NSDictionary *_Nullable)info{
-    NSLog(@"接收到消息=%@",info);
+//    NSLog(@"接收到消息=%@",info);
     [self skReceiveJush:info];
 }
 -(void)skReceiveJush:(NSDictionary *_Nullable)info{
     NSLog(@"接收到消息都在这里=%@",info);
+    
+    NSDictionary *aps=[info objectForKey:@"aps"];
+    NSLog(@"aps=%@",aps);
+    
+    
 }
 
 @end
