@@ -19,7 +19,11 @@
 
 
 //服务器的ip地址
-#define skURLString @"http://121.15.7.44:30032/api/ElectronicCouplet/PostApi"
+#define skURLString @"http://121.15.7.44:30036/api/ElectronicCouplet/PostApi"
+//#define skURLString @"http://121.15.7.44:30032/api/ElectronicCouplet/PostApi"
+//#define skURLString @"http://139.159.233.76:8100/api/ElectronicCouplet/PostApi"
+
+
 #define skName @"13530125769"
 #define skPw @"123456"
 //url和接口组成的请求连接

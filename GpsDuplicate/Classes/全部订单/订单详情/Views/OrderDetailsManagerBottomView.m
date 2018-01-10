@@ -141,32 +141,32 @@
             break;
         case 4:
         {
-//            //处置场处理员: 状态：15待确认、17待签认、22已签认
-//            switch ([_model.OrderStatus integerValue]) {
-//                case 15:
-//                {
-//                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
-//                        [weakself delegateBtnSure];
-//                    }];
-//                }
-//                    break;
-//                case 17:
-//                {
-//                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
-//                    [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
-//                        [weakself delegateBtnSure];
-//                    }];
-//                }
-//                    break;
-//                case 22:
-//                {
-//
-//                }
-//                    break;
-//
-//                default:
-//                    break;
-//            }
+            //处置场处理员: 状态：15待确认、17待签认、22已签认
+            switch ([_model.OrderStatus integerValue]) {
+                case 15:
+                {
+                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                        [weakself delegateBtnSure];
+                    }];
+                }
+                    break;
+                case 17:
+                {
+                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
+                    [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+                        [weakself delegateBtnSure];
+                    }];
+                }
+                    break;
+                case 22:
+                {
+
+                }
+                    break;
+
+                default:
+                    break;
+            }
         }
             break;
             
@@ -249,16 +249,16 @@
         {
             //处置场处理员: 状态：15待确认、17待签认、22已签认
             switch ([_model.OrderStatus integerValue]) {
-//                case 15:
-//                {
-//                    stateTitle=@"确认运单信息";
-//                }
-//                    break;
-//                case 17:
-//                {
-//                    stateTitle=@"入厂确认";
-//                }
-//                    break;
+                case 15:
+                {
+                    stateTitle=@"确认运单信息";
+                }
+                    break;
+                case 17:
+                {
+                    stateTitle=@"入厂确认";
+                }
+                    break;
                 case 22:
                 {
                     [self.btnSure setHidden:YES];

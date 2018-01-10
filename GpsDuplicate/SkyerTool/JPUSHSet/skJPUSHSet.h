@@ -15,13 +15,13 @@
 #endif
 
 #define kjpushKey @"19531031af448aff1b498495"
-#define kjpushChannel @"569965"
+#define kjpushChannel @"12580"
 #define kjpushIsProduction YES
 
 
 @interface skJPUSHSet : NSObject <JPUSHRegisterDelegate>
 
-    @property (nonatomic,strong) NSString * _Nullable skRegistrationID;
+@property (nonatomic,strong) NSString * _Nullable skRegistrationID;
 
 SkyerSingletonH(skJPUSHSet)
 /**
