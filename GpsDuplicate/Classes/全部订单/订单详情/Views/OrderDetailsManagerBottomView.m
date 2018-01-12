@@ -65,7 +65,7 @@
 }
 
 /**
- 出厂提示
+ 出场提示
  */
 -(void)userActionAlert{
     /*
@@ -92,7 +92,7 @@
                     break;
                 case 17:
                 {
-                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
+                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出场",self.model.VehicleNo];
                     [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
@@ -122,7 +122,7 @@
                     break;
                 case 17:
                 {
-                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
+                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出场",self.model.VehicleNo];
                     [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
@@ -152,7 +152,7 @@
                     break;
                 case 17:
                 {
-                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入厂",self.model.VehicleNo];
+                    NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认入场",self.model.VehicleNo];
                     [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
@@ -206,7 +206,7 @@
                     break;
                 case 17:
                 {
-                    stateTitle=@"出厂确认";
+                    stateTitle=@"出场确认";
                 }
                     break;
                 case 14:
@@ -231,7 +231,7 @@
                     break;
                 case 17:
                 {
-                    stateTitle=@"出厂确认";
+                    stateTitle=@"出场确认";
                 }
                     break;
                 case 13:
@@ -256,7 +256,7 @@
                     break;
                 case 17:
                 {
-                    stateTitle=@"入厂确认";
+                    stateTitle=@"入场确认";
                 }
                     break;
                 case 22:

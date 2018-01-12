@@ -469,7 +469,7 @@
 			path = "个人设置";
 			sourceTree = "<group>";
 		};
-		B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */ = {
+		B685C8A11FE0D8D9007F6E55 /* PopMenu */ = {
 			isa = PBXGroup;
 			children = (
 				B63572391FE91CA500F26023 /* skSelectView.h */,
@@ -477,7 +477,7 @@
 				B6520E141FE2110E00CD252D /* PopMenuViewController.h */,
 				B6520E151FE2110E00CD252D /* PopMenuViewController.m */,
 			);
-			path = "弹出菜单";
+			path = PopMenu;
 			sourceTree = "<group>";
 		};
 		B69CB8B21FD79B120045A4F2 /* Controller */ = {
@@ -627,13 +627,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B6C686941FFE27100047CD1E /* 网络请求工具 */ = {
+		B6C686941FFE27100047CD1E /* NetworkTool */ = {
 			isa = PBXGroup;
 			children = (
 				B6C686911FFE26F50047CD1E /* SkNetwork.h */,
 				B6C686921FFE26F50047CD1E /* SkNetwork.m */,
 			);
-			path = "网络请求工具";
+			path = NetworkTool;
 			sourceTree = "<group>";
 		};
 		B6D7EF211FC7C0ED00E669E3 = {
@@ -689,9 +689,9 @@
 		B6D7EF4D1FC7C7B200E669E3 /* SkyerTool */ = {
 			isa = PBXGroup;
 			children = (
-				B6C686941FFE27100047CD1E /* 网络请求工具 */,
+				B6C686941FFE27100047CD1E /* NetworkTool */,
 				B6BB4F821FE27118008B5F1B /* BaseViewController */,
-				B685C8A11FE0D8D9007F6E55 /* 弹出菜单 */,
+				B685C8A11FE0D8D9007F6E55 /* PopMenu */,
 				B6E985851FCD5A52003A370A /* JPUSHSet */,
 				B62CFDCD1FCBB36A00776F72 /* ComMacro */,
 				B6D7EF841FC8038C00E669E3 /* SKKeyboard */,

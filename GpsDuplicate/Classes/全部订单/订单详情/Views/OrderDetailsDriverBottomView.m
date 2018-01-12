@@ -69,7 +69,7 @@
 }
 
 /**
- 出厂提示
+ 出场提示
  */
 -(void)userActionAlert{
     /*
@@ -94,7 +94,7 @@
         case 12:
             
         {
-            NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出厂",self.model.VehicleNo];
+            NSString *title=[NSString stringWithFormat:@"车牌号(%@)车辆是否确认出场",self.model.VehicleNo];
             
             [SkClassMethod skAlerView:title message:nil cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                 [weakself delegateBtnSure];
@@ -141,7 +141,7 @@
         case 12:
             
         {
-            stateInfo=@"出厂确认";
+            stateInfo=@"出场确认";
         }
             break;
         case 15:
