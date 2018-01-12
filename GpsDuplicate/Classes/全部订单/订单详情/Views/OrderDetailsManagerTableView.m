@@ -176,11 +176,11 @@
             break;
         case 1:
         {
-            //线路
+            //路线
             UILabel *labRoute=[[UILabel alloc] init];
             [cell.contentView addSubview:labRoute];
             labRoute.font=[UIFont systemFontOfSize:16];
-            labRoute.text=@"运输线路";
+            labRoute.text=@"运输路线";
             [labRoute mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.size.mas_equalTo(CGSizeMake(200, 20));
                 make.top.left.mas_equalTo(10);
@@ -265,7 +265,7 @@
             break;
         case 2:
         {
-            //线路
+            //路线
             UILabel *labRoute=[[UILabel alloc] init];
             [cell.contentView addSubview:labRoute];
             labRoute.font=[UIFont systemFontOfSize:16];
@@ -285,10 +285,10 @@
             }];
             
             NSString *ProjectName=[NSString stringWithFormat:@"工程名称:%@",_model.ProjectName];
-            NSString *ProjectAddress=[NSString stringWithFormat:@"工程名称:%@",_model.ProjectAddress];
-            NSString *BuildUnit=[NSString stringWithFormat:@"工程名称:%@",_model.BuildUnit];
-            NSString *SupervisorUnit=[NSString stringWithFormat:@"工程名称;%@",_model.SupervisorUnit];
-            NSString *ConstructionUnit=[NSString stringWithFormat:@"工程名称:%@",_model.ConstructionUnit];
+            NSString *ProjectAddress=[NSString stringWithFormat:@"工程地址:%@",_model.ProjectAddress];
+            NSString *BuildUnit=[NSString stringWithFormat:@"建设单位:%@",_model.BuildUnit];
+            NSString *SupervisorUnit=[NSString stringWithFormat:@"监理单位;%@",_model.SupervisorUnit];
+            NSString *ConstructionUnit=[NSString stringWithFormat:@"施工单位:%@",_model.ConstructionUnit];
             NSArray *arrName=@[ProjectName,ProjectAddress,BuildUnit,SupervisorUnit,ConstructionUnit,ConstructionUnit];
             
             
