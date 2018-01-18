@@ -156,9 +156,11 @@
                 UILabel *labUser=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageUser.frame)+10, 35, 200, 20)];
                 
                 NSString *RealName=skUser.RealName;
-                NSString *VehicleNo=skUser.VehicleNo;
                 
-                labUser.text=[NSString stringWithFormat:@"%@(%@)",RealName,VehicleNo];
+                
+                NSString *VehicleNo=skUser.VehicleNo?@"":[NSString stringWithFormat:@"(%@)",skUser.VehicleNo];
+                
+                labUser.text=[NSString stringWithFormat:@"%@%@",RealName,VehicleNo];
                 labUser.textColor=[UIColor whiteColor];
                 [cell.contentView addSubview:labUser];
                 
