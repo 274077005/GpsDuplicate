@@ -85,7 +85,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交联单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -115,7 +115,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交联单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -145,7 +145,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 15:
                 {
-                    [SkClassMethod skAlerView:@"确认并提交运单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
+                    [SkClassMethod skAlerView:@"确认并提交联单信息" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确认" sureBlock:^{
                         [weakself delegateBtnSure];
                     }];
                 }
@@ -200,7 +200,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    stateTitle=@"提交运单信息";
+                    stateTitle=@"提交联单信息";
                     [self.btnAbnormal setHidden:NO];
                 }
                     break;
@@ -226,7 +226,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 12:
                 {
-                    stateTitle=@"提交运单信息";
+                    stateTitle=@"提交联单信息";
                 }
                     break;
                 case 17:
@@ -251,7 +251,7 @@
             switch ([_model.OrderStatus integerValue]) {
                 case 15:
                 {
-                    stateTitle=@"确认运单信息";
+                    stateTitle=@"确认联单信息";
                 }
                     break;
                 case 17:
@@ -286,7 +286,7 @@
     
 }
 
-#pragma mark - 非弃土运单接口
+#pragma mark - 非弃土联单接口
 -(void)NoSpoil{
     
     NSDictionary *parameters=@{

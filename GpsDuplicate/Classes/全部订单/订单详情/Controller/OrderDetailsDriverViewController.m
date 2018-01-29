@@ -50,7 +50,7 @@
     return _orderDetailsDriverTableView;
     
 }
-//能修改运单信息的
+//能修改联单信息的
 -(OrderDetailsManagerActionTableView *)orderDetailsManagerActionTableView{
     if (_orderDetailsManagerActionTableView==nil) {
         
@@ -193,7 +193,7 @@
 
 - (void)initUI {
     self.view.backgroundColor=skLineColor;
-    self.title=@"运单详情";
+    self.title=@"联单详情";
 }
 
 /**

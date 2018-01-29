@@ -109,7 +109,7 @@
             }];
             //订单编号
             UILabel *labOrder=[[UILabel alloc] init];
-            labOrder.text=[NSString stringWithFormat:@"运单编号:%@",_model.OrderID];
+            labOrder.text=[NSString stringWithFormat:@"联单编号:%@",_model.OrderID];
             [labOrder setTextColor:[UIColor grayColor]];
             labOrder.font=[UIFont systemFontOfSize:15];
             [cell.contentView addSubview:labOrder];
@@ -371,10 +371,10 @@
                 make.top.mas_equalTo(10);
             }];
             
-            //确认运单信息
+            //确认联单信息
             UIButton *btnSure=[[UIButton alloc] init];
             [btnSure setBackgroundColor:skBaseColor];
-            [btnSure setTitle:@"确认运单信息" forState:0];
+            [btnSure setTitle:@"确认联单信息" forState:0];
             btnSure.titleLabel.font=[UIFont systemFontOfSize:14];
             [btnSure setTitleColor:[UIColor whiteColor] forState:0];
             [btnSure skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];

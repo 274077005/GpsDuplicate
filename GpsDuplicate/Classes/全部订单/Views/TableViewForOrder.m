@@ -85,7 +85,7 @@
     //添加订单编号
     UILabel *labOrder=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, view.frame.size.width-16, 44)];
     
-    labOrder.text=[NSString stringWithFormat:@"运单编号:%@",model.OrderID];
+    labOrder.text=[NSString stringWithFormat:@"联单编号:%@",model.OrderID];
     labOrder.font=[UIFont systemFontOfSize:16];
     labOrder.textColor=[UIColor blackColor];
     [view addSubview:labOrder];

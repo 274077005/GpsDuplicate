@@ -36,7 +36,7 @@
     [super viewDidLoad];
     _indexSelect=1;
     // Do any additional setup after loading the view.
-    self.title=@"全部运单";
+    self.title=@"全部联单";
     self.view.backgroundColor=skLineColor;
     UIButton *btnUser=[self skSetNagRightImage:@"nar_btn_set_default"];
     @weakify(self)
@@ -169,7 +169,7 @@
     
     /*
      OrderType==>这个参数在切换的时候会自己变
-     运单类型：司机登录：0已完成 1未完成
+     联单类型：司机登录：0已完成 1未完成
      监管人员登录：0待确认 1待签认 2已签认
      */
     NSDictionary *parameters=@{@"UserID":skUser.UserID,
@@ -204,7 +204,7 @@
         OrderListModel *model=[OrderListModel mj_objectWithKeyValues:oneDic];
         [arrList addObject:model];
     }
-    //运单类型：司机登录：0已完成 1未完成
+    //联单类型：司机登录：0已完成 1未完成
 
     if (_indexSelect==0) {
         [_finishView skReloadDataWithData:arrList];

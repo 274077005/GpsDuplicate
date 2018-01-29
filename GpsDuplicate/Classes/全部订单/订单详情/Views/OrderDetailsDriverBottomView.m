@@ -85,7 +85,7 @@
     switch ([_model.OrderStatus integerValue]) {
         case 11:
         {
-            [SkClassMethod skAlerView:@"确认并提交运单" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
+            [SkClassMethod skAlerView:@"确认并提交联单" message:@"提交后不可修改" cancalTitle:@"取消" sureTitle:@"确定" sureBlock:^{
                 [weakself delegateBtnSure];
             }];
             
@@ -135,7 +135,7 @@
     switch ([_model.OrderStatus integerValue]) {
         case 11:
         {
-            stateInfo=@"确认运单信息";
+            stateInfo=@"确认联单信息";
         }
             break;
         case 12:

@@ -24,11 +24,11 @@
  SupervisorUnit = "<null>";
  VehicleNo = "\U7ca4B64986";
  WasteType = "<null>";
- 返回运单信息：OrderID（运单编号）、VehicleNo（车牌号）、ProjectAddress（工程地址）、ReceivingName（处置场名称）、OrderStatus（状态：11已激活、12待出场、15待处置、21已完成）、InOrOut（市内或市外：0、市内 1、市外）、OutTime（出场时间）、WasteType（废弃物种类）、Loading（装载量）、ProjectName（工程名称）、SupervisorUnit（监理单位）、BuildUnit（建设单位）、ConstructionUnit（施工单位）
+ 返回联单信息：OrderID（联单编号）、VehicleNo（车牌号）、ProjectAddress（工程地址）、ReceivingName（处置场名称）、OrderStatus（状态：11已激活、12待出场、15待处置、21已完成）、InOrOut（市内或市外：0、市内 1、市外）、OutTime（出场时间）、WasteType（废弃物种类）、Loading（装载量）、ProjectName（工程名称）、SupervisorUnit（监理单位）、BuildUnit（建设单位）、ConstructionUnit（施工单位）
 
  */
 
-@property (nonatomic,copy) NSString *OrderID;//运单编号
+@property (nonatomic,copy) NSString *OrderID;//联单编号
 @property (nonatomic,copy) NSString *VehicleNo;//车牌号码
 @property (nonatomic,copy) NSString *ProjectAddress;//工程地址
 @property (nonatomic,copy) NSString *ReceivingName;//处置场名称
