@@ -10,8 +10,13 @@
 
 @interface ResetPasswordViewController : SkyerBaseViewController
 
+typedef enum : NSUInteger {
+    skTypeUnlogin=0,
+    skTypeLogin,
+} skChangPasswordType;
 
-@property (nonatomic,copy) NSString *Tel;
+@property (nonatomic,assign) skChangPasswordType type;//修改类型0是
+@property (nonatomic,copy)  NSString *Tel;
 @property (weak, nonatomic) IBOutlet UITextField *textPassword;
 @property (weak, nonatomic) IBOutlet UITextField *textPasswordAgain;
 @property (weak, nonatomic) IBOutlet UIButton *btnSure;

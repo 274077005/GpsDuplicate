@@ -52,7 +52,24 @@
     
     
     [SkNetwork.sharedSkNetwork SKPOST:skURLWithPort(@"ResetPwd") parameters:parameters showHUD:YES showErrMsg:YES success:^(id  _Nullable responseObject) {
-        [SkHUD skyerShowToast:@"修改密码成功"];
+        
+//        [SkHUD skyerShowToast:@"修改密码成功"];
+        switch (_type) {
+            case skTypeUnlogin:
+                {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                break;
+            case skTypeLogin:
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
     } failure:^(NSError * _Nullable error) {
         
     }];
