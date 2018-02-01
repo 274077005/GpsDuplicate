@@ -160,7 +160,7 @@
             //装载量
             UILabel *labLoading=[[UILabel alloc] init];
             [cell.contentView addSubview:labLoading];
-            labLoading.text=[NSString stringWithFormat:@"装载量:%@立方(每年/次)",_model.Loading];
+            labLoading.text=[NSString stringWithFormat:@"装载量:%@立方/次",_model.Loading];
             labLoading.font=[UIFont systemFontOfSize:15];
             labLoading.textColor=[UIColor grayColor];
             [labLoading mas_makeConstraints:^(MASConstraintMaker *make) {

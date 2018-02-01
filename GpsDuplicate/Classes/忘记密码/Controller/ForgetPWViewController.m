@@ -113,7 +113,7 @@
         
         UIStoryboard *Main=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ResetPasswordViewController *view=[Main instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
-        view.Tel=skUser.UserName;
+        view.Tel=_textPhoneNum.text;
         view.type=skTypeUnlogin;
         [self.navigationController pushViewController:view animated:YES];
         

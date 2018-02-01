@@ -214,7 +214,7 @@
             //继续完善
             UILabel *labLoadingwei=[[UILabel alloc] init];
             [cell.contentView addSubview:labLoadingwei];
-            labLoadingwei.text=@"立方(每年/次)";
+            labLoadingwei.text=@"立方/次";
             labLoadingwei.font=[UIFont systemFontOfSize:15];
             labLoadingwei.textColor=[UIColor grayColor];
             labLoadingwei.textAlignment=0;
