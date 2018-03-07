@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <SkyerTools.h>
+#import <SkyerTools/SkyerTools.h>
 #import <ReactiveObjC.h>
 #import "SkNetwork.h"
 #import <Masonry.h>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0738976B8F6E121D1EA28E67 /* libPods-GpsDuplicate正式.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFC1A1EA74BF0D8A9B4F047 /* libPods-GpsDuplicate正式.a */; };
+		0E405F7E858FCD8706179E7B /* libPods-skyerTarget-GpsDuplicate测试.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E77D107AE296B144869761D4 /* libPods-skyerTarget-GpsDuplicate测试.a */; };
+		60102EE035EF219CDE56A266 /* libPods-skyerTarget-GpsDuplicate正式.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE9B75582D4A34351496A61 /* libPods-skyerTarget-GpsDuplicate正式.a */; };
 		B603224E2005EC2C00894CBA /* AbnormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61141E61FD54BDA00C7C392 /* AbnormalViewController.m */; };
 		B603224F2005EC2C00894CBA /* orderStateColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A8B3D1FF244E200F6E56D /* orderStateColor.m */; };
 		B60322502005EC2C00894CBA /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B640D9FC1FD68A7F00A6153F /* ResetPasswordViewController.m */; };
@@ -45,7 +48,6 @@
 		B60322712005EC2C00894CBA /* AboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B640DA091FD68E6F00A6153F /* AboutUsModel.m */; };
 		B60322722005EC2C00894CBA /* OrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C0FB561FD23FBF00061441 /* OrderListModel.m */; };
 		B60322742005EC2C00894CBA /* SKNetworkingSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61455391FECB7FB00F7EB8B /* SKNetworkingSDK.framework */; };
-		B60322752005EC2C00894CBA /* libPods-GpsDuplicate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */; };
 		B60322772005EC2C00894CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF381FC7C0ED00E669E3 /* LaunchScreen.storyboard */; };
 		B60322782005EC2C00894CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF361FC7C0ED00E669E3 /* Assets.xcassets */; };
 		B60322792005EC2C00894CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D7EF331FC7C0ED00E669E3 /* Main.storyboard */; };
@@ -94,9 +96,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.debug.xcconfig"; sourceTree = "<group>"; };
-		407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate.release.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate.release.xcconfig"; sourceTree = "<group>"; };
+		1CE15F08D92D2FCA7880C0CC /* Pods-skyerTarget-GpsDuplicate测试.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyerTarget-GpsDuplicate测试.debug.xcconfig"; path = "Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate测试/Pods-skyerTarget-GpsDuplicate测试.debug.xcconfig"; sourceTree = "<group>"; };
+		296B5E228FB8552E06734D59 /* Pods-skyerTarget-GpsDuplicate测试.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyerTarget-GpsDuplicate测试.release.xcconfig"; path = "Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate测试/Pods-skyerTarget-GpsDuplicate测试.release.xcconfig"; sourceTree = "<group>"; };
+		5DE9B75582D4A34351496A61 /* libPods-skyerTarget-GpsDuplicate正式.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-skyerTarget-GpsDuplicate正式.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74CA1BBC2EB39218E32423C3 /* Pods-skyerTarget-GpsDuplicate正式.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyerTarget-GpsDuplicate正式.debug.xcconfig"; path = "Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate正式/Pods-skyerTarget-GpsDuplicate正式.debug.xcconfig"; sourceTree = "<group>"; };
+		8FFC1A1EA74BF0D8A9B4F047 /* libPods-GpsDuplicate正式.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GpsDuplicate正式.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GpsDuplicate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA17760459F24B2F19BDE12 /* Pods-skyerTarget-GpsDuplicate正式.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyerTarget-GpsDuplicate正式.release.xcconfig"; path = "Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate正式/Pods-skyerTarget-GpsDuplicate正式.release.xcconfig"; sourceTree = "<group>"; };
 		B603227F2005EC2C00894CBA /* GpsDuplicate测试.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GpsDuplicate测试.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60322802005EC2D00894CBA /* TestInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TestInfo.plist; path = "/Users/htwx/Desktop/电子联单(电子外包)/GpsDuplicate/GpsDuplicate/TestInfo.plist"; sourceTree = "<absolute>"; };
 		B61141E51FD54BDA00C7C392 /* AbnormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbnormalViewController.h; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 		B6E985861FCD5A71003A370A /* skJPUSHSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
 		B6E985871FCD5A71003A370A /* skJPUSHSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
 		B6E985891FCD606B003A370A /* GpsDuplicate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpsDuplicate.entitlements; sourceTree = "<group>"; };
+		DFE14A06C3EDC1BB23F88658 /* Pods-GpsDuplicate正式.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate正式.release.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate正式/Pods-GpsDuplicate正式.release.xcconfig"; sourceTree = "<group>"; };
+		E77D107AE296B144869761D4 /* libPods-skyerTarget-GpsDuplicate测试.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-skyerTarget-GpsDuplicate测试.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C6BD1265B46F939F87AF56 /* Pods-GpsDuplicate正式.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GpsDuplicate正式.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GpsDuplicate正式/Pods-GpsDuplicate正式.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60322742005EC2C00894CBA /* SKNetworkingSDK.framework in Frameworks */,
-				B60322752005EC2C00894CBA /* libPods-GpsDuplicate.a in Frameworks */,
+				0E405F7E858FCD8706179E7B /* libPods-skyerTarget-GpsDuplicate测试.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +207,8 @@
 			files = (
 				B614553A1FECB7FB00F7EB8B /* SKNetworkingSDK.framework in Frameworks */,
 				D28D1A8515FEE999AFE9E9EE /* libPods-GpsDuplicate.a in Frameworks */,
+				0738976B8F6E121D1EA28E67 /* libPods-GpsDuplicate正式.a in Frameworks */,
+				60102EE035EF219CDE56A266 /* libPods-skyerTarget-GpsDuplicate正式.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +220,9 @@
 			children = (
 				B61455391FECB7FB00F7EB8B /* SKNetworkingSDK.framework */,
 				A66232F57BEB2D3FB73317D9 /* libPods-GpsDuplicate.a */,
+				8FFC1A1EA74BF0D8A9B4F047 /* libPods-GpsDuplicate正式.a */,
+				5DE9B75582D4A34351496A61 /* libPods-skyerTarget-GpsDuplicate正式.a */,
+				E77D107AE296B144869761D4 /* libPods-skyerTarget-GpsDuplicate测试.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -818,8 +832,12 @@
 		DBFE880E8607B67086DFC7AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */,
-				407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */,
+				F8C6BD1265B46F939F87AF56 /* Pods-GpsDuplicate正式.debug.xcconfig */,
+				DFE14A06C3EDC1BB23F88658 /* Pods-GpsDuplicate正式.release.xcconfig */,
+				74CA1BBC2EB39218E32423C3 /* Pods-skyerTarget-GpsDuplicate正式.debug.xcconfig */,
+				AFA17760459F24B2F19BDE12 /* Pods-skyerTarget-GpsDuplicate正式.release.xcconfig */,
+				1CE15F08D92D2FCA7880C0CC /* Pods-skyerTarget-GpsDuplicate测试.debug.xcconfig */,
+				296B5E228FB8552E06734D59 /* Pods-skyerTarget-GpsDuplicate测试.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -831,12 +849,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B603227C2005EC2C00894CBA /* Build configuration list for PBXNativeTarget "GpsDuplicate测试" */;
 			buildPhases = (
-				B603224C2005EC2C00894CBA /* [CP] Check Pods Manifest.lock */,
+				4867B51489116D6F729B80D0 /* [CP] Check Pods Manifest.lock */,
 				B603224D2005EC2C00894CBA /* Sources */,
 				B60322732005EC2C00894CBA /* Frameworks */,
 				B60322762005EC2C00894CBA /* Resources */,
-				B603227A2005EC2C00894CBA /* [CP] Embed Pods Frameworks */,
-				B603227B2005EC2C00894CBA /* [CP] Copy Pods Resources */,
+				22FC580A45AC1EC56FED4849 /* [CP] Embed Pods Frameworks */,
+				E416FACEE52912ECED5B3184 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -950,7 +968,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate正式/Pods-skyerTarget-GpsDuplicate正式-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22FC580A45AC1EC56FED4849 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate测试/Pods-skyerTarget-GpsDuplicate测试-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4867B51489116D6F729B80D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skyerTarget-GpsDuplicate测试-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B12AAB894ECCBF9DC0BF8B23 /* [CP] Check Pods Manifest.lock */ = {
@@ -964,63 +1015,11 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GpsDuplicate-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-skyerTarget-GpsDuplicate正式-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B603224C2005EC2C00894CBA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GpsDuplicate-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B603227A2005EC2C00894CBA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B603227B2005EC2C00894CBA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCA4A04E17A9E0F875085732 /* [CP] Copy Pods Resources */ = {
@@ -1029,7 +1028,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate正式/Pods-skyerTarget-GpsDuplicate正式-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
@@ -1039,7 +1038,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GpsDuplicate/Pods-GpsDuplicate-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate正式/Pods-skyerTarget-GpsDuplicate正式-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E416FACEE52912ECED5B3184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate测试/Pods-skyerTarget-GpsDuplicate测试-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-skyerTarget-GpsDuplicate测试/Pods-skyerTarget-GpsDuplicate测试-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1157,7 +1175,7 @@
 /* Begin XCBuildConfiguration section */
 		B603227D2005EC2C00894CBA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */;
+			baseConfigurationReference = 1CE15F08D92D2FCA7880C0CC /* Pods-skyerTarget-GpsDuplicate测试.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
@@ -1187,7 +1205,7 @@
 		};
 		B603227E2005EC2C00894CBA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */;
+			baseConfigurationReference = 296B5E228FB8552E06734D59 /* Pods-skyerTarget-GpsDuplicate测试.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
@@ -1321,7 +1339,7 @@
 		};
 		B6D7EF411FC7C0ED00E669E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FA957B95DBF16DD422AF7E3 /* Pods-GpsDuplicate.debug.xcconfig */;
+			baseConfigurationReference = 74CA1BBC2EB39218E32423C3 /* Pods-skyerTarget-GpsDuplicate正式.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;
@@ -1351,7 +1369,7 @@
 		};
 		B6D7EF421FC7C0ED00E669E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407B931CA33302D757EC5AF8 /* Pods-GpsDuplicate.release.xcconfig */;
+			baseConfigurationReference = AFA17760459F24B2F19BDE12 /* Pods-skyerTarget-GpsDuplicate正式.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GpsDuplicate/GpsDuplicate.entitlements;

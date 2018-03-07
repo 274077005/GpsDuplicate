@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '9.0'
 
-target 'GpsDuplicate' do
+abstract_target 'skyerTarget' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+#   use_frameworks!
 
   # Pods for GpsDuplicate
 pod 'SkyerTools'
@@ -15,4 +15,8 @@ pod 'IQKeyboardManager'
 pod 'MJExtension'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
+
+    target 'GpsDuplicate正式'
+    target 'GpsDuplicate测试'
+
 end
