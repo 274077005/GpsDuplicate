@@ -21,5 +21,5 @@ SkyerSingletonH(SkNetwork)
  *  @param success    请求成功回调
  *  @param failure    请求失败回调
  */
-- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters showHUD:(Boolean)isShow showErrMsg:(BOOL) showErr success:(Success)success failure:(Failure)failure;
+- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters showHUD:(Boolean)isShow showErrMsg:(BOOL) showErr success:(responseSuccess)success failure:(responseFailure)failure;
 @end

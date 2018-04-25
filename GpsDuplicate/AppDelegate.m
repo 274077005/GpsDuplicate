@@ -24,6 +24,8 @@
     //配置极光推送的key
     [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
     return YES;
+    
+    
 }
 
 

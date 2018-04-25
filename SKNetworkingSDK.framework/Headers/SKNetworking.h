@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class SKPicModle;
 
-typedef void (^ _Nullable Success)(id _Nullable responseObject);     // 成功Block
-typedef void (^ _Nullable Failure)(NSError * _Nullable error);        // 失败Blcok
+typedef void (^ _Nullable responseSuccess)(id _Nullable responseObject);     // 成功Block
+typedef void (^ _Nullable responseFailure)(NSError * _Nullable error);        // 失败Blcok
 typedef void (^ _Nullable Progress)(NSProgress * _Nullable progress); // 上传或者下载进度Block
 typedef NSURL * _Nullable (^ _Nullable Destination)(NSURL * _Nullable targetPath, NSURLResponse * _Nullable response); //返回URL的Block
 typedef void (^ _Nullable DownLoadSuccess)(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath); // 下载成功的Blcok
@@ -75,7 +75,7 @@ SkyerSingletonH(SKNetworking)
  *  @param success    请求成功回调
  *  @param failure    请求失败回调
  */
-- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters showHUD:(Boolean)isShow showErrMsg:(BOOL) showErr success:(Success)success failure:(Failure)failure;
+- (void)SKPOST:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters showHUD:(Boolean)isShow showErrMsg:(BOOL) showErr success:(responseSuccess)success failure:(responseFailure)failure;
 /**
  *  封装的get请求
  *
@@ -84,7 +84,7 @@ SkyerSingletonH(SKNetworking)
  *  @param success    请求成功回调
  *  @param failure    请求失败回调
  */
-- (void)SKGET:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters success:(Success)success failure:(Failure)failure;
+- (void)SKGET:(NSString *_Nullable)URLString parameters:(NSDictionary *_Nullable)parameters success:(responseSuccess)success failure:(responseFailure)failure;
 /**
  *  封装POST图片上传(单张图片) // 可扩展成单个别的数据上传如:mp3等
  *
@@ -95,7 +95,7 @@ SkyerSingletonH(SKNetworking)
  *  @param success    发送成功的回调
  *  @param failure    发送失败的回调
  */
-- (void)SKPOST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPic:(SKPicModle *_Nonnull)picModle progress:(Progress)progress success:(Success)success failure:(Failure)failure;
+- (void)SKPOST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPic:(SKPicModle *_Nonnull)picModle progress:(Progress)progress success:(responseSuccess)success failure:(responseFailure)failure;
 /**
  *  封装POST图片上传(多张图片) // 可扩展成多个别的数据上传如:mp3等
  *
@@ -106,7 +106,7 @@ SkyerSingletonH(SKNetworking)
  *  @param success    发送成功的回调
  *  @param failure    发送失败的回调
  */
-- (void)POST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPicArray:(NSArray *_Nonnull)picArray progress:(Progress)progress success:(Success)success failure:(Failure)failure;
+- (void)POST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPicArray:(NSArray *_Nonnull)picArray progress:(Progress)progress success:(responseSuccess)success failure:(responseFailure)failure;
 /**
  *  下载
  *
@@ -116,7 +116,7 @@ SkyerSingletonH(SKNetworking)
  *  @param downLoadSuccess 发送成功的回调
  *  @param failure         发送失败的回调
  */
-- (NSURLSessionDownloadTask *_Nonnull)downLoadWithURL:(NSString *_Nonnull)URLString progress:(Progress)progress destination:(Destination)destination downLoadSuccess:(DownLoadSuccess)downLoadSuccess failure:(Failure)failure;
+- (NSURLSessionDownloadTask *_Nonnull)downLoadWithURL:(NSString *_Nonnull)URLString progress:(Progress)progress destination:(Destination)destination downLoadSuccess:(DownLoadSuccess)downLoadSuccess failure:(responseFailure)failure;
 /**
  *  封装POST上传url资源
  *
@@ -127,7 +127,7 @@ SkyerSingletonH(SKNetworking)
  *  @param success    发送成功的回调
  *  @param failure    发送失败的回调
  */
-- (void)POST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPicUrl:(SKPicModle *_Nonnull)picModle progress:(Progress)progress success:(Success)success failure:(Failure)failure;
+- (void)POST:(NSString *_Nonnull)URLString parameters:(NSDictionary *_Nonnull)parameters andPicUrl:(SKPicModle *_Nonnull)picModle progress:(Progress)progress success:(responseSuccess)success failure:(responseFailure)failure;
 @end
 NS_ASSUME_NONNULL_END
 
