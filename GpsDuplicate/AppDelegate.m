@@ -21,11 +21,9 @@
     // Override point for customization after application launch.
     //处理键盘弹出和导航栏全局属性
     [SKKeyboard skMangerKeyboard];
-    //配置极光推送的key
+    //配置极光推送的key.设置
     [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
     return YES;
-    
-    
 }
 
 
